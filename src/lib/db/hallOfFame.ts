@@ -26,7 +26,7 @@ export async function getHallOfFame(limit = 100): Promise<HallOfFameEntry[]> {
       handle: r.handle == null ? null : String(r.handle),
       message: r.message == null ? null : String(r.message),
       linksFound: Number(r.links_found),
-      createdAt: String(r.created_at),
+      createdAt: (r.created_at instanceof Date ? r.created_at.toISOString() : String(r.created_at)),
     }))
   } catch {
     return [] // never crash the page on a DB hiccup

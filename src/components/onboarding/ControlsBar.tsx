@@ -15,11 +15,11 @@ export function ControlsBar() {
       className="pointer-events-none fixed bottom-3 left-1/2 z-[60] -translate-x-1/2"
     >
       <div className="flex items-center gap-3 rounded-full border border-black/10 bg-surface-raised/80 px-3.5 py-1.5 font-mono text-[0.65rem] text-ink-soft shadow-sm backdrop-blur-sm sm:gap-4 sm:text-xs">
-        <Item keys={['W', 'A', 'S', 'D']} label="Move" />
+        <Item keys={['↑↓←→', 'WASD']} label="Move" />
         <Divider />
-        <Item keys={['E']} label="Enter" />
+        <Item keys={['Shift']} label="Run" />
         <Divider />
-        <Item keys={['Esc']} label="Back" />
+        <Item keys={['Enter','Space']} label="Interact" />
       </div>
     </div>
   )

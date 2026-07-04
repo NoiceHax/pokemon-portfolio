@@ -60,14 +60,14 @@ export function RecruiterPreview({
       <div className="relative max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-card border-2 border-poke-red bg-surface p-6 shadow-2xl">
         <button
           onClick={onClose}
-          aria-label="Back to Adventure (Esc)"
+          aria-label="Back to Adventure"
           className="absolute right-3 top-3 rounded-md border border-edge p-1.5 text-ink-soft hover:text-poke-red"
         >
           <X className="h-4 w-4" aria-hidden />
         </button>
 
         <p className="mb-1 font-mono text-xs uppercase tracking-widest text-ink-faint">
-          You peek inside...  <span className="normal-case">press Esc to go back</span>
+          You peek inside...
         </p>
         <h2 className="mb-4 font-display text-xl text-poke-red">{dest.label}</h2>
 

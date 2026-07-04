@@ -5,7 +5,7 @@ import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { KeyCap } from './KeyCap'
 
 /**
- * A contextual interaction prompt, e.g. `[E] → Enter`. Rendered only while the player is
+ * A contextual interaction prompt, e.g. `[Enter] → Go in`. Rendered only while the player is
  * in range of something interactable (a house door, an NPC). Sits just above the dialogue
  * zone at the bottom of the screen and gently bobs to draw the eye. Non-interactive.
  *
@@ -13,8 +13,8 @@ import { KeyCap } from './KeyCap'
  */
 export function InteractionHint({
   visible,
-  keyLabel = 'E',
-  action = 'Enter',
+  keyLabel = 'Enter',
+  action = 'Go in',
 }: {
   visible: boolean
   keyLabel?: string

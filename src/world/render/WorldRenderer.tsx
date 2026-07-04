@@ -242,7 +242,7 @@ export function WorldRenderer({
       ref={viewportRef}
       className="relative h-[100dvh] w-full overflow-hidden bg-black"
       role="application"
-      aria-label={`Adventure world: ${snapshot.mapName}. Arrow keys or WASD to move, Enter to interact.`}
+      aria-label={`Adventure world: ${snapshot.mapName}. Arrow keys or WASD to move, hold Shift to run, Enter to interact.`}
     >
       {/* The four-layer Scene: Background → Entity → Foreground → Overlay. */}
       <Scene engine={engine} snapshot={snapshot} registry={registry} zoom={zoom} />
