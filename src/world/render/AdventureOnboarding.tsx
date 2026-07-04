@@ -7,9 +7,9 @@ import { stepCoord, type WorldSnapshot } from '@/world/engine/types'
  * All Adventure-Mode contextual guidance, driven purely by the world snapshot. It teaches
  * by playing while keeping a quiet permanent reference:
  *
- *  - A slim always-visible controls bar (WASD move · E enter · Esc back) pinned bottom-center.
+ *  - A slim always-visible controls bar (↑↓←→/WASD move · Shift run · Enter interact) pinned bottom-center.
  *  - An "Objective" banner the first time the player is in Cerulean City.
- *  - A live "[E] → Enter" prompt whenever the player faces an enterable house door - it
+ *  - A live "[Enter] → Go in" prompt whenever the player faces an enterable house door - it
  *    appears only within interaction range (the tile directly ahead) and hides otherwise.
  *
  * A hint that's suppressed (blocked by a preview overlay, or already shown) simply renders
@@ -45,7 +45,7 @@ export function AdventureOnboarding({
         />
       ) : null}
 
-      <InteractionHint visible={facingDoor && !overlayOpen} keyLabel="E" action="Enter" />
+      <InteractionHint visible={facingDoor && !overlayOpen} keyLabel="Enter" action="Go in" />
     </>
   )
 }

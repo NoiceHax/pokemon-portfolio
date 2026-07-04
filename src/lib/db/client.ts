@@ -12,6 +12,14 @@ import { neon, type NeonQueryFunction } from '@neondatabase/serverless'
  */
 export const isDbConfigured = Boolean(process.env.DATABASE_URL)
 
+/**
+ * The Neon HTTP driver runs each query through `fetch`. Next.js patches `fetch` and will
+ * store the response in its Data Cache — and a per-request cache setting overrides a
+ * route's `dynamic = 'force-dynamic'`. Without opting out, reads like the Hall of Fame
+ * leaderboard get served a stale (often empty, first-render) result even though the row is
+ * in the database (Vercel logs it as "Using cache … /sql"). We force `no-store` so every
+ * query hits Postgres live; writes/counters/rate-limits must never be cached anyway.
+ */
 export const sql: NeonQueryFunction<false, false> | null = isDbConfigured
-  ? neon(process.env.DATABASE_URL as string)
+  ? neon(process.env.DATABASE_URL as string, { fetchOptions: { cache: 'no-store' } })
   : null

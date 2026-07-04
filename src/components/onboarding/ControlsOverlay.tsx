@@ -7,8 +7,8 @@ import { KeyCap } from './KeyCap'
 
 /**
  * The global controls hint. A small, unobtrusive card in the corner that lists the core
- * inputs (move / interact / continue / skip) when an experience begins, then fades out on
- * its own after a few seconds. Feels like the control legend a game shows on a new screen.
+ * inputs (move / run / interact) when an experience begins, then fades out on its own
+ * after a few seconds. Feels like the control legend a game shows on a new screen.
  *
  * Auto-dismisses after `duration` ms; can be dismissed early by any keypress (once the
  * player uses a control, they've learned it). Purely visual - never captures input.
@@ -20,10 +20,9 @@ interface ControlLine {
 }
 
 const CONTROLS: ControlLine[] = [
-  { label: 'Move', keys: ['W', 'A', 'S', 'D'] },
-  { label: 'Interact', keys: ['E'] },
-  { label: 'Continue', keys: ['Enter', 'Space'] },
-  { label: 'Skip', keys: ['Esc'] },
+  { label: 'Move', keys: ['↑↓←→', 'WASD'] },
+  { label: 'Run', keys: ['Shift'] },
+  { label: 'Interact', keys: ['Enter'] },
 ]
 
 export function ControlsOverlay({

@@ -15,7 +15,7 @@ function toPost(r: Record<string, unknown>): DbBlogPost {
       type: String(r.type) as BlogFrontmatter['type'],
       title: String(r.title),
       excerpt: String(r.excerpt),
-      date: String(r.post_date).slice(0, 10),
+      date: (r.post_date instanceof Date ? r.post_date.toISOString() : String(r.post_date)).slice(0, 10),
       readMinutes: Number(r.read_minutes),
       tags: (r.tags as string[] | null) ?? [],
       draft: Boolean(r.draft),
