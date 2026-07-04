@@ -49,12 +49,19 @@ async function getAccessToken(): Promise<string | null> {
   return data.access_token ?? null
 }
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-function normalize(item: any, isPlaying: boolean): Track {
+interface SpotifyArtist { name: string }
+interface SpotifyItem {
+  name?: string
+  artists?: SpotifyArtist[]
+  album?: { name?: string; images?: { url: string }[] }
+  external_urls?: { spotify?: string }
+}
+
+function normalize(item: SpotifyItem, isPlaying: boolean): Track {
   return {
     isPlaying,
     title: item?.name ?? 'Unknown',
-    artist: (item?.artists ?? []).map((a: any) => a.name).join(', ') || 'Unknown',
+    artist: (item?.artists ?? []).map((a) => a.name).join(', ') || 'Unknown',
     album: item?.album?.name ?? '',
     albumArt: item?.album?.images?.[0]?.url ?? null,
     url: item?.external_urls?.spotify ?? null,
@@ -77,7 +84,7 @@ export async function GET(request: Request) {
       cache: 'no-store',
     })
     if (now.status === 200) {
-      const data = (await now.json()) as any
+      const data = (await now.json()) as { item?: SpotifyItem; is_playing?: boolean }
       if (data?.item) {
         return NextResponse.json({ configured: true, ...normalize(data.item, Boolean(data.is_playing)) })
       }
@@ -88,7 +95,7 @@ export async function GET(request: Request) {
       cache: 'no-store',
     })
     if (recent.ok) {
-      const data = (await recent.json()) as any
+      const data = (await recent.json()) as { items?: { track: SpotifyItem }[] }
       const track = data?.items?.[0]?.track
       if (track) return NextResponse.json({ configured: true, ...normalize(track, false) })
     }
