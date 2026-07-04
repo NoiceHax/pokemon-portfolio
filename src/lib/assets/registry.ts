@@ -49,15 +49,22 @@ export const maps = {
   palletTown: `${ASSET_ROOT}/pallet_town.png`,
 } as const
 
-/** Original-soundtrack audio cues, used through the audio manager (Milestone 3/6). */
+/**
+ * Original-soundtrack audio cues, used through the audio manager (Milestone 3/6).
+ *
+ * Filenames are plain ASCII slugs on purpose. The source tracks ship with spaces and
+ * non-ASCII characters (e.g. "Pokémon", "Victory! (Trainer)"), which serve fine from a
+ * Windows dev box but 404 on Vercel's Linux static CDN (URL-encoding / Unicode
+ * normalization mismatch) - so music played locally but not in production.
+ */
 export const audio = {
-  titleScreen: `${ASSET_ROOT}/audio/1-03. Title Screen.mp3`,
-  professorOakLab: `${ASSET_ROOT}/audio/1-08. Professor Oak's Laboratory.mp3`,
-  obtainedPokemon: `${ASSET_ROOT}/audio/1-09. Obtained a Pokémon!.mp3`,
-  victoryTrainer: `${ASSET_ROOT}/audio/1-12. Victory! (Trainer).mp3`,
-  pokemonCenter: `${ASSET_ROOT}/audio/1-21. Pokémon Center.mp3`,
-  jigglypuffsSong: `${ASSET_ROOT}/audio/1-22. Jigglypuff's Song.mp3`,
-  obtainedBadge: `${ASSET_ROOT}/audio/1-29. Obtained a Gym Badge!.mp3`,
+  titleScreen: `${ASSET_ROOT}/audio/title-screen.mp3`,
+  professorOakLab: `${ASSET_ROOT}/audio/professor-oak-lab.mp3`,
+  obtainedPokemon: `${ASSET_ROOT}/audio/obtained-pokemon.mp3`,
+  victoryTrainer: `${ASSET_ROOT}/audio/victory-trainer.mp3`,
+  pokemonCenter: `${ASSET_ROOT}/audio/pokemon-center.mp3`,
+  jigglypuffsSong: `${ASSET_ROOT}/audio/jigglypuffs-song.mp3`,
+  obtainedBadge: `${ASSET_ROOT}/audio/obtained-badge.mp3`,
 } as const
 
 export const assets = {
