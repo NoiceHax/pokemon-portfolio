@@ -1,0 +1,20 @@
+.next
+node_modules
+assets
+design
+*.png
+*.mp3
+pnpm-lock.yaml
+package-lock.json
+
+# Constitution / project docs are authored by hand — do not reformat.
+CLAUDE.md
+PROJECT_BIBLE.md
+ROADMAP.md
+PROMPT_INDEX.md
+design
+docs
+scripts
+
+# Reference game (inspiration only — not part of our build/format)
+test
