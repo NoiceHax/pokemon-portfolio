@@ -248,10 +248,8 @@ export function WorldRenderer({
       <Scene engine={engine} snapshot={snapshot} registry={registry} zoom={zoom} />
 
       <TouchControls
-        onMove={(d) => {
-          engine.pressDirection(d)
-          window.setTimeout(() => engine.releaseDirection(), 200)
-        }}
+        onMoveStart={(d) => engine.setHeld(d)}
+        onMoveEnd={() => engine.releaseDirection()}
         onAction={() => engine.interact()}
       />
 
