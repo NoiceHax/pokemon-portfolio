@@ -27,7 +27,7 @@ export function PokedexEntry({ project }: { project: Project }) {
           <StatusDot status={project.status} />
         </div>
 
-        <h1 className="mt-2 font-display text-3xl font-bold text-ink">{project.title}</h1>
+        <h1 className="mt-2 font-display text-2xl font-bold text-ink sm:text-3xl">{project.title}</h1>
         <p className="mt-1 font-mono text-sm text-ink-soft">{project.summary}</p>
 
         <div className="mt-3 flex flex-wrap gap-1.5">

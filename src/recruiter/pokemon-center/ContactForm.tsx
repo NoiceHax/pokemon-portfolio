@@ -99,7 +99,7 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? 'message-error' : undefined}
           onChange={(e) => setValues((s) => ({ ...s, message: e.target.value }))}
-          className="mt-1 w-full rounded-md border border-edge bg-surface-raised px-3 py-2 font-mono text-sm text-ink focus:border-poke-red focus:outline-none focus:ring-1 focus:ring-poke-red"
+          className="mt-1 w-full rounded-md border border-edge bg-surface-raised px-3 py-2.5 font-mono text-sm text-ink focus:border-poke-red focus:outline-none focus:ring-1 focus:ring-poke-red"
           placeholder="Enter your message here..."
         />
         {errors.message ? (
@@ -112,7 +112,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={sending}
-        className="flex items-center justify-center gap-2 rounded-md bg-poke-red px-5 py-2.5 font-mono text-sm font-semibold text-white transition-colors hover:bg-poke-red-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+        className="flex min-h-11 items-center justify-center gap-2 rounded-md bg-poke-red px-5 py-3 font-mono text-sm font-semibold text-white transition-colors hover:bg-poke-red-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
         <Send aria-hidden className="h-4 w-4" />
         {sending ? 'Transmitting…' : 'Transmit Data'}
@@ -153,7 +153,7 @@ function Field({
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-1 w-full rounded-md border border-edge bg-surface-raised px-3 py-2 font-mono text-sm text-ink focus:border-poke-red focus:outline-none focus:ring-1 focus:ring-poke-red"
+        className="mt-1 w-full rounded-md border border-edge bg-surface-raised px-3 py-2.5 font-mono text-sm text-ink focus:border-poke-red focus:outline-none focus:ring-1 focus:ring-poke-red"
       />
       {error ? (
         <p id={`${id}-error`} className="mt-1 font-mono text-xs text-poke-red">

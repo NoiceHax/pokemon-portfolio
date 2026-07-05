@@ -17,7 +17,7 @@ export function TrainerHeader({ profile }: { profile: Profile }) {
             className="h-24 w-24 object-contain [image-rendering:pixelated]"
           />
         </span>
-        <p className="mt-3 font-display text-3xl font-bold uppercase text-ink">{profile.name}</p>
+        <p className="mt-3 font-display text-2xl font-bold uppercase text-ink sm:text-3xl">{profile.name}</p>
         <p className="mt-1 rounded-md border border-poke-red px-3 py-1 font-mono text-xs text-poke-red">
           TRAINER ID: {profile.trainerId}
         </p>
@@ -25,7 +25,7 @@ export function TrainerHeader({ profile }: { profile: Profile }) {
 
       {/* Attributes */}
       <div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Attribute icon={Laptop} label="Class" value={profile.role} />
           <Attribute icon={Globe} label="Region" value={profile.region} />
         </div>
@@ -52,8 +52,8 @@ function Attribute({
   return (
     <div>
       <p className="font-mono text-xs uppercase tracking-wide text-poke-red">{label}</p>
-      <p className="mt-1 flex items-center gap-2 font-sans text-lg text-ink">
-        <Icon aria-hidden className="h-4 w-4 text-ink-soft" />
+      <p className="mt-1 flex items-center gap-2 break-words font-sans text-lg text-ink">
+        <Icon aria-hidden className="h-4 w-4 shrink-0 text-ink-soft" />
         {value}
       </p>
     </div>

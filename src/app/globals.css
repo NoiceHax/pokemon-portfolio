@@ -15,16 +15,16 @@
     @apply mb-2 mt-4 font-display text-lg font-bold text-ink;
   }
   .prose-journal p {
-    @apply my-3 text-sm leading-relaxed text-ink;
+    @apply my-3 break-words text-sm leading-relaxed text-ink;
   }
   .prose-journal ul {
-    @apply my-3 list-disc space-y-1 pl-5 text-sm text-ink;
+    @apply my-3 list-disc space-y-1 break-words pl-5 text-sm text-ink;
   }
   .prose-journal ol {
-    @apply my-3 list-decimal space-y-1 pl-5 text-sm text-ink;
+    @apply my-3 list-decimal space-y-1 break-words pl-5 text-sm text-ink;
   }
   .prose-journal a {
-    @apply text-poke-red underline;
+    @apply break-words text-poke-red underline;
   }
   .prose-journal blockquote {
     @apply my-4 border-l-2 border-poke-red pl-4 font-mono text-sm italic text-ink-soft;
@@ -48,6 +48,15 @@
     font-family: theme('fontFamily.sans');
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Mobile: keep form controls at >=16px so iOS Safari doesn't auto-zoom on focus. */
+  @media (max-width: 640px) {
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    }
   }
 
   /* Respect the user's motion preference globally (accessibility is required). */

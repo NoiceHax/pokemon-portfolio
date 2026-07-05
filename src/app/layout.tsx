@@ -4,6 +4,7 @@ import { SettingsProvider } from '@/providers/SettingsProvider'
 import { AudioProvider } from '@/providers/AudioProvider'
 import { BadgeProvider } from '@/providers/BadgeProvider'
 import { DevConsole } from '@/components/easter-eggs/DevConsole'
+import { ServiceWorkerCleanup } from '@/components/ServiceWorkerCleanup'
 import './globals.css'
 
 const SITE_URL = 'https://trainer-chandan.vercel.app'
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AudioProvider>
             <BadgeProvider>
               {children}
+              <ServiceWorkerCleanup />
               <DevConsole />
             </BadgeProvider>
           </AudioProvider>

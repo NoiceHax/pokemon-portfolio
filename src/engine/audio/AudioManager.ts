@@ -18,12 +18,37 @@ export type SoundKey = keyof typeof audioAssets
 export class AudioManager {
   private elements = new Map<SoundKey, HTMLAudioElement>()
   private muted = false
+  /** Cues paused by suspend() so resume() can pick them back up where they left off. */
+  private suspended = new Set<SoundKey>()
 
   setMuted(muted: boolean): void {
     this.muted = muted
     for (const element of this.elements.values()) {
       element.muted = muted
     }
+  }
+
+  /**
+   * Pause every currently-playing cue (e.g. the window lost focus / tab was hidden),
+   * remembering which were playing. Uses pause() - NOT stop() - so currentTime is kept
+   * and resume() continues seamlessly. Idempotent.
+   */
+  suspend(): void {
+    for (const [key, element] of this.elements) {
+      if (!element.paused && !element.ended) {
+        element.pause()
+        this.suspended.add(key)
+      }
+    }
+  }
+
+  /** Resume the cues suspended by suspend() (window regained focus). Respects mute. */
+  resume(): void {
+    for (const key of this.suspended) {
+      const element = this.elements.get(key)
+      if (element) void element.play().catch(() => {})
+    }
+    this.suspended.clear()
   }
 
   private element(key: SoundKey): HTMLAudioElement | null {
@@ -57,6 +82,7 @@ export class AudioManager {
   stop(key: SoundKey): void {
     const element = this.elements.get(key)
     if (!element) return
+    this.suspended.delete(key)
     element.pause()
     element.currentTime = 0
   }

@@ -71,7 +71,7 @@ export default async function JournalEntryPage({ params }: EntryPageProps) {
           </span>
         </div>
 
-        <h1 className="mt-2 font-display text-3xl font-bold text-ink">{fm.title}</h1>
+        <h1 className="mt-2 font-display text-2xl font-bold text-ink sm:text-3xl">{fm.title}</h1>
 
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-ink-faint">
           <span className="flex items-center gap-1">

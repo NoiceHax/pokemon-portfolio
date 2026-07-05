@@ -11,7 +11,7 @@ export function DialoguePortrait({ speaker }: { speaker: Speaker | undefined }) 
       <img
         src={speaker.portrait.src}
         alt={speaker.portrait.alt}
-        className="h-16 w-16 rounded-lg border border-edge bg-surface-sunken object-contain [image-rendering:pixelated]"
+        className="h-12 w-12 rounded-lg border border-edge bg-surface-sunken object-contain [image-rendering:pixelated] sm:h-16 sm:w-16"
       />
     </div>
   )

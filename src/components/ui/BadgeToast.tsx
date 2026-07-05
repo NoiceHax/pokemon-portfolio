@@ -27,14 +27,14 @@ export function BadgeToast() {
   return (
     <div
       role="status"
-      className="fixed bottom-6 left-1/2 z-[80] flex -translate-x-1/2 items-center gap-3 rounded-card border-2 border-poke-red bg-surface-raised px-4 py-3 shadow-lg"
+      className="fixed bottom-6 left-1/2 z-[80] flex max-w-[92vw] -translate-x-1/2 items-center gap-3 rounded-card border-2 border-poke-red bg-surface-raised px-4 py-3 shadow-lg"
     >
-      <Trophy className="h-6 w-6 text-poke-red" aria-hidden />
-      <div>
+      <Trophy className="h-6 w-6 shrink-0 text-poke-red" aria-hidden />
+      <div className="min-w-0">
         <p className="font-display text-[0.7rem] uppercase tracking-wide text-poke-red">
           Badge unlocked!
         </p>
-        <p className="font-mono text-sm text-ink">{badge.name}</p>
+        <p className="break-words font-mono text-sm text-ink">{badge.name}</p>
       </div>
     </div>
   )

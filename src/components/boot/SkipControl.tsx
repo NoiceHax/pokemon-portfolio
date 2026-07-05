@@ -29,7 +29,7 @@ export function SkipControl({ onSkip }: SkipControlProps) {
     <button
       type="button"
       onClick={onSkip}
-      className="absolute bottom-6 right-6 z-20 rounded-full border border-surface/30 bg-black/40 px-4 py-1.5 font-mono text-xs uppercase tracking-widest text-surface/80 transition-colors hover:border-surface/60 hover:text-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
+      className="absolute bottom-6 right-6 z-20 rounded-full border border-surface/30 bg-black/40 px-4 py-2.5 font-mono text-xs uppercase tracking-widest text-surface/80 transition-colors hover:border-surface/60 hover:text-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
     >
       Skip ▸
     </button>

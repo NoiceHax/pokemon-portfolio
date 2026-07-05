@@ -45,7 +45,7 @@ export function TitleScreen({ onStart }: { onStart: () => void }) {
       <img
         src="/assets/sprites/charizard.png"
         alt="Charizard"
-        className="mt-16 h-44 w-auto [image-rendering:pixelated] sm:h-56"
+        className="mt-8 h-32 w-auto [image-rendering:pixelated] sm:mt-16 sm:h-56"
         draggable={false}
       />
 

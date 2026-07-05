@@ -38,7 +38,7 @@ export function TrainerSidebar() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="flex items-center gap-3 border-b border-edge py-2.5 font-mono text-sm text-ink-soft transition-colors hover:text-poke-red focus:outline-none focus-visible:text-poke-red"
+                className="flex min-h-11 items-center gap-3 border-b border-edge py-3 font-mono text-sm text-ink-soft transition-colors hover:text-poke-red focus:outline-none focus-visible:text-poke-red"
               >
                 <item.icon aria-hidden className="h-4 w-4" />
                 {item.label}
