@@ -7,7 +7,7 @@ import { stepCoord, type WorldSnapshot } from '@/world/engine/types'
  * All Adventure-Mode contextual guidance, driven purely by the world snapshot. It teaches
  * by playing while keeping a quiet permanent reference:
  *
- *  - A slim always-visible controls bar (↑↓←→/WASD move · Shift run · Enter interact) pinned bottom-center.
+ *  - Desktop: slim controls bar (↑↓←→/WASD · Shift · Enter). Mobile: short touch hint.
  *  - An "Objective" banner the first time the player is in Cerulean City.
  *  - A live "[Enter] → Go in" prompt whenever the player faces an enterable house door - it
  *    appears only within interaction range (the tile directly ahead) and hides otherwise.
