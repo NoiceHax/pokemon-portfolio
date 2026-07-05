@@ -42,7 +42,7 @@ export function HallOfFameForm() {
   }
 
   const inputClass =
-    'w-full rounded-md border border-surface/25 bg-white/5 px-3 py-2 font-mono text-sm text-surface placeholder:text-surface/40 focus:border-amber-300 focus:outline-none'
+    'w-full rounded-md border border-surface/25 bg-white/5 px-3 py-2.5 font-mono text-sm text-surface placeholder:text-surface/40 focus:border-amber-300 focus:outline-none'
 
   return (
     <form onSubmit={submit} className="flex flex-col gap-3 text-left">
@@ -76,7 +76,7 @@ export function HallOfFameForm() {
       <button
         type="submit"
         disabled={status === 'saving' || !name.trim()}
-        className="rounded-md border border-amber-300 px-3 py-2 font-mono text-xs font-semibold uppercase tracking-wide text-amber-300 transition-colors hover:bg-amber-300 hover:text-black disabled:cursor-not-allowed disabled:opacity-50"
+        className="min-h-11 rounded-md border border-amber-300 px-3 py-3 font-mono text-xs font-semibold uppercase tracking-wide text-amber-300 transition-colors hover:bg-amber-300 hover:text-black disabled:cursor-not-allowed disabled:opacity-50"
       >
         {status === 'saving' ? 'Saving…' : status === 'done' ? 'Added! ✓' : 'Add me'}
       </button>

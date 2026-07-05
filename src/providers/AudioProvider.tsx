@@ -31,6 +31,25 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     manager.setMuted(muted)
   }, [manager, muted])
 
+  // Pause all audio while the window/tab is out of focus, and resume when it comes back.
+  // We treat the app as "active" only when the document is BOTH visible and focused, so
+  // switching tabs, minimizing, or clicking another window all silence playback.
+  useEffect(() => {
+    const sync = () => {
+      const active = document.visibilityState === 'visible' && document.hasFocus()
+      if (active) manager.resume()
+      else manager.suspend()
+    }
+    window.addEventListener('focus', sync)
+    window.addEventListener('blur', sync)
+    document.addEventListener('visibilitychange', sync)
+    return () => {
+      window.removeEventListener('focus', sync)
+      window.removeEventListener('blur', sync)
+      document.removeEventListener('visibilitychange', sync)
+    }
+  }, [manager])
+
   useEffect(() => {
     return () => manager.stopAll()
   }, [manager])

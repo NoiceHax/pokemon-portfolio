@@ -42,7 +42,7 @@ export function PokedexCard({ project }: { project: Project }) {
 
       <Link
         href={`/recruiter/pokedex/${project.slug}`}
-        className="mt-4 flex items-center justify-between rounded-md border border-edge px-3 py-2 font-mono text-sm text-poke-red transition-colors hover:border-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
+        className="mt-4 flex min-h-11 items-center justify-between rounded-md border border-edge px-3 py-3 font-mono text-sm text-poke-red transition-colors hover:border-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
       >
         View Entry
         <ArrowRight aria-hidden className="h-4 w-4" />

@@ -9,7 +9,7 @@ export function CompletionBar({ unlocked, total }: { unlocked: number; total: nu
   const percent = total === 0 ? 0 : Math.round((unlocked / total) * 100)
   return (
     <div className="rounded-card border border-edge bg-surface-raised p-4">
-      <div className="flex items-center justify-between font-mono text-xs uppercase tracking-wide text-ink-soft">
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 font-mono text-xs uppercase tracking-wide text-ink-soft">
         <span>
           Badges Unlocked{' '}
           <span className="font-bold text-poke-red">

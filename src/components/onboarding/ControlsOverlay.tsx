@@ -58,7 +58,7 @@ export function ControlsOverlay({
           animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
           transition={{ duration: 0.3 }}
-          className="pointer-events-none fixed bottom-4 right-4 z-[70] w-max rounded-card border-2 border-edge bg-surface-raised/95 px-3 py-2.5 shadow-lg backdrop-blur-sm"
+          className="pointer-events-none fixed bottom-4 right-4 z-[70] w-max max-w-[90vw] rounded-card border-2 border-edge bg-surface-raised/95 px-3 py-2.5 shadow-lg backdrop-blur-sm"
         >
           <p className="mb-1.5 font-display text-[0.55rem] uppercase tracking-widest text-poke-red">
             Controls

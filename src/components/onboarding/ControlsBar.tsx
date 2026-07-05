@@ -14,7 +14,7 @@ export function ControlsBar() {
       aria-label="Controls"
       className="pointer-events-none fixed bottom-3 left-1/2 z-[60] -translate-x-1/2"
     >
-      <div className="flex items-center gap-3 rounded-full border border-black/10 bg-surface-raised/80 px-3.5 py-1.5 font-mono text-[0.65rem] text-ink-soft shadow-sm backdrop-blur-sm sm:gap-4 sm:text-xs">
+      <div className="flex max-w-[96vw] flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-black/10 bg-surface-raised/80 px-3.5 py-1.5 font-mono text-[0.65rem] text-ink-soft shadow-sm backdrop-blur-sm sm:gap-4 sm:text-xs">
         <Item keys={['↑↓←→', 'WASD']} label="Move" />
         <Divider />
         <Item keys={['Shift']} label="Run" />

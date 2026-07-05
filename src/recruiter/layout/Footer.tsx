@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="mt-12 border-t border-edge">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 font-mono text-xs text-ink-faint sm:flex-row">
         <p>© 2024 NOICEHAX | Research Division</p>
-        <p className="flex items-center gap-3">
+        <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
           <Link href="/recruiter" className="transition-colors hover:text-poke-red">
             Global Terminal
           </Link>

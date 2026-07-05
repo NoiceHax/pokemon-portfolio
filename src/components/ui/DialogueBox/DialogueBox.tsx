@@ -99,7 +99,7 @@ export function DialogueBox({
             aria-label={isTyping ? 'Complete text' : 'Advance dialogue'}
             className="mt-1 w-full cursor-default text-left focus:outline-none"
           >
-            <p className="min-h-[3rem] whitespace-pre-wrap font-mono text-lg leading-relaxed text-ink">
+            <p className="min-h-[3rem] whitespace-pre-wrap break-words font-mono text-base leading-relaxed text-ink sm:text-lg">
               {displayed}
             </p>
           </button>

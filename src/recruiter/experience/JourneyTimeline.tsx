@@ -16,13 +16,13 @@ export function JourneyTimeline({ milestones }: { milestones: Experience }) {
   const ordered = [...milestones].reverse()
 
   return (
-    <ol className="relative ml-3 space-y-6 border-l-2 border-dashed border-poke-red/40 pl-8">
+    <ol className="relative ml-2 space-y-6 border-l-2 border-dashed border-poke-red/40 pl-6 sm:ml-3 sm:pl-8">
       {ordered.map((m) => (
         <li key={m.slug} className="relative">
           {/* Route node - a Poké Ball marker sitting on the trail line. */}
           <span
             aria-hidden
-            className={`absolute -left-[2.6rem] top-1 grid h-6 w-6 place-items-center rounded-full border-2 ${
+            className={`absolute -left-[2rem] top-1 grid h-6 w-6 place-items-center rounded-full border-2 sm:-left-[2.6rem] ${
               m.current
                 ? 'border-poke-red bg-gradient-to-b from-poke-red from-50% to-surface-raised to-50%'
                 : 'border-ink/60 bg-gradient-to-b from-ink/40 from-50% to-surface-raised to-50%'
