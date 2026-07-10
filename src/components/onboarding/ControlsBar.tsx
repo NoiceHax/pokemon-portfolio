@@ -12,7 +12,7 @@ export function ControlsBar() {
     <div
       role="note"
       aria-label="Controls"
-      className="pointer-events-none fixed bottom-3 left-1/2 z-[60] -translate-x-1/2"
+      className="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 md:bottom-3"
     >
       {/* Desktop — keyboard / mouse legend */}
       <div className="hidden max-w-[96vw] flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-black/10 bg-surface-raised/80 px-3.5 py-1.5 font-mono text-xs text-ink-soft shadow-sm backdrop-blur-sm sm:gap-4 md:flex">

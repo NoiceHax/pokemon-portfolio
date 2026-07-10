@@ -1,9 +1,9 @@
 /**
  * SSR-safe localStorage wrapper.
  *
- * All persisted client state (first-visit flag, mute, badge progress, save state)
- * goes through here so we never touch `window` during server rendering - a common
- * Next.js hydration-mismatch trap.
+ * All persisted client state (first-visit flag, mute, save state) goes through here
+ * so we never touch `window` during server rendering - a common Next.js
+ * hydration-mismatch trap.
  */
 
 export function readStorage<T>(key: string, fallback: T): T {
@@ -33,4 +33,8 @@ export const STORAGE_KEYS = {
   muted: 'tc.muted',
   reducedMotion: 'tc.reducedMotion',
   chosenExperience: 'tc.chosenExperience',
+  /** Last Spotify track shown in the sidebar (instant paint, refresh in background). */
+  spotifyTrack: 'tc.spotify.track',
+  /** Last known trainers-visited count (instant paint, refresh in background). */
+  visitCount: 'tc.visits.count',
 } as const

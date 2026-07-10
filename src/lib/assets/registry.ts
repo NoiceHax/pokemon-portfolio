@@ -64,7 +64,6 @@ export const audio = {
   victoryTrainer: `${ASSET_ROOT}/audio/victory-trainer.mp3`,
   pokemonCenter: `${ASSET_ROOT}/audio/pokemon-center.mp3`,
   jigglypuffsSong: `${ASSET_ROOT}/audio/jigglypuffs-song.mp3`,
-  obtainedBadge: `${ASSET_ROOT}/audio/obtained-badge.mp3`,
 } as const
 
 export const assets = {

@@ -18,7 +18,7 @@ import { OverlayLayer } from './OverlayLayer'
  *   ├── Animated Water     Shimmer over open water            (camera-transformed)
  *   ├── Entity Layer       Player · NPCs · Items · Signs      (camera-transformed, y-sorted)
  *   ├── Foreground Layer   Tree tops · Roofs · Bridges · Canopies  (camera-transformed)
- *   └── Overlay Layer      Dialogue · Fade · Transitions · Badge Unlocks  (viewport-fixed)
+ *   └── Overlay Layer      Dialogue · Fade · Transitions  (viewport-fixed)
  *
  * The first three layers live inside one camera-translated world container so they scroll
  * together; the Overlay Layer sits outside it, pinned to the viewport. Every layer is a

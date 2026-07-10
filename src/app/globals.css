@@ -15,37 +15,41 @@
     @apply mb-2 mt-4 font-display text-lg font-bold text-ink;
   }
   .prose-journal p {
-    @apply my-3 break-words text-sm leading-relaxed text-ink;
+    @apply my-3 break-words text-base leading-relaxed text-ink;
   }
   .prose-journal ul {
-    @apply my-3 list-disc space-y-1 break-words pl-5 text-sm text-ink;
+    @apply my-3 list-disc space-y-1 break-words pl-5 text-base text-ink;
   }
   .prose-journal ol {
-    @apply my-3 list-decimal space-y-1 break-words pl-5 text-sm text-ink;
+    @apply my-3 list-decimal space-y-1 break-words pl-5 text-base text-ink;
   }
   .prose-journal a {
     @apply break-words text-poke-red underline;
   }
   .prose-journal blockquote {
-    @apply my-4 border-l-2 border-poke-red pl-4 font-mono text-sm italic text-ink-soft;
+    @apply my-4 border-l-2 border-poke-red pl-4 font-mono text-base italic text-ink-soft;
   }
   .prose-journal code {
-    @apply rounded bg-surface-sunken px-1 py-0.5 font-mono text-xs text-ink;
+    @apply rounded bg-surface-sunken px-1 py-0.5 font-mono text-sm text-ink;
   }
   .prose-journal pre {
-    @apply my-4 overflow-x-auto rounded-md border border-edge bg-surface-sunken p-3 font-mono text-xs;
+    @apply my-4 overflow-x-auto rounded-md border border-edge bg-surface-sunken p-3 font-mono text-sm;
   }
 }
 
 @layer base {
   html {
-    /* Warm, minimal surface per DESIGN.md. */
+    /* Warm, minimal surface per DESIGN.md. Do not raise root font-size — that
+       scales every rem (padding, gaps, widths) and feels like a page zoom. */
     background-color: theme('colors.surface.DEFAULT');
     color: theme('colors.ink.DEFAULT');
   }
 
   body {
     font-family: theme('fontFamily.sans');
+    /* Readable default for VT323; uses the bumped `base` token (18px), not a raised root. */
+    font-size: theme('fontSize.base');
+    line-height: theme('lineHeight.relaxed');
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }

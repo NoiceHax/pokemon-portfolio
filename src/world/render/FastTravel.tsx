@@ -91,7 +91,7 @@ export function FastTravel({
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-center font-mono text-[0.65rem] text-ink-faint">
+            <p className="mt-3 text-center font-mono text-xs text-ink-faint">
               Esc to close · M to toggle
             </p>
           </div>

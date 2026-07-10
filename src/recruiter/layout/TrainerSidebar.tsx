@@ -1,15 +1,14 @@
 import Link from 'next/link'
 import { getProfile } from '@/lib/content'
 import { NAV_ITEMS } from './navItems'
-import { SidebarBadgeRail } from './SidebarBadgeRail'
 import { CoolFeatureButton } from './CoolFeatureButton'
 import { NowPlaying } from './NowPlaying'
 import { VisitorCount } from './VisitorCount'
 
 /**
  * Right-hand Trainer sidebar (canonical Recruiter layout). Shows the trainer avatar,
- * ID, quick navigation, and a live badge rail - mirroring the mockups. Content-driven
- * via getProfile (no duplicated data); unlock state via BadgeProvider.
+ * ID, and quick navigation (with plain-English meanings).
+ * Content-driven via getProfile.
  */
 export function TrainerSidebar() {
   const profile = getProfile()
@@ -40,8 +39,11 @@ export function TrainerSidebar() {
                 href={item.href}
                 className="flex min-h-11 items-center gap-3 border-b border-edge py-3 font-mono text-sm text-ink-soft transition-colors hover:text-poke-red focus:outline-none focus-visible:text-poke-red"
               >
-                <item.icon aria-hidden className="h-4 w-4" />
-                {item.label}
+                <item.icon aria-hidden className="h-4 w-4 shrink-0" />
+                <span className="flex min-w-0 flex-1 items-baseline justify-between gap-2">
+                  <span className="truncate">{item.label}</span>
+                  <span className="shrink-0 font-mono text-xs text-ink-faint">{item.meaning}</span>
+                </span>
               </Link>
             </li>
           ))}
@@ -50,9 +52,6 @@ export function TrainerSidebar() {
 
       {/* "A Cool Feature" - opens the hidden developer terminal (same as pressing `). */}
       <CoolFeatureButton />
-
-      {/* Badge rail (live unlock state) */}
-      <SidebarBadgeRail />
 
       {/* Latest Spotify track (hidden until Spotify creds are configured). */}
       <NowPlaying />

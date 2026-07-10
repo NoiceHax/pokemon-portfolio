@@ -17,13 +17,13 @@ export function ProjectParty({ projects }: { projects: Project[] }) {
         {projects.map((project) => (
           <li key={project.slug}>
             <Link
-              href={`/recruiter/pokedex/${project.slug}`}
+              href={`/home/pokedex/${project.slug}`}
               className="group flex w-16 flex-col items-center gap-1 focus:outline-none"
             >
               <span className="grid h-12 w-12 place-items-center rounded-full border-2 border-ink/70 bg-gradient-to-b from-poke-red from-50% to-surface-raised to-50% transition-transform duration-500 ease-out group-hover:rotate-180 group-focus-visible:rotate-180 group-focus-visible:ring-2 group-focus-visible:ring-poke-red">
                 <span className="h-3 w-3 rounded-full border-2 border-ink/70 bg-surface-raised" />
               </span>
-              <span className="w-full truncate text-center font-mono text-[0.65rem] text-ink-soft group-hover:text-ink">
+              <span className="w-full truncate text-center font-mono text-xs text-ink-soft group-hover:text-ink">
                 {project.title}
               </span>
             </Link>

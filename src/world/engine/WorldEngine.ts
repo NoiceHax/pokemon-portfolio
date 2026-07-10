@@ -244,7 +244,6 @@ export class WorldEngine {
     )
     if (item && item.kind === 'item') {
       this.collectItem(item.id, item.name)
-      if (item.unlockBadge) this.bus.emit({ type: 'BadgeUnlocked', slug: item.unlockBadge })
       if (item.dialogueId)
         this.bus.emit({ type: 'DialogueRequested', dialogueId: item.dialogueId, entityId: item.id })
     }
@@ -294,7 +293,6 @@ export class WorldEngine {
           })
         }),
       warp: (toMap, toSpawn) => this.changeArea(toMap, toSpawn),
-      unlockBadge: (slug) => this.bus.emit({ type: 'BadgeUnlocked', slug }),
       wait: (ms) => new Promise((resolve) => this.clock.timeout(resolve, ms)),
     }
   }

@@ -6,7 +6,6 @@ import type { DialogueScript } from '@/engine/dialogue/types'
 import { TILE_SIZE, TILES_ACROSS, type Direction } from '@/world/engine/types'
 import { WorldEngine } from '@/world/engine/WorldEngine'
 import { MAP_REGISTRY, START_MAP_ID } from '@/world/world/maps'
-import { useBadges } from '@/providers/BadgeProvider'
 import { useAudio } from '@/providers/AudioProvider'
 import { track } from '@/lib/analytics'
 import { useWorldSnapshot } from './useWorldEngine'
@@ -17,6 +16,7 @@ import { RecruiterPreview } from './RecruiterPreview'
 import { AdventureOnboarding } from './AdventureOnboarding'
 import { resolveDestination, getDestination, type RecruiterDestinationId } from '@/world/world/recruiterPortals'
 import { setAdventureTransition, getAdventureTransition, clearAdventureTransition } from '@/lib/adventureTransition'
+import { MuteButton } from '@/components/ui/MuteButton'
 
 // Keyed by KeyboardEvent.code (the PHYSICAL key), not `.key`. Using `.key` breaks when a
 // modifier is held: releasing "d" while Shift is down fires keyup with key "D", which
@@ -42,7 +42,7 @@ const SFX_VOLUME = 0.3
 /**
  * WorldRenderer - the top-level consumer. It instantiates the engine ONCE (in a ref),
  * feeds it input and viewport size, and bridges engine events out to app providers
- * (badges, audio, analytics). Everything below it is a pure snapshot renderer.
+ * (audio, analytics). Everything below it is a pure snapshot renderer.
  *
  * React owns NO game state here: the engine instance lives in a ref, and the only
  * reactive value is the immutable snapshot from `useWorldSnapshot`.
@@ -54,7 +54,6 @@ export function WorldRenderer({
   registry: Record<string, DialogueScript>
   experience: string | null
 }) {
-  const { unlock } = useBadges()
   const { play, stop } = useAudio()
 
   // The engine lives in React state so its lifecycle is tied to this component, but it
@@ -121,13 +120,9 @@ export function WorldRenderer({
   // Bridge engine events → app providers. The engine stays framework/provider-agnostic;
   // this effect is the adapter.
   useEffect(() => {
-    const offBadge = engine.bus.on('BadgeUnlocked', ({ slug }) => unlock(slug))
     const offInteract = engine.bus.on('InteractionStarted', ({ entityId }) =>
       track('world_interact', { entity: entityId }),
     )
-    const offArea = engine.bus.on('AreaChanged', ({ mapId }) => {
-      if (mapId.startsWith('interior')) unlock('world-traveller')
-    })
     // Ambient background: Victory! (Trainer) is the default Adventure Mode BGM,
     // kept at a subtle volume. When the player steps into an interior's audio zone,
     // we play that track instead; leaving the zone brings the default back.
@@ -160,16 +155,14 @@ export function WorldRenderer({
       setPreview({ portalId, destinationId, returnSnapshot })
     })
     return () => {
-      offBadge()
       offInteract()
-      offArea()
       offAudio()
       offItem()
       offPortal()
       stop('victoryTrainer')
       stop('jigglypuffsSong')
     }
-  }, [engine, unlock, play, stop])
+  }, [engine, play, stop])
 
   // Keyboard input → engine, intent-based. Holding a direction walks continuously; the
   // most-recently-pressed held key wins. While an overlay owns input (dialogue box or
@@ -246,6 +239,10 @@ export function WorldRenderer({
     >
       {/* The four-layer Scene: Background → Entity → Foreground → Overlay. */}
       <Scene engine={engine} snapshot={snapshot} registry={registry} zoom={zoom} />
+
+      <div className="absolute right-4 top-4 z-40">
+        <MuteButton className="border-ink/40 bg-surface-raised/90" />
+      </div>
 
       <TouchControls
         onMoveStart={(d) => engine.setHeld(d)}

@@ -31,7 +31,7 @@ export function BootHints({ phase }: { phase: 'power' | 'gamefreak' | 'title' | 
         initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
         animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.6 }}
-        className="whitespace-nowrap rounded-full bg-white/70 px-3 py-1 text-center font-mono text-[0.7rem] uppercase tracking-widest text-black shadow-sm backdrop-blur-sm"
+        className="whitespace-nowrap rounded-full bg-white/70 px-3 py-1 text-center font-mono text-xs uppercase tracking-widest text-black shadow-sm backdrop-blur-sm"
       >
         {text}
       </motion.p>

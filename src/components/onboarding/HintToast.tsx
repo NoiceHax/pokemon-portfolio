@@ -6,9 +6,9 @@ import { X } from 'lucide-react'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 
 /**
- * A small, self-dismissing notice toast (bottom-left, matching BadgeToast placement but
- * offset so they don't collide). Used for one-off contextual messages such as "You
- * entered through Adventure Mode - use Return to Adventure to keep exploring."
+ * A small, self-dismissing notice toast (bottom-left). Used for one-off contextual
+ * messages such as "You entered through Adventure Mode - use Return to Adventure to
+ * keep exploring."
  *
  * Auto-dismisses after `duration` ms; also closable via the × button.
  */
@@ -54,7 +54,7 @@ export function HintToast({
             <X className="h-3.5 w-3.5" aria-hidden />
           </button>
           {title ? (
-            <p className="mb-1 pr-4 font-display text-[0.6rem] uppercase tracking-widest text-poke-red">
+            <p className="mb-1 pr-4 font-display text-xs uppercase tracking-widest text-poke-red">
               {title}
             </p>
           ) : null}

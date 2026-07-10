@@ -14,7 +14,7 @@ export function PokedexEntry({ project }: { project: Project }) {
   return (
     <article className="space-y-6">
       <Link
-        href="/recruiter/pokedex"
+        href="/home/pokedex"
         className="inline-flex items-center gap-1 font-mono text-sm text-ink-soft hover:text-poke-red focus:outline-none focus-visible:text-poke-red"
       >
         <ArrowLeft aria-hidden className="h-4 w-4" />

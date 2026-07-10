@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { fontSans, fontDisplay, fontPokemon } from './fonts'
 import { SettingsProvider } from '@/providers/SettingsProvider'
 import { AudioProvider } from '@/providers/AudioProvider'
-import { BadgeProvider } from '@/providers/BadgeProvider'
 import { DevConsole } from '@/components/easter-eggs/DevConsole'
 import { ServiceWorkerCleanup } from '@/components/ServiceWorkerCleanup'
 import './globals.css'
@@ -52,11 +51,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <SettingsProvider>
           <AudioProvider>
-            <BadgeProvider>
-              {children}
-              <ServiceWorkerCleanup />
-              <DevConsole />
-            </BadgeProvider>
+            {children}
+            <ServiceWorkerCleanup />
+            <DevConsole />
           </AudioProvider>
         </SettingsProvider>
       </body>

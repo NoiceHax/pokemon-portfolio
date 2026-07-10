@@ -60,7 +60,7 @@ export function ControlsOverlay({
           transition={{ duration: 0.3 }}
           className="pointer-events-none fixed bottom-4 right-4 z-[70] w-max max-w-[90vw] rounded-card border-2 border-edge bg-surface-raised/95 px-3 py-2.5 shadow-lg backdrop-blur-sm"
         >
-          <p className="mb-1.5 font-display text-[0.55rem] uppercase tracking-widest text-poke-red">
+          <p className="mb-1.5 font-display text-xs uppercase tracking-widest text-poke-red">
             Controls
           </p>
           <ul className="flex flex-col gap-1.5">
@@ -71,7 +71,7 @@ export function ControlsOverlay({
                   {c.keys.map((k, i) => (
                     <span key={k} className="flex items-center gap-1">
                       {i > 0 ? (
-                        <span className="font-mono text-[0.6rem] text-ink-faint">/</span>
+                        <span className="font-mono text-xs text-ink-faint">/</span>
                       ) : null}
                       <KeyCap>{k}</KeyCap>
                     </span>

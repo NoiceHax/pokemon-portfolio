@@ -1,4 +1,4 @@
-import { Clock, BookOpen, Trophy, type LucideIcon } from 'lucide-react'
+import { Clock, BookOpen, type LucideIcon } from 'lucide-react'
 import type { TrainerStat } from '@/content/schema'
 import { StatCard } from '@/recruiter/ui'
 
@@ -6,12 +6,11 @@ import { StatCard } from '@/recruiter/ui'
 const STAT_ICONS: Record<string, LucideIcon> = {
   experienceYears: Clock,
   projectCount: BookOpen,
-  badgeCount: Trophy,
 }
 
 export function TrainerStats({ stats }: { stats: TrainerStat[] }) {
   return (
-    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {stats.map((stat) => (
         <li key={stat.key}>
           <StatCard icon={STAT_ICONS[stat.key] ?? Clock} value={stat.value} label={stat.label} />

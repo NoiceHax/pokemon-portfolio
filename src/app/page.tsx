@@ -3,7 +3,6 @@ import {
   getProfile,
   getProjects,
   getJournalEntries,
-  getBadges,
   getExperience,
   getContact,
 } from '@/lib/content'
@@ -27,7 +26,6 @@ function validateContentAtBuild() {
   getProfile()
   getProjects()
   getJournalEntries()
-  getBadges()
   getExperience()
   getContact()
 }

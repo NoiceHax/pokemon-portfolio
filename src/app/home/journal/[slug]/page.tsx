@@ -52,7 +52,7 @@ export default async function JournalEntryPage({ params }: EntryPageProps) {
   return (
     <article className="space-y-6">
       <Link
-        href="/recruiter/journal"
+        href="/home/journal"
         className="inline-flex items-center gap-1 font-mono text-sm text-ink-soft hover:text-poke-red focus:outline-none focus-visible:text-poke-red"
       >
         <ArrowLeft aria-hidden className="h-4 w-4" />
@@ -62,7 +62,7 @@ export default async function JournalEntryPage({ params }: EntryPageProps) {
       <Panel className="p-6">
         <div className="flex items-center gap-2">
           <span
-            className={`rounded border px-1.5 py-0.5 font-mono text-[0.6rem] uppercase ${meta.classes}`}
+            className={`rounded border px-1.5 py-0.5 font-mono text-xs uppercase ${meta.classes}`}
           >
             {meta.label}
           </span>

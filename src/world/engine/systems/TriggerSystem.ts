@@ -7,7 +7,7 @@ import type { WorldEntity } from '@/world/entities/entityTypes'
  * TriggerSystem - resolves everything that fires by STEPPING onto a tile (as opposed
  * to pressing the action key, which the InteractionSystem handles):
  *   - step-warps (door mats) → WarpEntered
- *   - step triggers / secrets → SecretFound (+ badge) (+ optional dialogue)
+ *   - step triggers / secrets → SecretFound (+ optional dialogue)
  *   - audio zones → AudioZoneEntered (only when the active track changes)
  *
  * Holds the currently-playing track so it can emit AudioZoneEntered only on change.
@@ -34,7 +34,6 @@ export class TriggerSystem {
         return // leaving the map; stop processing further triggers
       }
       if (e.kind === 'trigger') {
-        if (e.unlockBadge) this.bus.emit({ type: 'BadgeUnlocked', slug: e.unlockBadge })
         if (e.secretId) this.bus.emit({ type: 'SecretFound', secretId: e.secretId })
       }
     }

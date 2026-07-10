@@ -9,7 +9,7 @@ import { useAdventureTransition } from '@/lib/adventureTransition'
  * again for the rest of the session (they've learned it).
  *
  * Gated on the same transition state that renders the "Return to Adventure" button, so it
- * never shows for visitors who came to /recruiter directly.
+ * never shows for visitors who came to /home directly.
  */
 export function AdventureModeNotice() {
   const transition = useAdventureTransition()

@@ -18,7 +18,6 @@ export type WorldEvent =
   /** An enterable house door that portals into the Recruiter site (see recruiterPortals). */
   | { type: 'RecruiterPortalEntered'; portalId: string; destination: string }
   | { type: 'AreaChanged'; mapId: string; mapName: string }
-  | { type: 'BadgeUnlocked'; slug: string }
   | { type: 'AudioZoneEntered'; track: string | null }
   | { type: 'SecretFound'; secretId: string }
   /** A world item was picked up (and removed from the map). */

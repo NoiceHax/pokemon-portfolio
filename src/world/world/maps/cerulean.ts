@@ -202,14 +202,13 @@ const entities: WorldEntity[] = [
   { id: 'sign-town', kind: 'sign', position: { x: 18, y: 20 }, dialogueId: 'sign-town' },
   { id: 'sign-center', kind: 'sign', position: { x: 25, y: 19 }, dialogueId: 'sign-center' },
 
-  // Hidden secret by the water - invisible trigger, unlocks Secret Finder.
+  // Hidden secret by the water - invisible trigger.
   {
     id: 'secret-spot',
     kind: 'trigger',
     position: { x: 3, y: 13 },
     dialogueId: 'secret',
     secretId: 'water-note',
-    unlockBadge: 'secret-finder',
     hidden: true,
   },
 ]

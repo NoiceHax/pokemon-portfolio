@@ -12,7 +12,7 @@ export function JournalCard({ entry }: { entry: BlogFrontmatter }) {
   const meta = ENTRY_TYPE_META[entry.type]
   return (
     <Link
-      href={`/recruiter/journal/${entry.slug}`}
+      href={`/home/journal/${entry.slug}`}
       className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
     >
       <Panel brackets={false} className="flex gap-4 p-4 transition-colors hover:border-poke-red">
@@ -29,7 +29,7 @@ export function JournalCard({ entry }: { entry: BlogFrontmatter }) {
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
             <span
-              className={`rounded border px-1.5 py-0.5 font-mono text-[0.6rem] uppercase ${meta.classes}`}
+              className={`rounded border px-1.5 py-0.5 font-mono text-xs uppercase ${meta.classes}`}
             >
               {meta.label}
             </span>

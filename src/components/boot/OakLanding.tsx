@@ -19,7 +19,7 @@ import { sprites } from '@/lib/assets/registry'
  * then fade out and route to the chosen experience (M5 deliverable: correct
  * experience launches).
  *
- * Recruiter → /recruiter; Developer & Friend → /adventure (same world, different
+ * Recruiter → /home; Developer & Friend → /adventure (same world, different
  * presentation - decision C).
  */
 export function OakLanding() {
@@ -34,7 +34,7 @@ export function OakLanding() {
     (experience: ChosenExperience) => {
       chosenRef.current = experience
       setChosenExperience(experience)
-      play('obtainedBadge', { volume: 0.3 })
+      play('obtainedPokemon', { volume: 0.3 })
     },
     [setChosenExperience, play],
   )

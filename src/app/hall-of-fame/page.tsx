@@ -79,7 +79,7 @@ export default async function HallOfFamePage() {
 
       <div className="mx-auto mt-10 max-w-5xl text-center">
         <Link
-          href="/recruiter"
+          href="/home"
           className="inline-block font-mono text-xs text-amber-300 underline hover:text-amber-200"
         >
           ← Back to the portfolio

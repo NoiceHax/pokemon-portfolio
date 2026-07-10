@@ -1,6 +1,5 @@
 import type { Profile } from '@/content/schema'
 import { projects as projectsData } from './projects'
-import { experience as experienceData } from './experience'
 
 /**
  * PLACEHOLDER profile data.
@@ -15,7 +14,6 @@ import { experience as experienceData } from './experience'
 const currentYear = new Date().getFullYear()
 const experienceYears = currentYear - 2024
 const projectCount = projectsData.length
-const badgeCount = experienceData.length
 
 export const profile: Profile = {
   name: 'Chandan',
@@ -35,7 +33,6 @@ export const profile: Profile = {
   stats: [
     { key: 'experienceYears', value: String(Math.max(0, experienceYears)), label: 'YEARS EXPERIENCE' },
     { key: 'projectCount', value: String(projectCount), label: 'POKÉDEX PROJECTS' },
-    { key: 'badgeCount', value: String(badgeCount), label: 'GYM BADGES EARNED' },
   ],
   // Slugs of projects to feature in the "Current Party" (max 6). Add slugs here after
   // adding the corresponding projects in @/content/data/projects.ts.

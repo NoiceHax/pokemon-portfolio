@@ -9,9 +9,10 @@ export type SoundKey = keyof typeof audioAssets
  * Responsibilities:
  * - Lazily create and cache one HTMLAudioElement per cue.
  * - Respect a global mute flag (set by the UI from SettingsProvider).
+ * - Never overlap music: a new looping track stops other loops first. One-shot SFX
+ *   can play over BGM without cutting the theme.
  * - Tolerate the browser autoplay policy: play() may reject until the user has
- *   interacted with the page; we swallow that rejection rather than crash
- *   (CLAUDE.md: fail gracefully).
+ *   interacted with the page; we swallow that rejection rather than crash.
  *
  * This class holds no React state. AudioProvider is the thin React binding.
  */
@@ -20,6 +21,8 @@ export class AudioManager {
   private muted = false
   /** Cues paused by suspend() so resume() can pick them back up where they left off. */
   private suspended = new Set<SoundKey>()
+  /** Current looping background track (if any). */
+  private bgmKey: SoundKey | null = null
 
   setMuted(muted: boolean): void {
     this.muted = muted
@@ -63,31 +66,71 @@ export class AudioManager {
     return element
   }
 
-  /** Play a one-shot cue from the start. Silently no-ops if blocked or muted. */
+  /** Stop every cue except `keep` (optional). Resets playback position. */
+  private haltOthers(keep?: SoundKey): void {
+    for (const [key, element] of this.elements) {
+      if (key === keep) continue
+      element.pause()
+      element.currentTime = 0
+      this.suspended.delete(key)
+    }
+  }
+
+  /**
+   * Play a cue. Looping tracks are exclusive BGM (other music is halted first, then
+   * this track plays). One-shot SFX layer on top of BGM without stopping it — that
+   * matches game audio and avoids pausing the theme on every UI tick.
+   */
   play(
     key: SoundKey,
     { loop = false, volume = 1 }: { loop?: boolean; volume?: number } = {},
   ): void {
+    if (this.muted) return
     const element = this.element(key)
     if (!element) return
-    element.loop = loop
+
+    if (loop) {
+      // New BGM — stop every other cue so themes never stack.
+      this.haltOthers(key)
+      this.bgmKey = key
+      element.loop = true
+      element.onended = null
+      element.volume = volume
+      element.currentTime = 0
+      void element.play().catch(() => {})
+      return
+    }
+
+    // One-shot SFX — leave BGM running; only cut other one-shots so they don't pile up.
+    for (const [otherKey, other] of this.elements) {
+      if (otherKey === key || otherKey === this.bgmKey) continue
+      if (!other.loop) {
+        other.pause()
+        other.currentTime = 0
+      }
+    }
+
+    element.loop = false
+    element.onended = null
     element.volume = volume
     element.currentTime = 0
-    // play() returns a promise that rejects under autoplay restrictions.
-    void element.play().catch(() => {
-      /* blocked until user gesture - acceptable, boot still proceeds */
-    })
+    void element.play().catch(() => {})
   }
 
   stop(key: SoundKey): void {
     const element = this.elements.get(key)
     if (!element) return
     this.suspended.delete(key)
+    element.onended = null
     element.pause()
     element.currentTime = 0
+    if (this.bgmKey === key) {
+      this.bgmKey = null
+    }
   }
 
   stopAll(): void {
+    this.bgmKey = null
     for (const key of this.elements.keys()) this.stop(key)
   }
 }
