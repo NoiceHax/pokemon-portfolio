@@ -1,20 +1,18 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useBadges } from '@/providers/BadgeProvider'
 import { useAudio } from '@/providers/AudioProvider'
 import { getAnalyticsBuffer } from '@/lib/analytics'
 
 /**
  * Hidden developer console (Milestone 10). Opens with the backtick (`) key. Recruiters
  * never see it; developers naturally find it. Also exposes a `window.trainer` API for
- * console pokers. Unlocks the "Secret Finder" badge on first open and plays Jigglypuff's Song.
+ * console pokers. Plays Jigglypuff's Song on first open.
  *
- * Commands: help, badges, unlock <slug>, whoami, events, clear, close.
+ * Commands: help, whoami, events, clear, close.
  */
 export function DevConsole() {
-  const { unlock, unlockedSlugs, totalCount } = useBadges()
-  const { play, stop } = useAudio()
+  const { play } = useAudio()
   const easterEggMusicRef = useRef(false)
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
@@ -25,17 +23,12 @@ export function DevConsole() {
   // Expose a window API for developers digging in the browser console.
   useEffect(() => {
     const api = {
-      help: () => 'Commands: help, badges, unlock(slug), whoami, events',
+      help: () => 'Commands: help, whoami, events',
       whoami: () => 'Trainer Chandan - built with Next.js, TypeScript, a hand-rolled tile engine.',
-      badges: () => `${unlockedSlugs.size}/${totalCount} unlocked`,
-      unlock: (slug: string) => {
-        unlock(slug)
-        return `unlocked: ${slug}`
-      },
       events: () => getAnalyticsBuffer(),
     }
     ;(window as unknown as { trainer: typeof api }).trainer = api
-  }, [unlock, unlockedSlugs, totalCount])
+  }, [])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -43,7 +36,6 @@ export function DevConsole() {
         e.preventDefault()
         setOpen((o) => {
           if (!o) {
-            unlock('secret-finder')
             if (!easterEggMusicRef.current) {
               easterEggMusicRef.current = true
               play('jigglypuffsSong', { volume: 0.2, loop: true })
@@ -60,7 +52,6 @@ export function DevConsole() {
     }
     // Also openable from UI (the "A Cool Feature" button) - same effect as backtick.
     const onOpenEvent = () => {
-      unlock('secret-finder')
       if (!easterEggMusicRef.current) {
         easterEggMusicRef.current = true
         play('jigglypuffsSong', { volume: 0.2, loop: true })
@@ -73,23 +64,14 @@ export function DevConsole() {
       window.removeEventListener('keydown', onKey)
       window.removeEventListener('open-dev-console', onOpenEvent)
     }
-  }, [open, unlock, play])
+  }, [open, play])
 
   const run = (raw: string) => {
-    const [cmd, ...args] = raw.trim().split(/\s+/)
+    const [cmd] = raw.trim().split(/\s+/)
     const out: string[] = [`> ${raw}`]
     switch (cmd) {
       case 'help':
-        out.push('help · badges · unlock <slug> · whoami · events · clear · close')
-        break
-      case 'badges':
-        out.push(`${unlockedSlugs.size}/${totalCount} badges unlocked`)
-        break
-      case 'unlock':
-        if (args[0]) {
-          unlock(args[0])
-          out.push(`Unlocked: ${args[0]}`)
-        } else out.push('usage: unlock <slug>')
+        out.push('help · whoami · events · clear · close')
         break
       case 'whoami':
         out.push('Trainer Chandan - a curious engineer who builds things.')

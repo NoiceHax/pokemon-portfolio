@@ -41,7 +41,7 @@ export function ObjectiveBanner({
           transition={{ duration: 0.35 }}
           className="pointer-events-none fixed left-1/2 top-4 z-[70] w-[min(92vw,26rem)] -translate-x-1/2 rounded-card border-2 border-poke-red bg-surface-raised/95 px-4 py-3 shadow-lg backdrop-blur-sm"
         >
-          <p className="mb-1 font-display text-[0.6rem] uppercase tracking-widest text-poke-red">
+          <p className="mb-1 font-display text-xs uppercase tracking-widest text-poke-red">
             {title}
           </p>
           {lines.map((line) => (

@@ -40,7 +40,7 @@ export function JourneyTimeline({ milestones }: { milestones: Experience }) {
                 <MapPin aria-hidden className="h-3.5 w-3.5 text-poke-red" />
                 {m.location}
               </span>
-              <span className="rounded border border-edge px-1.5 py-0.5 font-mono text-[0.6rem] uppercase text-ink-faint">
+              <span className="rounded border border-edge px-1.5 py-0.5 font-mono text-xs uppercase text-ink-faint">
                 {m.year}
                 {m.current ? ' · Now' : ''}
               </span>

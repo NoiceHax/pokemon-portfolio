@@ -9,8 +9,8 @@
  * - A node either auto-advances (`next`) or presents `choices` (branching). If it has
  *   neither, it is terminal.
  * - Callbacks (`onEnter`, `onSelect`) let dialogue drive side effects - playing a
- *   sound, unlocking a badge, or (for Oak) selecting an experience - without the
- *   engine knowing anything about those domains.
+ *   sound, or (for Oak) selecting an experience - without the engine knowing
+ *   anything about those domains.
  * - Text is authored as an array of lines so one node can hold multiple advanceable
  *   "pages" of speech, matching how Pokémon dialogue boxes page through text.
  */

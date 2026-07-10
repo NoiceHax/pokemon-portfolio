@@ -115,12 +115,12 @@ export function DialogueBox({
               {/* Subtle, self-explanatory prompt near the box; only while there's more to
                   read. It naturally disappears when the dialogue ends. */}
               {!isTyping ? (
-                <span className="font-mono text-[0.65rem] text-ink-faint">
-                  <span className="font-display text-[0.55rem] uppercase tracking-wide">
+                <span className="font-mono text-xs text-ink-faint">
+                  <span className="font-display text-xs uppercase tracking-wide">
                     Space
                   </span>{' '}
                   /{' '}
-                  <span className="font-display text-[0.55rem] uppercase tracking-wide">
+                  <span className="font-display text-xs uppercase tracking-wide">
                     Enter
                   </span>{' '}
                   → Continue

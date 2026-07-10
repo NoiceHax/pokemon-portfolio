@@ -10,16 +10,16 @@ const SITE_URL = 'https://trainer-chandan.vercel.app'
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = [
     '',
-    '/recruiter',
-    '/recruiter/pokedex',
-    '/recruiter/journal',
-    '/recruiter/badges',
-    '/recruiter/pokemon-center',
+    '/home',
+    '/home/pokedex',
+    '/home/experience',
+    '/home/journal',
+    '/home/pokemon-center',
     '/adventure',
     '/hall-of-fame',
   ]
-  const projectPaths = getProjects().map((p) => `/recruiter/pokedex/${p.slug}`)
-  const journalPaths = getJournalEntries().map((e) => `/recruiter/journal/${e.frontmatter.slug}`)
+  const projectPaths = getProjects().map((p) => `/home/pokedex/${p.slug}`)
+  const journalPaths = getJournalEntries().map((e) => `/home/journal/${e.frontmatter.slug}`)
 
   return [...staticPaths, ...projectPaths, ...journalPaths].map((path) => ({
     url: `${SITE_URL}${path}`,

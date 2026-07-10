@@ -11,7 +11,6 @@ export type CutsceneEvent =
   | { type: 'face'; who: string; toward: string } // `who` turns to face `toward`
   | { type: 'text'; dialogueId: string }
   | { type: 'warp'; toMap: string; toSpawn?: TileCoord }
-  | { type: 'unlockBadge'; slug: string }
   | { type: 'wait'; time: number }
 
 /**
@@ -25,7 +24,6 @@ export interface CutsceneDriver {
   face(who: string, toward: string): void
   text(dialogueId: string): Promise<void>
   warp(toMap: string, toSpawn?: TileCoord): void
-  unlockBadge(slug: string): void
   wait(ms: number): Promise<void>
 }
 
@@ -62,9 +60,6 @@ export class CutsceneSystem {
           break
         case 'warp':
           driver.warp(event.toMap, event.toSpawn)
-          break
-        case 'unlockBadge':
-          driver.unlockBadge(event.slug)
           break
         case 'wait':
           await driver.wait(event.time)

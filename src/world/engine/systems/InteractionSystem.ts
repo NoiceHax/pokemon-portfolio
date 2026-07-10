@@ -9,7 +9,7 @@ import type { WorldEntity } from '@/world/entities/entityTypes'
  * something in between (e.g. turn the NPC to face the player) before firing.
  *
  * Stateless: it reads facing/position + entities and emits. Listeners decide what
- * happens next (open dialogue, warp, unlock a badge).
+ * happens next (open dialogue, warp).
  */
 export class InteractionSystem {
   constructor(private readonly bus: EventBus) {}
@@ -27,7 +27,6 @@ export class InteractionSystem {
   /** Fire the appropriate events for interacting with `target`. */
   trigger(target: WorldEntity): void {
     this.bus.emit({ type: 'InteractionStarted', entityId: target.id, at: target.position })
-    if (target.unlockBadge) this.bus.emit({ type: 'BadgeUnlocked', slug: target.unlockBadge })
 
     switch (target.kind) {
       case 'npc':

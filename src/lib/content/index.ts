@@ -10,18 +10,15 @@ import {
   profileSchema,
   projectSchema,
   contactSchema,
-  badgeSchema,
   experienceSchema,
   type Profile,
   type Project,
   type Contact,
-  type Badge,
   type Experience,
 } from '@/content/schema'
 import { profile as profileData } from '@/content/data/profile'
 import { projects as projectsData } from '@/content/data/projects'
 import { contact as contactData } from '@/content/data/contact'
-import { badges as badgesData } from '@/content/data/badges'
 import { experience as experienceData } from '@/content/data/experience'
 import { validateContent } from './validate'
 
@@ -51,12 +48,6 @@ export function getFeaturedProjects(): Project[] {
 
 export function getContact(): Contact {
   return validateContent(contactSchema, contactData, 'contact')
-}
-
-export function getBadges(): Badge[] {
-  return badgesData.map((badge, i) =>
-    validateContent(badgeSchema, badge, `badge[${i}] (${badge.slug ?? '?'})`),
-  )
 }
 
 export function getExperience(): Experience {

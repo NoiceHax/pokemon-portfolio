@@ -14,8 +14,6 @@ interface BaseEntity {
   position: TileCoord
   /** Does this entity block its tile? Defaults per kind (see entityIsSolid). */
   solid?: boolean
-  /** Badge slug to unlock when this entity is interacted with / entered. */
-  unlockBadge?: string
 }
 
 /** One step in an NPC's idle behaviour loop (inspired by the reference engine). */
@@ -91,8 +89,8 @@ export interface TriggerEntity extends BaseEntity {
 
 /**
  * A collectible item lying in the world (a Poké Ball on the ground, a hidden note).
- * Interacting picks it up: emits ItemCollected, optionally opens dialogue / unlocks a
- * badge, and the item disappears. It draws in the Entity Layer, y-sorted like actors.
+ * Interacting picks it up: emits ItemCollected, optionally opens dialogue, and the
+ * item disappears. It draws in the Entity Layer, y-sorted like actors.
  */
 export interface ItemEntity extends BaseEntity {
   kind: 'item'

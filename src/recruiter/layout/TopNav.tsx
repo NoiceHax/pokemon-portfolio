@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { NAV_ITEMS } from './navItems'
+import { MuteButton } from '@/components/ui/MuteButton'
 
 /**
  * Persistent top navigation for Recruiter Mode. Active link is underlined in the
@@ -16,13 +17,13 @@ export function TopNav() {
   const [open, setOpen] = useState(false)
 
   const isActive = (href: string) =>
-    href === '/recruiter' ? pathname === href : pathname.startsWith(href)
+    href === '/home' ? pathname === href : pathname.startsWith(href)
 
   return (
     <header className="sticky top-0 z-30 border-b border-edge bg-surface/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Link
-          href="/recruiter"
+          href="/home"
           className="flex items-center gap-2 font-display text-lg font-bold uppercase tracking-wide text-poke-red"
         >
           <span
@@ -41,6 +42,7 @@ export function TopNav() {
               <Link
                 href={item.href}
                 aria-current={isActive(item.href) ? 'page' : undefined}
+                title={item.meaning}
                 className={`border-b-2 pb-0.5 font-mono text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red ${
                   isActive(item.href)
                     ? 'border-poke-red text-poke-red'
@@ -53,19 +55,20 @@ export function TopNav() {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          aria-expanded={open}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          className="grid h-11 w-11 place-items-center rounded-md border border-edge text-ink-soft md:hidden"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <MuteButton />
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            aria-expanded={open}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            className="grid h-11 w-11 place-items-center rounded-md border border-edge text-ink-soft md:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile menu */}
       {open ? (
         <ul className="flex flex-col gap-1 border-t border-edge px-4 py-2 md:hidden">
           {NAV_ITEMS.map((item) => (
@@ -80,7 +83,10 @@ export function TopNav() {
                     : 'text-ink-soft hover:text-ink'
                 }`}
               >
-                {item.label}
+                <span className="flex items-baseline justify-between gap-2">
+                  <span>{item.label}</span>
+                  <span className="text-xs text-ink-faint">{item.meaning}</span>
+                </span>
               </Link>
             </li>
           ))}

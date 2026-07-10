@@ -87,7 +87,7 @@ export default function PrivacyPage() {
 
         <div className="mt-12 border-t border-edge pt-6">
           <Link
-            href="/recruiter"
+            href="/home"
             className="inline-flex items-center gap-1 font-mono text-sm text-ink-soft transition-colors hover:text-poke-red"
           >
             <ArrowLeft aria-hidden className="h-4 w-4" />

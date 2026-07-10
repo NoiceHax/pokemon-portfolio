@@ -13,6 +13,13 @@ const nextConfig = {
     workerThreads: false,
     cpus: 1,
   },
+  // Old /recruiter URLs → /home (bookmark + external link compatibility).
+  async redirects() {
+    return [
+      { source: '/recruiter', destination: '/home', permanent: true },
+      { source: '/recruiter/:path*', destination: '/home/:path*', permanent: true },
+    ]
+  },
 }
 
 const withMDX = createMDX({

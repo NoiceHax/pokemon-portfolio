@@ -28,31 +28,31 @@ export const RECRUITER_DESTINATIONS: Record<RecruiterDestinationId, RecruiterDes
   'trainer-card': {
     id: 'trainer-card',
     label: 'Trainer Card',
-    href: '/recruiter',
+    href: '/home',
     cta: 'View Trainer Card',
   },
   pokedex: {
     id: 'pokedex',
     label: 'Pokédex',
-    href: '/recruiter/pokedex',
+    href: '/home/pokedex',
     cta: 'View All Projects',
   },
   journal: {
     id: 'journal',
     label: 'Journal',
-    href: '/recruiter/journal',
+    href: '/home/journal',
     cta: 'Read Journal',
   },
   'pokemon-center': {
     id: 'pokemon-center',
     label: 'Pokémon Center',
-    href: '/recruiter/pokemon-center',
+    href: '/home/pokemon-center',
     cta: 'Open Pokémon Center',
   },
   journey: {
     id: 'journey',
     label: 'Journey So Far',
-    href: '/recruiter/experience',
+    href: '/home/experience',
     cta: 'View Journey',
   },
 }

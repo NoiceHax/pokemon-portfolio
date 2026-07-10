@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import {
   BookOpen,
-  Trophy,
   Map,
   NotebookPen,
   HeartPulse,
@@ -11,8 +10,8 @@ import {
 import { Panel } from '@/recruiter/ui'
 
 /**
- * Quick-action navigation cards on the Trainer Card (mockup: Open Pokédex, View Gym
- * Badges, Journey So Far, Scout Journal, Pokémon Center). Each is a two-click-max
+ * Quick-action navigation cards on the Trainer Card (mockup: Open Pokédex,
+ * Journey So Far, Scout Journal, Pokémon Center). Each is a two-click-max
  * shortcut into the rest of the portfolio (DESIGN.md: everything within two clicks).
  */
 interface Action {
@@ -29,23 +28,15 @@ const ACTIONS: Action[] = [
     tag: 'No.001',
     title: 'Open Pokédex',
     description: 'Explore my projects in the research lab.',
-    href: '/recruiter/pokedex',
+    href: '/home/pokedex',
     cta: 'View Projects',
     icon: BookOpen,
-  },
-  {
-    tag: 'Gym 00',
-    title: 'View Gym Badges',
-    description: 'Achievements, certifications and milestones.',
-    href: '/recruiter/badges',
-    cta: 'View Badges',
-    icon: Trophy,
   },
   {
     tag: 'Route Map',
     title: 'Journey So Far',
     description: 'My experience and achievements across different routes.',
-    href: '/recruiter/experience',
+    href: '/home/experience',
     cta: 'View Experience',
     icon: Map,
   },
@@ -53,7 +44,7 @@ const ACTIONS: Action[] = [
     tag: 'No.007',
     title: 'Scout Journal',
     description: 'Thoughts, learnings and field notes.',
-    href: '/recruiter/journal',
+    href: '/home/journal',
     cta: 'Read Journal',
     icon: NotebookPen,
   },
@@ -61,7 +52,7 @@ const ACTIONS: Action[] = [
     tag: 'Pokémon Center',
     title: 'Pokémon Center',
     description: "Let's connect and start a new adventure.",
-    href: '/recruiter/pokemon-center',
+    href: '/home/pokemon-center',
     cta: 'Contact / Heal Up',
     icon: HeartPulse,
   },
@@ -82,7 +73,7 @@ export function QuickActions() {
             >
               <div className="flex items-start justify-between">
                 <action.icon aria-hidden className="h-7 w-7 text-poke-red" strokeWidth={2} />
-                <span className="rounded border border-edge px-1.5 py-0.5 font-mono text-[0.6rem] uppercase text-ink-faint">
+                <span className="rounded border border-edge px-1.5 py-0.5 font-mono text-xs uppercase text-ink-faint">
                   {action.tag}
                 </span>
               </div>

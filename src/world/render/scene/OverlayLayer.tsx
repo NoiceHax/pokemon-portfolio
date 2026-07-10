@@ -7,14 +7,12 @@ import { MapTransition } from './MapTransition'
 import { FadeOverlay } from './FadeOverlay'
 
 /**
- * Overlay Layer - Dialogue · Fade · Transitions · Badge Unlocks.
+ * Overlay Layer - Dialogue · Fade · Transitions.
  *
  * Everything drawn ABOVE the world, fixed to the viewport (not camera-transformed):
  *  - Dialogue    - the reused Dialogue Engine, opened by engine DialogueRequested events.
  *  - Fade        - general-purpose engine-driven fade to/from black (FadeOverlay).
  *  - Transitions - the quick auto-flash on area change (MapTransition).
- *  - Badge Unlocks - the unlock toast is app-level (BadgeToast in the providers) so it
- *    shows in BOTH experiences; the engine emits BadgeUnlocked, the provider renders it.
  *    A small area label is also shown here for orientation.
  */
 export function OverlayLayer({

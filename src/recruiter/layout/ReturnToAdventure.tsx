@@ -9,7 +9,7 @@ import { useAdventureTransition } from '@/lib/adventureTransition'
  * Floating "Return to Adventure" button.
  *
  * Only rendered when the recruiter site was opened FROM Adventure Mode (a transition is
- * stashed in sessionStorage). Visitors who navigate to /recruiter directly have no
+ * stashed in sessionStorage). Visitors who navigate to /home directly have no
  * transition → no button. Clicking navigates back to /adventure, where the WorldRenderer
  * restores the exact building/position/facing/camera from the saved snapshot.
  */

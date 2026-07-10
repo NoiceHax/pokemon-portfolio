@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Music } from 'lucide-react'
+import { readStorage, writeStorage, STORAGE_KEYS } from '@/lib/storage/localStorage'
 
 interface Track {
   configured: boolean
@@ -12,36 +13,76 @@ interface Track {
   url?: string | null
 }
 
+/** True when we have a real track to show (configured + titled). */
+function isUsableTrack(
+  t: Track | null | undefined,
+): t is Track & { configured: true; title: string } {
+  return Boolean(t && t.configured && t.title)
+}
+
+function TrackSkeleton() {
+  return (
+    <div
+      role="status"
+      aria-label="Loading now playing"
+      className="flex items-center gap-3 rounded-card border border-edge bg-surface-raised p-2.5"
+    >
+      <span className="h-10 w-10 flex-none animate-pulse rounded bg-surface-sunken" />
+      <div className="min-w-0 flex-1 space-y-2">
+        <span className="block h-2.5 w-20 animate-pulse rounded bg-surface-sunken" />
+        <span className="block h-3 w-36 max-w-full animate-pulse rounded bg-surface-sunken" />
+        <span className="block h-2.5 w-24 animate-pulse rounded bg-surface-sunken" />
+      </div>
+    </div>
+  )
+}
+
 /**
- * "Now Playing" - Chandan's latest Spotify track, shown below the badge rail. Polls the
- * server route (which holds the Spotify creds) every 30s. Renders nothing until the
- * feature is configured (no creds → no clutter). A green pulse marks a live track;
- * otherwise it shows the most recently played song.
+ * "Now Playing" - Chandan's latest Spotify track. Shows a skeleton on first load,
+ * a cached track instantly on return visits, then refreshes from the API (and every
+ * 5 minutes).
  */
 export function NowPlaying() {
   const [track, setTrack] = useState<Track | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     let alive = true
+
+    const cached = readStorage<Track | null>(STORAGE_KEYS.spotifyTrack, null)
+    if (isUsableTrack(cached)) {
+      setTrack({ ...cached, isPlaying: false })
+      setLoading(false)
+    }
+
     const load = async () => {
       try {
         const res = await fetch('/api/spotify/now-playing', { cache: 'no-store' })
         const data = (await res.json()) as Track
-        if (alive) setTrack(data)
+        if (!alive) return
+        if (isUsableTrack(data)) {
+          setTrack(data)
+          writeStorage(STORAGE_KEYS.spotifyTrack, data)
+        } else if (data && data.configured === false) {
+          setTrack(data)
+          writeStorage(STORAGE_KEYS.spotifyTrack, null)
+        }
       } catch {
-        /* leave last state */
+        /* keep cache / skeleton → empty */
+      } finally {
+        if (alive) setLoading(false)
       }
     }
-    load()
-    const id = setInterval(load, 30_000)
+    void load()
+    const id = setInterval(load, 5 * 60_000)
     return () => {
       alive = false
       clearInterval(id)
     }
   }, [])
 
-  // Hide entirely until configured and we have a track to show.
-  if (!track || !track.configured || !track.title) return null
+  if (loading && !isUsableTrack(track)) return <TrackSkeleton />
+  if (!isUsableTrack(track)) return null
 
   const body = (
     <div className="flex items-center gap-3 rounded-card border border-edge bg-surface-raised p-2.5">
@@ -58,7 +99,7 @@ export function NowPlaying() {
         </span>
       )}
       <div className="min-w-0 flex-1">
-        <p className="flex items-center gap-1.5 font-mono text-[0.6rem] uppercase tracking-wide text-ink-faint">
+        <p className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-wide text-ink-faint">
           {track.isPlaying ? (
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
           ) : null}

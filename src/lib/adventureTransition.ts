@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react'
  * When the player enters a house door in Adventure Mode, we stash everything needed to
  * (a) know the recruiter page was opened FROM Adventure (so the floating "Return to
  * Adventure" button shows) and (b) restore the exact spot on return. Persisted in
- * sessionStorage so it survives the client-side navigation to /recruiter/* and is
- * per-tab (a visitor who opens /recruiter directly has no state → no return button).
+ * sessionStorage so it survives the client-side navigation to /home/* and is
+ * per-tab (a visitor who opens /home directly has no state → no return button).
  *
  * We deliberately do NOT rely on URL params - the state must persist across all recruiter
  * pages the visitor browses to after arriving.

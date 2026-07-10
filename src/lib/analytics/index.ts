@@ -1,14 +1,13 @@
 /**
  * Lightweight analytics. Records typed events so both experiences can report the same
- * signals (badge unlocks, page views, world interactions). There is no backend yet -
- * events are buffered in memory and logged in development; a real sink (Vercel
- * Analytics, etc.) can be attached in one place at launch.
+ * signals (page views, world interactions). There is no backend yet - events are
+ * buffered in memory and logged in development; a real sink (Vercel Analytics, etc.)
+ * can be attached in one place at launch.
  */
 
 export type AnalyticsEvent =
   | { type: 'page_view'; payload: { path: string } }
   | { type: 'section_view'; payload: { section: string } }
-  | { type: 'badge_unlocked'; payload: { slug: string } }
   | { type: 'world_interact'; payload: { entity: string } }
   | { type: 'experience_chosen'; payload: { experience: string } }
 
