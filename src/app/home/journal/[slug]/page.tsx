@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { compileMDX } from 'next-mdx-remote/rsc'
 import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { getJournalEntry } from '@/lib/content'
 import { getDbBlogPost } from '@/lib/db/blogPosts'
@@ -22,7 +22,24 @@ async function loadEntry(
 ): Promise<{ fm: BlogFrontmatter; body: React.ReactNode } | null> {
   const dbPost = await getDbBlogPost(slug)
   if (dbPost) {
-    return { fm: dbPost.frontmatter, body: <MDXRemote source={dbPost.bodyMdx} /> }
+    try {
+      const { content } = await compileMDX({ source: dbPost.bodyMdx })
+      return { fm: dbPost.frontmatter, body: content }
+    } catch (err) {
+      // Malformed MDX in a DB post shouldn't crash the whole page - fall back to a
+      // friendly notice instead of an uncaught Server Components render error.
+      // eslint-disable-next-line no-console
+      console.error(`Failed to compile journal post "${slug}":`, err)
+      return {
+        fm: dbPost.frontmatter,
+        body: (
+          <p className="text-sm text-ink-faint">
+            This entry couldn&apos;t be rendered due to a formatting error. Edit it in the
+            Control Room to fix it.
+          </p>
+        ),
+      }
+    }
   }
   const staticEntry = getJournalEntry(slug)
   if (staticEntry) {
