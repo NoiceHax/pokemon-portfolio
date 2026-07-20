@@ -6,13 +6,15 @@
   /* Journal MDX prose. Kept minimal and readable - matches the notebook feel without
      pulling in a full typography plugin. */
   .prose-journal h1 {
-    @apply mb-3 mt-6 font-display text-2xl font-bold text-ink;
+    /* leading-loose (not the tighter fixed line-height on text-2xl) - Press Start 2P's
+       glyph metrics need extra headroom or its ascenders get clipped. */
+    @apply mb-3 mt-6 font-display text-2xl font-bold leading-loose text-ink;
   }
   .prose-journal h2 {
-    @apply mb-2 mt-5 font-display text-xl font-bold text-ink;
+    @apply mb-2 mt-5 font-display text-xl font-bold leading-loose text-ink;
   }
   .prose-journal h3 {
-    @apply mb-2 mt-4 font-display text-lg font-bold text-ink;
+    @apply mb-2 mt-4 font-display text-lg font-bold leading-loose text-ink;
   }
   .prose-journal p {
     @apply my-3 break-words text-base leading-relaxed text-ink;
