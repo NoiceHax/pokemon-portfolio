@@ -44,7 +44,12 @@ async function getAccessToken(): Promise<string | null> {
     body: new URLSearchParams({ grant_type: 'refresh_token', refresh_token: refresh }),
     cache: 'no-store',
   })
-  if (!res.ok) return null
+  if (!res.ok) {
+    // Creds are present but Spotify rejected them (commonly a revoked or mismatched
+    // refresh token). Log it — otherwise the widget just silently hides itself.
+    console.warn(`[spotify] token refresh failed (${res.status}): ${await res.text()}`)
+    return null
+  }
   const data = (await res.json()) as { access_token?: string }
   return data.access_token ?? null
 }
