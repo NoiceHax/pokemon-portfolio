@@ -28,7 +28,17 @@ export const experience: ExperienceInput = [
     location: 'Remote',
     role: 'Freelance Full Stack Developer',
     description:
-      'Designing and building modern web applications for clients using Next.js, React, TypeScript, FastAPI, and cloud technologies. Delivered production-ready platforms with scalable architectures, AI integrations, performance optimizations, and maintainable developer workflows.',
+      'Developed and deployed client websites including Sneha Sammilana Foundation, Shree Solar Systems, and Chinnaswamy Farm, modernizing legacy web experiences and building responsive production-ready interfaces. Handled end-to-end development including frontend architecture, backend integration, deployment, domain configuration, and infrastructure setup.',
+    current: true,
+  },
+
+  {
+    slug: 'open-source-contribution',
+    year: 'Jan 2026 - Present',
+    location: 'Open Source',
+    role: 'Open Source Contributor',
+    description:
+      '40+ merged PRs across 35+ open-source projects in Python, TypeScript, and C++, spanning ML libraries (huggingface_hub, pydantic, kornia, marimo), web frameworks (litestar, better-auth, authentik, superset), and infra tooling (frigate, dokploy, immich). Resolved production bugs and improved reliability across ML, web, and infrastructure projects, including numerical stability fixes, authentication and authorization fixes, CLI improvements, data validation, and resource handling.',
     current: true,
   },
 ]

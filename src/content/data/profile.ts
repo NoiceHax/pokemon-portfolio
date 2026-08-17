@@ -40,9 +40,9 @@ export const profile: Profile = {
     'learnflow-ai',
     'aasrah',
     'divyalipi-ai',
-    'ssf-platform',
-    'ai-scanner',
-    'pokedex-portfolio',
+    'chinnaswamy-farm-stay',
+    'shree-solar',
+    'llm-gateway',
   ],
   bio: "Placeholder bio - replace with Chandan’s real summary.",
 }
