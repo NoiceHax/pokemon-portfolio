@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const SITE_URL = 'https://trainer-chandan.vercel.app'
+const SITE_URL = 'https://noicehax.dev'
 
 /**
  * Backlink/keyword crawlers that mine the site for databases they resell. They send no

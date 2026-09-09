@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getProjects, getJournalEntries } from '@/lib/content'
 
-const SITE_URL = 'https://trainer-chandan.vercel.app'
+const SITE_URL = 'https://noicehax.dev'
 
 /**
  * Sitemap generated from the shared content layer, so new projects/journal entries are

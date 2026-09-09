@@ -6,7 +6,7 @@ import { DevConsole } from '@/components/easter-eggs/DevConsole'
 import { ServiceWorkerCleanup } from '@/components/ServiceWorkerCleanup'
 import './globals.css'
 
-const SITE_URL = 'https://trainer-chandan.vercel.app'
+const SITE_URL = 'https://noicehax.dev'
 const TITLE = 'Trainer Chandan - Interactive Portfolio'
 const DESCRIPTION =
   'A Pokémon-inspired interactive software engineering portfolio. The same content, two experiences: a fast Recruiter mode and an explorable Adventure world.'
