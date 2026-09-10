@@ -60,11 +60,12 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong>Abuse prevention.</strong> To stop spam and brute-force attempts, the
-                contact form, Hall of Fame, visit counter and admin login are rate-limited. Each
-                request stores a one-way hash of your IP address (never the address itself)
+                contact form, Hall of Fame and admin login are rate-limited. Each of those
+                requests stores a one-way hash of your IP address (never the address itself)
                 together with the route and a request count. These rows are automatically
                 deleted once they age out - typically within minutes, and always within 24
-                hours.
+                hours. The visit counter is not rate-limited and records nothing about your
+                IP address at all.
               </li>
             </ul>
           </Section>
