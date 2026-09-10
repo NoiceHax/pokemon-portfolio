@@ -7,8 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "shots": "node scripts/screenshot.mjs",
+    "shots:all": "node scripts/screenshot.mjs --viewport all --full",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "check:links": "node scripts/check-links.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
