@@ -233,11 +233,6 @@ export const projects: ProjectInput[] = [
         href: 'https://www.chinnaswamyfarm.in',
         kind: 'live',
       },
-      {
-        label: 'Repository',
-        href: 'https://github.com/NoiceHax/chinnaswamy-farm-stay',
-        kind: 'repo',
-      },
     ],
     featured: true,
   },
@@ -262,11 +257,6 @@ export const projects: ProjectInput[] = [
         label: 'Website',
         href: 'https://www.shreesolarsystems.com',
         kind: 'live',
-      },
-      {
-        label: 'Repository',
-        href: 'https://github.com/NoiceHax/shree-solar',
-        kind: 'repo',
       },
     ],
     featured: true,
@@ -297,33 +287,8 @@ export const projects: ProjectInput[] = [
   },
 
   {
-    slug: 'llm-gateway',
-    dexNumber: 10,
-    title: 'LLM Gateway',
-    summary:
-      'An OpenAI-compatible front door over a pool of NVIDIA NIM keys with per-project model routing.',
-    status: 'production',
-    types: ['psychic'],
-    cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
-      alt: 'LLM Gateway',
-    },
-    problemSolved:
-      'Multiple self-hosted apps each held their own API key and hardcoded model, so throttling or a model outage took features down independently. The gateway centralizes key pooling, rate limiting, and scored model routing behind one OpenAI-compatible endpoint.',
-    stack: ['Python', 'FastAPI', 'NVIDIA NIM', 'OpenAI API', 'Routing'],
-    links: [
-      {
-        label: 'Repository',
-        href: 'https://github.com/NoiceHax/llm-gateway',
-        kind: 'repo',
-      },
-    ],
-    featured: true,
-  },
-
-  {
     slug: 'drafter',
-    dexNumber: 11,
+    dexNumber: 10,
     title: 'Drafter',
     summary:
       'An AI pre-production workspace that turns a rough idea into a structured short-form script with hooks, scenes, and visuals.',
@@ -347,7 +312,7 @@ export const projects: ProjectInput[] = [
 
   {
     slug: 'ragnotebook',
-    dexNumber: 12,
+    dexNumber: 11,
     title: 'PDFChat / RAG Notebook',
     summary:
       'A full RAG pipeline for chatting with PDFs using page-level citations and grounded answers.',
@@ -378,32 +343,8 @@ export const projects: ProjectInput[] = [
   },
 
   {
-    slug: 'rift',
-    dexNumber: 13,
-    title: 'Rift',
-    summary:
-      'An autonomous application-security orchestration platform with deterministic workflows and a unified finding model.',
-    status: 'prototype',
-    types: ['electric'],
-    cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
-      alt: 'Rift',
-    },
-    problemSolved:
-      'Point scanners dump disconnected results. Rift plans a content-addressed task DAG across Semgrep, Trivy, Gitleaks, Nuclei and others, normalizes findings, correlates them deterministically, and keeps AI as an optional enrichment leaf — never the source of truth.',
-    stack: ['Python', 'PostgreSQL', 'Redis', 'Plugin SDK', 'Semgrep', 'Trivy'],
-    links: [
-      {
-        label: 'Repository',
-        href: 'https://github.com/NoiceHax/rift',
-        kind: 'repo',
-      },
-    ],
-  },
-
-  {
     slug: 'search-typeahead',
-    dexNumber: 14,
+    dexNumber: 12,
     title: 'Search Typeahead System',
     summary:
       'A sub-millisecond prefix autocomplete service over a 200k-query dataset with popularity and trending rankers.',
@@ -427,7 +368,7 @@ export const projects: ProjectInput[] = [
 
   {
     slug: 'lagclear',
-    dexNumber: 15,
+    dexNumber: 13,
     title: 'LagClear',
     summary:
       'A browser extension that virtualizes off-screen AI chat messages so long threads stay fast.',
@@ -451,7 +392,7 @@ export const projects: ProjectInput[] = [
 
   {
     slug: 'waltuh',
-    dexNumber: 16,
+    dexNumber: 14,
     title: 'Waltuh',
     summary:
       'An orchestration layer for Claude Code where Claude decides and Waltuh executes with benchmarks and acceptance gates.',
@@ -475,7 +416,7 @@ export const projects: ProjectInput[] = [
 
   {
     slug: 'github-analyzer',
-    dexNumber: 17,
+    dexNumber: 15,
     title: 'GitHub Portfolio Analyzer',
     summary:
       'A web app that scores GitHub profiles, checks repo health, and suggests actionable portfolio improvements.',
@@ -499,7 +440,7 @@ export const projects: ProjectInput[] = [
 
   {
     slug: 'seq2seq-date',
-    dexNumber: 18,
+    dexNumber: 16,
     title: 'Seq2Seq Date Conversion',
     summary:
       'An attention-based sequence-to-sequence model that converts free-form date phrases into standard formats.',
@@ -523,7 +464,7 @@ export const projects: ProjectInput[] = [
 
   {
     slug: 'persona-chatbot',
-    dexNumber: 19,
+    dexNumber: 17,
     title: 'Scaler Mentors Persona Chat',
     summary:
       'Chat with three AI-powered Scaler mentor personas, each with a distinct teaching style.',
@@ -547,7 +488,7 @@ export const projects: ProjectInput[] = [
 
   {
     slug: 'model-visualiser',
-    dexNumber: 20,
+    dexNumber: 18,
     title: 'YOLOv8 Model Visualiser',
     summary:
       'A React showcase of a YOLOv8m detector trained to 95.5% mAP@0.5 on only 600 custom images.',
@@ -562,16 +503,16 @@ export const projects: ProjectInput[] = [
     stack: ['React', 'YOLOv8', 'Computer Vision', 'Python'],
     links: [
       {
-        label: 'Repository',
-        href: 'https://github.com/NoiceHax/model-visualiser',
-        kind: 'repo',
+        label: 'Live Demo',
+        href: 'https://model-visualiser.vercel.app/',
+        kind: 'demo',
       },
     ],
   },
 
   {
     slug: 'vibecoolertunes',
-    dexNumber: 21,
+    dexNumber: 19,
     title: 'vibecoolertunes',
     summary:
       'Claude Code plugins for distinct stop-reason notification tones and turn timeline reporting.',
