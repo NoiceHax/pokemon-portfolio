@@ -5,8 +5,8 @@ import { JourneyTimeline } from '@/recruiter/experience'
 
 export const metadata = {
   title: 'Journey So Far',
-  description:
-    "Chandan's experience and achievements - a route map of milestones, latest first.",
+  description: "Chandan's experience and achievements - a route map of milestones, latest first.",
+  alternates: { canonical: '/home/experience' },
 }
 
 /**

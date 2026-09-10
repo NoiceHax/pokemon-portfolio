@@ -6,6 +6,7 @@ import { DataBankHeader, PokedexGrid } from '@/recruiter/pokedex'
 export const metadata = {
   title: 'Pokédex',
   description: 'What has Chandan built? Projects catalogued as Pokédex entries.',
+  alternates: { canonical: '/home/pokedex' },
 }
 
 /** Pokédex - "What has Chandan built?" Content-driven via getProjects. */

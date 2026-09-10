@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
-
-const SITE_URL = 'https://noicehax.dev'
+import { SITE_URL } from '@/lib/seo'
 
 /**
  * Backlink/keyword crawlers that mine the site for databases they resell. They send no

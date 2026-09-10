@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { DEFAULT_OG_IMAGE, SITE_NAME } from '@/lib/seo'
 import { TopNav, TrainerSidebar, Footer } from '@/recruiter/layout'
 import { RecruiterChrome } from '@/recruiter/layout/RecruiterChrome'
 
@@ -9,6 +10,20 @@ export const metadata: Metadata = {
   },
   description:
     "Trainer Chandan's portfolio: Trainer Card, Pokédex projects, Journal, Journey and Pokémon Center.",
+  // Share-card defaults for every Home page. og:title and og:description are left unset so
+  // each page's own title/description flow in; './' resolves against the request path, so
+  // every page gets its own og:url from this one line. A child that sets `openGraph`
+  // replaces this object wholesale, so the detail routes repeat these keys.
+  openGraph: {
+    type: 'website',
+    siteName: SITE_NAME,
+    url: './',
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  // The root sets a twitter card, and Next only back-fills twitter from openGraph when a
+  // card is declared at this level too - without this, every Home page would keep the
+  // root's card title, description and image.
+  twitter: { card: 'summary_large_image' },
 }
 
 /**

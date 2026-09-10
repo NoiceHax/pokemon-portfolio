@@ -5,7 +5,10 @@ import { ContactForm, ContactLinks } from '@/recruiter/pokemon-center'
 
 export const metadata = {
   title: 'Pokémon Center',
-  description: 'How to reach Chandan - contact form, email, GitHub, LinkedIn and resume.',
+  // No "and resume" until public/chandan-resume.pdf exists - a search snippet promising a
+  // document the site 404s on is worse than not mentioning it. See contact.ts to add it.
+  description: 'How to reach Chandan - contact form, email, GitHub and LinkedIn.',
+  alternates: { canonical: '/home/pokemon-center' },
 }
 
 /** Pokémon Center - "How can someone reach Chandan?" A welcoming contact page. */

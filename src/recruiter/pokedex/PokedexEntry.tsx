@@ -23,11 +23,13 @@ export function PokedexEntry({ project }: { project: Project }) {
 
       <Panel className="overflow-hidden p-6">
         <div className="flex items-center justify-between">
-          <span className="font-mono text-sm font-bold text-poke-red">{dexLabel}</span>
+          <span className="font-mono text-sm font-bold text-poke-red-dark">{dexLabel}</span>
           <StatusDot status={project.status} />
         </div>
 
-        <h1 className="mt-2 font-display text-2xl font-bold text-ink sm:text-3xl">{project.title}</h1>
+        <h1 className="mt-2 break-words font-display text-2xl font-bold text-ink sm:text-3xl">
+          {project.title}
+        </h1>
         <p className="mt-1 font-mono text-sm text-ink-soft">{project.summary}</p>
 
         <div className="mt-3 flex flex-wrap gap-1.5">
@@ -37,7 +39,13 @@ export function PokedexEntry({ project }: { project: Project }) {
         </div>
 
         <div className="mt-4 overflow-hidden rounded-md border border-edge bg-surface-sunken">
-          <ProjectCover project={project} className="h-56" />
+          {/* Full width of the Home main column: max-w-6xl minus the 18rem sidebar, gap
+              and padding caps the box near 750px, so it never needs more than that. */}
+          <ProjectCover
+            project={project}
+            className="h-56"
+            sizes="(min-width: 1024px) 750px, 100vw"
+          />
         </div>
 
         <Section title="Stack">
@@ -92,7 +100,7 @@ export function PokedexEntry({ project }: { project: Project }) {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 font-mono text-sm text-poke-red hover:underline"
+                    className="inline-flex items-center gap-1 font-mono text-sm text-poke-red-dark hover:underline"
                   >
                     {link.label}
                     <ExternalLink aria-hidden className="h-3 w-3" />
@@ -110,7 +118,7 @@ export function PokedexEntry({ project }: { project: Project }) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-6 border-t border-edge pt-4">
-      <h2 className="mb-2 font-mono text-xs uppercase tracking-wide text-poke-red">{title}</h2>
+      <h2 className="mb-2 font-mono text-xs uppercase tracking-wide text-poke-red-dark">{title}</h2>
       {children}
     </section>
   )

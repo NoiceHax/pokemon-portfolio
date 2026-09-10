@@ -4,9 +4,9 @@ import { SettingsProvider } from '@/providers/SettingsProvider'
 import { AudioProvider } from '@/providers/AudioProvider'
 import { DevConsole } from '@/components/easter-eggs/DevConsole'
 import { ServiceWorkerCleanup } from '@/components/ServiceWorkerCleanup'
+import { SITE_URL } from '@/lib/seo'
 import './globals.css'
 
-const SITE_URL = 'https://noicehax.dev'
 const TITLE = 'Trainer Chandan - Interactive Portfolio'
 const DESCRIPTION =
   'A Pokémon-inspired interactive software engineering portfolio. The same content, two experiences: a fast Recruiter mode and an explorable Adventure world.'
@@ -20,7 +20,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Chandan' }],
   openGraph: {
     type: 'website',
-    url: SITE_URL,
+    // No `url` here on purpose: this is the ROOT metadata, inherited by every route that
+    // doesn't set its own openGraph. Hardcoding it made every deep link advertise itself
+    // as the homepage when shared. `metadataBase` resolves the per-route URL instead.
     title: TITLE,
     description: DESCRIPTION,
     siteName: 'Trainer Chandan',

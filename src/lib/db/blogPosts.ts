@@ -7,6 +7,20 @@ export interface DbBlogPost {
   bodyMdx: string
 }
 
+/**
+ * `post_date` is a bare DATE, and the driver parses one into a Date at LOCAL midnight.
+ * Round-tripping that through toISOString() would shift the calendar day back by one on
+ * any host east of UTC - and because the Control Room seeds its edit form from what it
+ * read, the shifted day gets written back on the next save. Format from local components
+ * so the day that comes out is the day that went in.
+ */
+function toDateString(value: unknown): string {
+  if (!(value instanceof Date)) return String(value).slice(0, 10)
+  const month = String(value.getMonth() + 1).padStart(2, '0')
+  const day = String(value.getDate()).padStart(2, '0')
+  return `${value.getFullYear()}-${month}-${day}`
+}
+
 function toPost(r: Record<string, unknown>): DbBlogPost {
   return {
     frontmatter: {
@@ -15,7 +29,7 @@ function toPost(r: Record<string, unknown>): DbBlogPost {
       type: String(r.type) as BlogFrontmatter['type'],
       title: String(r.title),
       excerpt: String(r.excerpt),
-      date: (r.post_date instanceof Date ? r.post_date.toISOString() : String(r.post_date)).slice(0, 10),
+      date: toDateString(r.post_date),
       readMinutes: Number(r.read_minutes),
       tags: (r.tags as string[] | null) ?? [],
       draft: Boolean(r.draft),
@@ -33,10 +47,11 @@ export async function getDbBlogPosts(): Promise<DbBlogPost[] | null> {
       SELECT slug, entry_number, type, title, excerpt, body_mdx, post_date, read_minutes, tags, draft
       FROM blog_posts
       WHERE draft = false
-      ORDER BY post_date DESC
+      ORDER BY post_date DESC, entry_number DESC
     `) as Record<string, unknown>[]
     return rows.map(toPost)
-  } catch {
+  } catch (err) {
+    console.error('[db] getDbBlogPosts failed:', err)
     return null // fall back to static entries on any DB error
   }
 }
@@ -49,7 +64,8 @@ export async function getDbBlogPost(slug: string): Promise<DbBlogPost | null> {
       FROM blog_posts WHERE slug = ${slug} LIMIT 1
     `) as Record<string, unknown>[]
     return rows[0] ? toPost(rows[0]) : null
-  } catch {
+  } catch (err) {
+    console.error('[db] getDbBlogPost failed:', err)
     return null
   }
 }
@@ -59,7 +75,7 @@ export async function getAllDbBlogPosts(): Promise<DbBlogPost[]> {
   if (!sql) return []
   const rows = (await sql`
     SELECT slug, entry_number, type, title, excerpt, body_mdx, post_date, read_minutes, tags, draft
-    FROM blog_posts ORDER BY post_date DESC
+    FROM blog_posts ORDER BY post_date DESC, entry_number DESC
   `) as Record<string, unknown>[]
   return rows.map(toPost)
 }

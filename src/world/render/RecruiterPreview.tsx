@@ -2,22 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import { ArrowRight, X } from 'lucide-react'
-import {
-  getProfile,
-  getFeaturedProjects,
-  getContact,
-  getExperience,
-} from '@/lib/content'
+import { getProfile, getFeaturedProjects, getContact, getExperience } from '@/lib/content'
 import type { BlogFrontmatter } from '@/content/schema'
 import { TrainerHeader } from '@/recruiter/trainer-card'
 import { PokedexCard } from '@/recruiter/pokedex/PokedexCard'
 import { JournalCard } from '@/recruiter/journal'
 import { ContactLinks } from '@/recruiter/pokemon-center/ContactLinks'
 import { JourneyTimeline } from '@/recruiter/experience'
-import {
-  getDestination,
-  type RecruiterDestinationId,
-} from '@/world/world/recruiterPortals'
+import { getDestination, type RecruiterDestinationId } from '@/world/world/recruiterPortals'
 
 /**
  * Recruiter Preview - the "looking inside the building" screen shown after entering a
@@ -69,7 +61,7 @@ export function RecruiterPreview({
         <p className="mb-1 font-mono text-xs uppercase tracking-widest text-ink-faint">
           You peek inside...
         </p>
-        <h2 className="mb-4 font-display text-xl text-poke-red">{dest.label}</h2>
+        <h2 className="mb-4 font-display text-xl text-poke-red-dark">{dest.label}</h2>
 
         <PreviewBody destinationId={destinationId} />
 
@@ -92,7 +84,9 @@ function PreviewBody({ destinationId }: { destinationId: RecruiterDestinationId 
       // Hero section ONLY - no quick-nav cards, no bottom feature cards.
       return (
         <div className="rounded-card border border-edge bg-surface-raised p-4">
-          <TrainerHeader profile={getProfile()} />
+          {/* h3, matching JournalCard's heading in the same modal: the modal's own title
+              above is the h2, and Adventure has no h1 for a teaser to sit under. */}
+          <TrainerHeader profile={getProfile()} as="h3" />
         </div>
       )
 

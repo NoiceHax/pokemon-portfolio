@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, Clock, ChevronRight } from 'lucide-react'
 import type { BlogFrontmatter } from '@/content/schema'
 import { Panel } from '@/recruiter/ui'
@@ -18,9 +19,11 @@ export function JournalCard({ entry }: { entry: BlogFrontmatter }) {
       <Panel brackets={false} className="flex gap-4 p-4 transition-colors hover:border-poke-red">
         {entry.cover ? (
           <div className="hidden h-24 w-24 shrink-0 overflow-hidden rounded-md border border-edge bg-surface-sunken sm:block">
-            <img
+            <Image
               src={entry.cover.src}
               alt={entry.cover.alt}
+              width={96}
+              height={96}
               className="h-full w-full object-cover"
             />
           </div>
@@ -58,7 +61,7 @@ export function JournalCard({ entry }: { entry: BlogFrontmatter }) {
           </div>
         </div>
 
-        <ChevronRight aria-hidden className="h-5 w-5 shrink-0 self-center text-poke-red" />
+        <ChevronRight aria-hidden className="h-5 w-5 shrink-0 self-center text-poke-red-dark" />
       </Panel>
     </Link>
   )

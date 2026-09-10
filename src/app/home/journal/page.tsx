@@ -6,6 +6,7 @@ import { JournalList } from '@/recruiter/journal'
 export const metadata = {
   title: 'Journal',
   description: 'How does Chandan think? Field notes, build logs, research and thoughts.',
+  alternates: { canonical: '/home/journal' },
 }
 
 // DB-backed content: read the Journal fresh on every request so a post published in the

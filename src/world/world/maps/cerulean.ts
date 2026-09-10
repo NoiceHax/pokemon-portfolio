@@ -92,7 +92,8 @@ const entities: WorldEntity[] = [
   // Enterable house doors are RECRUITER PORTALS: interacting opens a preview of a
   // recruiter section, then the full page (see world/recruiterPortals.ts).
   //
-  // Which buildings ARE houses is defined by public/assets/reference.png: exactly 8
+  // Which buildings ARE houses was traced from a reference screenshot (since removed
+  // from the deploy - it was a 2.3 MB unused asset). What it showed: exactly 8
   // enterable houses (each with a door), and 2 "not a house" buildings that have NO door
   // and must stay inaccessible - the top-RIGHT corner house (~45,12) and the building
   // immediately RIGHT of the Mart (~34,29). We deliberately place NO portal on those two.

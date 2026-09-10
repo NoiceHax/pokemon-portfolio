@@ -1,11 +1,22 @@
 import Link from 'next/link'
 import { Trophy } from 'lucide-react'
 import { getHallOfFame, isDbConfigured } from '@/lib/db'
+import { DEFAULT_OG_IMAGE, SITE_NAME } from '@/lib/seo'
 import { HallOfFameForm } from '@/components/hall-of-fame/HallOfFameForm'
 
 export const metadata = {
   title: 'Hall of Fame',
   description: 'Explorers who found the hidden links.',
+  alternates: { canonical: '/hall-of-fame' },
+  // Outside the Home layout, so the share card is inherited from the root and would
+  // otherwise advertise the site description on every page. Spelled out here instead.
+  openGraph: {
+    type: 'website' as const,
+    siteName: SITE_NAME,
+    url: '/hall-of-fame',
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+  },
+  twitter: { card: 'summary_large_image' as const },
 }
 
 // Always render fresh so a new sign-in appears immediately.
@@ -51,9 +62,7 @@ export default async function HallOfFamePage() {
                 <div className="min-w-0 flex-1">
                   <p className="font-mono text-sm text-surface">
                     {f.name}
-                    {f.handle ? (
-                      <span className="ml-2 text-surface/50">{f.handle}</span>
-                    ) : null}
+                    {f.handle ? <span className="ml-2 text-surface/50">{f.handle}</span> : null}
                   </p>
                   {f.message ? (
                     <p className="mt-0.5 truncate font-mono text-xs text-surface/60">
@@ -62,9 +71,7 @@ export default async function HallOfFamePage() {
                   ) : null}
                 </div>
                 {f.linksFound > 0 ? (
-                  <span className="font-mono text-xs text-amber-300/80">
-                    {f.linksFound} 🔗
-                  </span>
+                  <span className="font-mono text-xs text-amber-300/80">{f.linksFound} 🔗</span>
                 ) : null}
               </li>
             ))

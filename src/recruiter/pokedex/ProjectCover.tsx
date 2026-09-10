@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Project } from '@/content/schema'
 
 /**
@@ -19,18 +20,33 @@ const TYPE_GRADIENT: Record<string, string> = {
 export function ProjectCover({
   project,
   className = '',
+  sizes,
 }: {
   project: Project
   className?: string
+  /**
+   * How wide the cover box is at each breakpoint. Required rather than defaulted: a grid
+   * card and a full-width entry size their boxes completely differently, and one shared
+   * string under-declares for the entry - the browser then picks a srcset candidate
+   * narrower than the box and upscales a screenshot that had the detail to spare.
+   */
+  sizes: string
 }) {
   const realImage = !project.isPlaceholder && !project.cover.src.includes('/Miscellaneous/')
   if (realImage) {
+    // `fill` rather than fixed dimensions: callers set the box height via className
+    // (h-36 on a grid card, h-56 on an entry), so the height is already reserved and
+    // the intrinsic size of the source screenshot is irrelevant to layout.
     return (
-      <img
-        src={project.cover.src}
-        alt={project.cover.alt}
-        className={`w-full object-cover ${className}`}
-      />
+      <div className={`relative w-full overflow-hidden ${className}`}>
+        <Image
+          src={project.cover.src}
+          alt={project.cover.alt}
+          fill
+          sizes={sizes}
+          className="object-cover"
+        />
+      </div>
     )
   }
 

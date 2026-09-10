@@ -1,10 +1,17 @@
+import type { Metadata } from 'next'
 import { getProfile, getFeaturedProjects } from '@/lib/content'
 import { Panel } from '@/recruiter/ui'
 import { TrainerHeader, TrainerStats, ProjectParty, QuickActions } from '@/recruiter/trainer-card'
 
-export const metadata = {
-  title: 'Trainer Card',
-  description: 'Who is Chandan? Class, region, current quest, stats and featured projects.',
+export const metadata: Metadata = {
+  // This is the canonical URL for the Trainer Card - `/` points here - so it carries the
+  // title and description a search result should show. `absolute` opts out of the Home
+  // layout's "%s - Trainer Chandan" template, which would append a second copy of a name
+  // this title already carries.
+  title: { absolute: 'Chandan - Software Engineer Portfolio' },
+  description:
+    'Chandan, a software engineer in India: Pokédex projects, the journey so far, field notes and contact - a Pokémon-inspired interactive portfolio.',
+  alternates: { canonical: '/home' },
 }
 
 /**

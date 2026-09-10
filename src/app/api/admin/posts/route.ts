@@ -1,16 +1,21 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { hasValidSession } from '@/lib/admin/auth'
-import {
-  getAllDbBlogPosts,
-  upsertDbBlogPost,
-  deleteDbBlogPost,
-} from '@/lib/db/blogPosts'
+import { getAllDbBlogPosts, upsertDbBlogPost, deleteDbBlogPost } from '@/lib/db/blogPosts'
 import { rateLimit, clientIp, tooManyRequests } from '@/lib/rateLimit'
+import { absoluteUrl } from '@/lib/seo'
+import { pingIndexNow } from '@/lib/seo/indexnow'
 
 /**
  * Admin blog CRUD. Every method requires a valid admin session AND is rate-limited.
  * Writes go to the Neon `blog_posts` table (which the public Journal reads).
+ *
+ * A successful write also nudges IndexNow (Bing/Yandex/Seznam) so a post published here
+ * is discoverable without waiting for the next manual container deploy. The ping IS
+ * awaited: on a serverless host nothing keeps a function alive past the response, and
+ * neither `waitUntil` nor Next 15's `after()` is available in this stack, so work left
+ * running after the return is not guaranteed to finish at all. The 2.5s AbortSignal
+ * inside pingIndexNow bounds what this can add to a Control Room save.
  */
 
 export const dynamic = 'force-dynamic'
@@ -32,6 +37,11 @@ const postSchema = z.object({
   tags: z.array(z.string().trim().min(1).max(40)).max(20),
   draft: z.boolean(),
 })
+
+/** Submit the changed entry plus the sitemap that now lists (or no longer lists) it. */
+async function notifySearchEngines(slug: string): Promise<void> {
+  await pingIndexNow([absoluteUrl(`/home/journal/${slug}`), absoluteUrl('/sitemap.xml')])
+}
 
 async function guard(request: Request): Promise<Response | null> {
   const rl = await rateLimit(`admin-posts:${clientIp(request)}`, {
@@ -70,6 +80,12 @@ export async function POST(request: Request) {
   }
   try {
     await upsertDbBlogPost(parsed.data)
+    // Ping either way. Publishing announces a new URL; UNPUBLISHING makes that URL 404 for
+    // the public (the draft guard in home/journal/[slug] returns null), which is exactly the
+    // condition the DELETE branch below submits for - a crawler needs the same nudge to drop
+    // a withdrawn entry as a deleted one. Skipping drafts meant an unpublished post kept
+    // being served from Bing/Yandex indefinitely.
+    await notifySearchEngines(parsed.data.slug)
     return NextResponse.json({ ok: true }, { status: 201 })
   } catch {
     return NextResponse.json({ error: 'Could not save post.' }, { status: 500 })
@@ -83,6 +99,8 @@ export async function DELETE(request: Request) {
   if (!slug) return NextResponse.json({ error: 'Missing slug.' }, { status: 400 })
   try {
     await deleteDbBlogPost(slug)
+    // The URL is now a 404; submitting it is how a crawler learns to drop it.
+    await notifySearchEngines(slug)
     return NextResponse.json({ ok: true })
   } catch {
     return NextResponse.json({ error: 'Could not delete post.' }, { status: 500 })
