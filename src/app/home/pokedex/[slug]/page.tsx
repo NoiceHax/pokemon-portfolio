@@ -12,6 +12,14 @@ export function generateStaticParams() {
   return getProjects().map((project) => ({ slug: project.slug }))
 }
 
+/**
+ * Only the slugs above exist. Without this, Next renders ANY other slug on demand, so a
+ * removed project (or a typo'd URL) answered 200 with an "Unknown Entry" page - a soft 404
+ * that crawlers happily index, and that makes a deleted project look like it is still
+ * there. false makes anything not in generateStaticParams a real 404.
+ */
+export const dynamicParams = false
+
 export function generateMetadata({ params }: EntryPageProps) {
   const project = getProject(params.slug)
   if (!project) return { title: 'Unknown Entry' }
