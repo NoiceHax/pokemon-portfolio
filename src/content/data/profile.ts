@@ -10,9 +10,25 @@ import { projects as projectsData } from './projects'
  * reference project slugs - they do not copy project data.
  */
 
-// Compute stats dynamically from data
-const currentYear = new Date().getFullYear()
-const experienceYears = currentYear - 2024
+/**
+ * Years of experience, counted from an actual start date rather than a year subtraction.
+ *
+ * `new Date().getFullYear() - 2024` was wrong twice over: it jumped on 1 January instead
+ * of the real anniversary (so for most of 2026 it over-claimed), and /home is statically
+ * prerendered, so it froze at build time regardless. The page now sets `revalidate` so
+ * this is recomputed daily.
+ *
+ * Elapsed whole months are floored to years, so the figure is never rounded up.
+ */
+const CAREER_START = { year: 2024, month: 1 } // Jan 2024 - matches the earliest milestone
+
+function yearsSince({ year, month }: { year: number; month: number }): number {
+  const now = new Date()
+  const months = (now.getFullYear() - year) * 12 + (now.getMonth() + 1 - month)
+  return Math.max(0, Math.floor(months / 12))
+}
+
+const experienceYears = yearsSince(CAREER_START)
 const projectCount = projectsData.length
 
 export const profile: Profile = {
@@ -31,7 +47,7 @@ export const profile: Profile = {
   },
   currentQuest: 'Curious to explore, build and understand everything around tech.',
   stats: [
-    { key: 'experienceYears', value: String(Math.max(0, experienceYears)), label: 'YEARS EXPERIENCE' },
+    { key: 'experienceYears', value: String(experienceYears), label: 'YEARS EXPERIENCE' },
     { key: 'projectCount', value: String(projectCount), label: 'POKÉDEX PROJECTS' },
   ],
   // Slugs of projects to feature in the "Current Party" (max 6). Add slugs here after
@@ -42,7 +58,6 @@ export const profile: Profile = {
     'divyalipi-ai',
     'chinnaswamy-farm-stay',
     'shree-solar',
-    'llm-gateway',
   ],
   bio: "Placeholder bio - replace with Chandan’s real summary.",
 }

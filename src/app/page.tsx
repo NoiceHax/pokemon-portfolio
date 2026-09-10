@@ -15,6 +15,15 @@ import { JsonLd, personSchema, webSiteSchema } from '@/lib/seo'
 import { Panel } from '@/recruiter/ui'
 import { TrainerHeader, TrainerStats, ProjectParty, QuickActions } from '@/recruiter/trainer-card'
 
+/**
+ * The Trainer Card shows a years-of-experience figure derived from the current date
+ * (see content/data/profile.ts). This page is otherwise fully static, so without a
+ * revalidate the number would be frozen at whatever the last manual deploy computed -
+ * and deploys here are manual. One day is far finer than the annual granularity of the
+ * value, and the page has no other time-dependent content.
+ */
+export const revalidate = 86400
+
 export const metadata: Metadata = {
   // `/` and `/home` now serve the same Trainer Card, so the two are consolidated onto
   // one URL. No noindex - `/` is what gets linked and shared, and it should keep
