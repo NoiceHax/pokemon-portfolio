@@ -62,16 +62,36 @@ export function OakLanding() {
       <AnimatePresence onExitComplete={handleExitComplete}>
         {!isLeaving ? (
           <Fade key="oak" motionKey="oak" className="flex h-full w-full flex-col items-center">
-            {/* Full-body Oak on the lecture stage, standing on a soft platform. */}
-            <div className="flex flex-1 flex-col items-center justify-center">
-              <img
-                src={sprites.professorOak}
-                alt="Professor Oak"
-                className="h-48 w-auto drop-shadow-[0_6px_0_rgba(0,0,0,0.15)] [image-rendering:pixelated] sm:h-56"
-                draggable={false}
-              />
+            {/* Full-body Oak on the lecture stage, standing on a soft platform.
+
+                Three things about the sprite, all of which showed up as him looking a few
+                pixels off top and bottom:
+
+                1. It is 63x88, so the height is pinned to whole multiples of 88 (2x, then
+                   3x). At a fractional scale `image-rendering: pixelated` rounds each
+                   source row independently - some rows land on two device pixels, others
+                   on three - which shaved a pixel off his hair and shoes.
+                2. No drop-shadow on the sprite: the filter traces the alpha channel, and
+                   the art has no transparent padding, so it drew a dark rim around his
+                   outline instead of a shadow on the ground. The ellipse below is the
+                   shadow now.
+                3. Rows 85-87 of the source PNG are a solid white strip left over from the
+                   rip, and read on screen as a bright bar under his feet. Oak's own art
+                   ends at row 81, so the last 6 rows are cropped off here rather than by
+                   editing the asset - the file is shared, and this keeps it untouched.
+                   The crop is why the box is sized in 82nds and shifted up by the
+                   difference. */}
+            <div className="flex min-h-0 flex-1 flex-col items-center justify-center">
+              <div className="h-[164px] overflow-hidden sm:h-[246px]">
+                <img
+                  src={sprites.professorOak}
+                  alt="Professor Oak"
+                  className="h-[176px] w-auto max-w-none [image-rendering:pixelated] sm:h-[264px]"
+                  draggable={false}
+                />
+              </div>
               {/* Platform shadow, echoing the opening-lecture stage. */}
-              <div className="mt-1 h-4 w-40 rounded-[100%] bg-teal-200/50 blur-[1px]" />
+              <div className="mt-2 h-3 w-32 rounded-[100%] bg-teal-950/25 blur-[4px]" />
             </div>
 
             {/* Dialogue box pinned to the bottom, like the games. */}
