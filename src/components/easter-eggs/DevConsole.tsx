@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useAudio } from '@/providers/AudioProvider'
+import { MUSIC_VOLUME } from '@/engine/audio/volumes'
 import { getAnalyticsBuffer } from '@/lib/analytics'
 
 /**
@@ -38,7 +39,7 @@ export function DevConsole() {
           if (!o) {
             if (!easterEggMusicRef.current) {
               easterEggMusicRef.current = true
-              play('jigglypuffsSong', { volume: 0.2, loop: true })
+              play('jigglypuffsSong', { volume: MUSIC_VOLUME, loop: true })
             }
           } else {
             easterEggMusicRef.current = false
@@ -54,7 +55,7 @@ export function DevConsole() {
     const onOpenEvent = () => {
       if (!easterEggMusicRef.current) {
         easterEggMusicRef.current = true
-        play('jigglypuffsSong', { volume: 0.2, loop: true })
+        play('jigglypuffsSong', { volume: MUSIC_VOLUME, loop: true })
       }
       setOpen(true)
     }

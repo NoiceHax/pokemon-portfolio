@@ -6,7 +6,8 @@ import type { DialogueScript } from '@/engine/dialogue/types'
 import { TILE_SIZE, TILES_ACROSS, type Direction } from '@/world/engine/types'
 import { WorldEngine } from '@/world/engine/WorldEngine'
 import { MAP_REGISTRY, START_MAP_ID } from '@/world/world/maps'
-import { useAudio } from '@/providers/AudioProvider'
+import { useAudio, useAudioEnabled } from '@/providers/AudioProvider'
+import { MUSIC_VOLUME, SFX_VOLUME } from '@/engine/audio/volumes'
 import { track } from '@/lib/analytics'
 import { useWorldSnapshot } from './useWorldEngine'
 import { useElementSize } from '@/hooks/useElementSize'
@@ -33,10 +34,6 @@ const CODE_TO_DIR: Record<string, Direction> = {
   KeyD: 'right',
 }
 
-// Music volumes - increased for better audibility
-const BG_MUSIC_VOLUME = 0.2
-const ZONE_MUSIC_VOLUME = 0.25
-const SFX_VOLUME = 0.3
 
 
 /**
@@ -54,6 +51,7 @@ export function WorldRenderer({
   registry: Record<string, DialogueScript>
   experience: string | null
 }) {
+  useAudioEnabled()
   const { play, stop } = useAudio()
 
   // The engine lives in React state so its lifecycle is tied to this component, but it
@@ -126,16 +124,16 @@ export function WorldRenderer({
     // Ambient background: Victory! (Trainer) is the default Adventure Mode BGM,
     // kept at a subtle volume. When the player steps into an interior's audio zone,
     // we play that track instead; leaving the zone brings the default back.
-    play('victoryTrainer', { loop: true, volume: BG_MUSIC_VOLUME })
+    play('victoryTrainer', { loop: true, volume: MUSIC_VOLUME })
 
     const activeTrack = { current: null as string | null }
     const offAudio = engine.bus.on('AudioZoneEntered', ({ track: t }) => {
       if (activeTrack.current) stop(activeTrack.current as never)
       if (t) {
         stop('victoryTrainer')
-        play(t as never, { loop: true, volume: ZONE_MUSIC_VOLUME })
+        play(t as never, { loop: true, volume: MUSIC_VOLUME })
       } else {
-        play('victoryTrainer', { loop: true, volume: BG_MUSIC_VOLUME })
+        play('victoryTrainer', { loop: true, volume: MUSIC_VOLUME })
       }
       activeTrack.current = t
     })

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { useTypewriter } from '@/hooks/useTypewriter'
 import { useAudio } from '@/providers/AudioProvider'
+import { UI_SFX_VOLUME } from '@/engine/audio/volumes'
 import type { DialogueChoice, Speaker } from '@/engine/dialogue/types'
 import { DialoguePortrait } from './DialoguePortrait'
 import { DialogueChoices } from './DialogueChoices'
@@ -108,7 +109,7 @@ export function DialogueBox({
             <DialogueChoices
               choices={choices}
               onSelect={onSelect}
-              onHighlightChange={() => play('obtainedPokemon', { volume: 0.15 })}
+              onHighlightChange={() => play('obtainedPokemon', { volume: UI_SFX_VOLUME })}
             />
           ) : (
             <div className="mt-1 flex h-4 items-center justify-between">

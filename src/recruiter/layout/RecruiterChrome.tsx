@@ -1,51 +1,31 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { useVisitTracker } from '@/hooks/useVisitTracker'
-import { useAudio } from '@/providers/AudioProvider'
+import { useAudio, useAudioEnabled } from '@/providers/AudioProvider'
+import { MUSIC_VOLUME } from '@/engine/audio/volumes'
 import { ReturnToAdventure } from '@/recruiter/layout/ReturnToAdventure'
 import { AdventureModeNotice } from '@/recruiter/layout/AdventureModeNotice'
 
 /**
  * Client-side chrome for Recruiter Mode: runs the visit tracker, shows the floating
  * "Return to Adventure" button, and plays Pokémon Center BGM.
+ *
+ * Asking for the track once is enough. If the browser refuses it for want of a user
+ * activation, the AudioManager holds it and starts it on the visitor's first click or
+ * keypress. This used to be handled here with gesture listeners plus a 100ms timer, but
+ * the timer always won the race: it called play(), autoplay rejected it, and it still
+ * marked the music as started - so the listeners were removed and the refused track was
+ * never retried. Recruiter Mode was silent for anyone whose browser enforces the policy.
  */
 export function RecruiterChrome() {
   useVisitTracker()
-  const { play, stopAll } = useAudio()
-  const playedMusic = useRef(false)
+  useAudioEnabled()
+  const { play } = useAudio()
 
   useEffect(() => {
-    if (playedMusic.current) return
-
-    const startMusic = () => {
-      if (!playedMusic.current) {
-        playedMusic.current = true
-        stopAll()
-        play('pokemonCenter', { volume: 0.2, loop: true })
-        document.removeEventListener('click', startMusic)
-        document.removeEventListener('keydown', startMusic)
-        document.removeEventListener('touchstart', startMusic)
-      }
-    }
-
-    const timer = setTimeout(() => {
-      stopAll()
-      play('pokemonCenter', { volume: 0.2, loop: true })
-      playedMusic.current = true
-    }, 100)
-
-    document.addEventListener('click', startMusic)
-    document.addEventListener('keydown', startMusic)
-    document.addEventListener('touchstart', startMusic)
-
-    return () => {
-      clearTimeout(timer)
-      document.removeEventListener('click', startMusic)
-      document.removeEventListener('keydown', startMusic)
-      document.removeEventListener('touchstart', startMusic)
-    }
-  }, [play, stopAll])
+    play('pokemonCenter', { volume: MUSIC_VOLUME, loop: true })
+  }, [play])
 
   return (
     <>

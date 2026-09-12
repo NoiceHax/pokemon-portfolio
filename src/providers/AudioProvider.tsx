@@ -8,6 +8,7 @@ interface AudioContextValue {
   play: (key: SoundKey, opts?: { loop?: boolean; volume?: number }) => void
   stop: (key: SoundKey) => void
   stopAll: () => void
+  setEnabled: (enabled: boolean) => void
 }
 
 const AudioContext = createContext<AudioContextValue | null>(null)
@@ -51,7 +52,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   }, [manager])
 
   useEffect(() => {
-    return () => manager.stopAll()
+    return () => manager.dispose()
   }, [manager])
 
   const value = useMemo<AudioContextValue>(
@@ -59,6 +60,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       play: (key, opts) => manager.play(key, opts),
       stop: (key) => manager.stop(key),
       stopAll: () => manager.stopAll(),
+      setEnabled: (enabled) => manager.setEnabled(enabled),
     }),
     [manager],
   )
@@ -73,4 +75,21 @@ export function useAudio(): AudioContextValue {
     throw new Error('useAudio must be used within an AudioProvider')
   }
   return context
+}
+
+/**
+ * Declare that sound belongs in this part of the app. Audio is off by default so the
+ * boot sequence stays silent; Recruiter and Adventure Mode each call this on mount and
+ * it switches back off when they unmount.
+ *
+ * Anything played outside a mode that has opted in - a dialogue cursor tick during
+ * Professor Oak, say - is dropped rather than queued, which is the point: those cues
+ * belong to their mode, not to the visitor's first ten seconds on the site.
+ */
+export function useAudioEnabled(): void {
+  const { setEnabled } = useAudio()
+  useEffect(() => {
+    setEnabled(true)
+    return () => setEnabled(false)
+  }, [setEnabled])
 }

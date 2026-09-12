@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { AnimatePresence } from 'framer-motion'
 import { DialogueScene } from '@/components/ui/DialogueBox'
@@ -8,7 +8,8 @@ import { Fade } from '@/components/ui/transitions/Fade'
 import { createOakScript } from '@/content/dialogue/oak'
 import { routeForExperience } from '@/engine/emulator/routing'
 import { useSettings, type ChosenExperience } from '@/providers/SettingsProvider'
-import { useAudio } from '@/providers/AudioProvider'
+import { useAudio, useAudioEnabled } from '@/providers/AudioProvider'
+import { MUSIC_VOLUME, SFX_VOLUME } from '@/engine/audio/volumes'
 import { sprites } from '@/lib/assets/registry'
 
 /**
@@ -25,7 +26,9 @@ import { sprites } from '@/lib/assets/registry'
 export function OakLanding() {
   const router = useRouter()
   const { setChosenExperience } = useSettings()
-  const { play, stop } = useAudio()
+  // Sound starts here, not at power-on: the earlier boot screens stay silent.
+  useAudioEnabled()
+  const { play } = useAudio()
 
   const chosenRef = useRef<ChosenExperience>(null)
   const [isLeaving, setIsLeaving] = useState(false)
@@ -34,7 +37,7 @@ export function OakLanding() {
     (experience: ChosenExperience) => {
       chosenRef.current = experience
       setChosenExperience(experience)
-      play('obtainedPokemon', { volume: 0.3 })
+      play('obtainedPokemon', { volume: SFX_VOLUME })
     },
     [setChosenExperience, play],
   )
@@ -48,14 +51,18 @@ export function OakLanding() {
 
   const script = useMemo(() => createOakScript(handleChoose), [handleChoose])
 
+  // Oak's lab theme. Autoplay will refuse this on a fresh page load; the AudioManager
+  // holds it and starts it on the visitor's first click or keypress - and reaching Oak
+  // at all takes a PRESS START, so in practice it begins as soon as he appears.
+  useEffect(() => {
+    play('professorOakLab', { volume: MUSIC_VOLUME, loop: true })
+  }, [play])
+
   // After the fade-out completes, perform the actual navigation.
   const handleExitComplete = useCallback(() => {
     const destination = routeForExperience(chosenRef.current)
-    if (destination) {
-      stop('professorOakLab')
-      router.push(destination)
-    }
-  }, [router, stop])
+    if (destination) router.push(destination)
+  }, [router])
 
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-end overflow-hidden bg-gradient-to-b from-teal-700 via-teal-500 to-teal-300">

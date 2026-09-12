@@ -1,9 +1,7 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useEmulatorBoot } from '@/engine/emulator/useEmulatorBoot'
-import { useAudio } from '@/providers/AudioProvider'
 import { CrtScreen } from '@/components/ui/CrtScreen/CrtScreen'
 import { Fade } from '@/components/ui/transitions/Fade'
 import { PowerScreen } from './PowerScreen'
@@ -18,25 +16,15 @@ import { BootHints } from './BootHints'
  * (PRESS START) → Professor Oak.
  *
  * Phase logic lives in the emulator machine; this component maps a phase to a screen
- * and wires sound + skip + press-start. The title screen music plays when the title
- * appears and stops when the player starts the game.
+ * and wires skip + press-start.
+ *
+ * The boot is silent on purpose. It is the first thing a visitor sees, often with the
+ * tab in the background or in a room where sound is not welcome, and a theme starting
+ * unannounced there is the kind of thing people close a tab over. Music begins once
+ * they have chosen a mode - see `useAudioEnabled`.
  */
 export function BootSequence() {
-  const { phase, isBooting, skip, canSkip, pressStart, awaitingStart } = useEmulatorBoot()
-  const { play, stopAll } = useAudio()
-  const playedTitle = useRef(false)
-
-  useEffect(() => {
-    if (awaitingStart && !playedTitle.current) {
-      playedTitle.current = true
-      stopAll()
-      play('titleScreen', { volume: 0.5, loop: true })
-    }
-    if (phase === 'oak') {
-      stopAll()
-      play('professorOakLab', { volume: 0.5, loop: true })
-    }
-  }, [awaitingStart, phase, play, stopAll])
+  const { phase, isBooting, skip, canSkip, pressStart } = useEmulatorBoot()
 
   const screen = {
     power: <PowerScreen />,
