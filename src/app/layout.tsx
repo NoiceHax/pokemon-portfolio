@@ -7,9 +7,11 @@ import { ServiceWorkerCleanup } from '@/components/ServiceWorkerCleanup'
 import { SITE_URL } from '@/lib/seo'
 import './globals.css'
 
-const TITLE = 'Trainer Chandan - Interactive Portfolio'
-const DESCRIPTION =
-  'A Pokémon-inspired interactive software engineering portfolio. The same content, two experiences: a fast Recruiter mode and an explorable Adventure world.'
+// Shown verbatim in a link preview: `/` sets no `openGraph` of its own, so the share card
+// for the bare domain is exactly this pair. Both are kept short enough to survive the
+// ~100-character truncation WhatsApp and LinkedIn apply to a description.
+const TITLE = "Trainer Chandan's Portfolio"
+const DESCRIPTION = 'A portfolio disguised as a Pokémon adventure. Meet Chandan by exploring it.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
