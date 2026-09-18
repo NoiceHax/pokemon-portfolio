@@ -13,14 +13,15 @@ import { TrainerHeader, TrainerStats, ProjectParty, QuickActions } from '@/recru
 export const revalidate = 86400
 
 export const metadata: Metadata = {
-  // This is the canonical URL for the Trainer Card - `/` points here - so it carries the
-  // title and description a search result should show. `absolute` opts out of the Home
-  // layout's "%s - Trainer Chandan" template, which would append a second copy of a name
-  // this title already carries.
+  // `/` is the canonical URL for the Trainer Card and this route is the alternate, so
+  // the two deliberately carry identical title and description text: it is one page on
+  // two URLs, and a crawler that reaches this one should see nothing that contradicts
+  // what `/` claims. `absolute` opts out of the Home layout's "%s - Trainer Chandan"
+  // template, which would append a second copy of a name this title already carries.
   title: { absolute: 'Chandan - Software Engineer Portfolio' },
   description:
     'Chandan, a software engineer in India: Pokédex projects, the journey so far, field notes and contact - a Pokémon-inspired interactive portfolio.',
-  alternates: { canonical: '/home' },
+  alternates: { canonical: '/' },
 }
 
 /**

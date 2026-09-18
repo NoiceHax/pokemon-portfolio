@@ -25,15 +25,19 @@ import { TrainerHeader, TrainerStats, ProjectParty, QuickActions } from '@/recru
 export const revalidate = 86400
 
 export const metadata: Metadata = {
-  // `/` and `/home` now serve the same Trainer Card, so the two are consolidated onto
-  // one URL. No noindex - `/` is what gets linked and shared, and it should keep
-  // passing that equity through to `/home`. The keyword-bearing title/description live
-  // on `/home` instead: a consolidated URL's own metadata is discarded along with it,
-  // so writing them here would mean writing them for the page nobody is shown.
+  // `/` and `/home` serve the same Trainer Card, consolidated onto this URL. The bare
+  // domain is what gets typed, linked and shared, so it is the one that should be
+  // indexed - pointing it at `/home` made the site's strongest URL declare itself a
+  // duplicate and handed the equity to a page with no external links of its own.
+  // It therefore carries the title and description a search result should show.
   // `absolute` opts out of the root layout's "%s - Trainer Chandan" template.
-  title: { absolute: 'Trainer Card - Trainer Chandan' },
-  description: 'Who is Chandan? Class, region, current quest, stats and featured projects.',
-  alternates: { canonical: '/home' },
+  //
+  // The share card is unaffected: this page sets no `openGraph`, so og:title and
+  // og:description still come from the root layout.
+  title: { absolute: 'Chandan - Software Engineer Portfolio' },
+  description:
+    'Chandan, a software engineer in India: Pokédex projects, the journey so far, field notes and contact - a Pokémon-inspired interactive portfolio.',
+  alternates: { canonical: '/' },
 }
 
 /**

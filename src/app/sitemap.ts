@@ -35,9 +35,11 @@ function lastModified(date: string | undefined): Date | undefined {
 
 // `/adventure` is omitted on purpose: it is a client-only page loaded with `ssr: false`,
 // so a crawler receives nothing but the "Loading world…" fallback.
+// `/home` is omitted: it is the alternate URL for the Trainer Card and canonicals to
+// `''` (the bare domain), and submitting a URL that points its canonical elsewhere is
+// what puts it in Search Console's "Alternate page with proper canonical tag" bucket.
 const STATIC_PATHS = [
   '',
-  '/home',
   '/home/pokedex',
   '/home/experience',
   '/home/journal',
