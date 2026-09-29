@@ -8,7 +8,7 @@ import { getDbBlogPost } from '@/lib/db/blogPosts'
 import { AUTHOR_NAME, JsonLd, SITE_NAME, blogPostingSchema, journalOgImage } from '@/lib/seo'
 import type { BlogFrontmatter } from '@/content/schema'
 import { Panel } from '@/recruiter/ui'
-import { ENTRY_TYPE_META } from '@/recruiter/journal'
+import { ENTRY_TYPE_META, ReadingProgress } from '@/recruiter/journal'
 
 // DB-backed content: render fresh per request so newly published/edited posts appear
 // immediately rather than from a cached static render.
@@ -98,6 +98,7 @@ export default async function JournalEntryPage({ params }: EntryPageProps) {
 
   return (
     <article className="space-y-6">
+      <ReadingProgress />
       <JsonLd data={blogPostingSchema(fm)} />
       <Link
         href="/home/journal"
