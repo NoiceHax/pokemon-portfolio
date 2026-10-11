@@ -54,10 +54,11 @@ export const profile: Profile = {
   // adding the corresponding projects in @/content/data/projects.ts.
   featuredProjectSlugs: [
     'learnflow-ai',
-    'aasrah',
     'divyalipi-ai',
+    '65to70',
+    'aasrah',
     'chinnaswamy-farm-stay',
     'shree-solar',
   ],
-  bio: "Placeholder bio - replace with Chandan’s real summary.",
+  bio: 'Placeholder bio - replace with Chandan’s real summary.',
 }

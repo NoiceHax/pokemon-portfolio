@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import type { Project } from '@/content/schema'
 import { Panel, TypePill, StatusDot } from '@/recruiter/ui'
 import { ProjectCover } from './ProjectCover'
+import { ProjectLinks } from './ProjectLinks'
 
 /**
  * A single Pokédex card (mockup: No., status, cover, title, type pills, View Entry).
@@ -28,7 +29,7 @@ export function PokedexCard({ project }: { project: Project }) {
       </div>
 
       <p className="mt-3 font-mono text-xs uppercase tracking-wide text-ink-faint">Project Title</p>
-      <p className="font-display text-lg font-bold text-ink">{project.title}</p>
+      <p className="break-words font-display text-lg font-bold text-ink">{project.title}</p>
 
       <div className="mt-2 flex flex-wrap items-center gap-1.5">
         <span className="font-mono text-xs text-ink-faint">Type</span>
@@ -48,9 +49,12 @@ export function PokedexCard({ project }: { project: Project }) {
         </div>
       ) : null}
 
+      {/* mt-auto pins the actions to the bottom so cards in a row line up. */}
+      <ProjectLinks links={project.links} compact className="mt-auto pt-4" />
+
       <Link
         href={`/home/pokedex/${project.slug}`}
-        className="mt-4 flex min-h-11 items-center justify-between rounded-md border border-edge px-3 py-3 font-mono text-sm text-poke-red-dark transition-colors hover:border-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
+        className={`${project.links.length ? 'mt-2' : 'mt-auto'} flex min-h-11 items-center justify-between rounded-md border border-edge px-3 py-3 font-mono text-sm text-poke-red-dark transition-colors hover:border-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red`}
       >
         View Entry
         <ArrowRight aria-hidden className="h-4 w-4" />

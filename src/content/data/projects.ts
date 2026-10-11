@@ -26,17 +26,13 @@ export const projects: ProjectInput[] = [
     },
     problemSolved:
       'Traditional learning platforms force every student through the same curriculum regardless of their pace or understanding. LearnFlow AI continuously evaluates mastery, generates personalized study paths, and uses Socratic questioning to guide students toward deeper conceptual understanding rather than simply providing answers.',
-    stack: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Python',
-      'FastAPI',
-      'PostgreSQL',
-      'RAG',
-      'Gemini',
-    ],
+    stack: ['Next.js', 'React', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'RAG', 'Gemini'],
     links: [
+      {
+        label: 'Live Site',
+        href: 'https://learnflow.noicehax.dev',
+        kind: 'live',
+      },
       {
         label: 'Repository',
         href: 'https://github.com/NoiceHax/Learnflow-AI',
@@ -60,16 +56,13 @@ export const projects: ProjectInput[] = [
     },
     problemSolved:
       'Helping homeless individuals often requires coordination between multiple organizations, resulting in delayed responses and duplicated efforts. Aasrah creates a unified workflow where citizens submit reports, NGOs manage cases, volunteers choose or receive assignments, and every report remains traceable throughout its lifecycle.',
-    stack: [
-      'React',
-      'Node.js',
-      'Express',
-      'MongoDB',
-      'Tailwind CSS',
-      'Google Maps',
-      'Cloudinary',
-    ],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Google Maps', 'Cloudinary'],
     links: [
+      {
+        label: 'Live Site',
+        href: 'https://aasrah.noicehax.dev',
+        kind: 'live',
+      },
       {
         label: 'Repository',
         href: 'https://github.com/NoiceHax/Aasrah',
@@ -93,16 +86,7 @@ export const projects: ProjectInput[] = [
     },
     problemSolved:
       'Existing OCR systems perform poorly on degraded historical Sanskrit manuscripts due to image noise, faded ink, and handwritten scripts. DivyaLipi AI combines document localization, OCR, image preprocessing, and LLM-assisted translation to recover readable digital text from centuries-old manuscripts.',
-    stack: [
-      'React',
-      'FastAPI',
-      'Python',
-      'YOLOv8',
-      'OpenCV',
-      'Gemini',
-      'Computer Vision',
-      'OCR',
-    ],
+    stack: ['React', 'FastAPI', 'Python', 'YOLOv8', 'OpenCV', 'Gemini', 'Computer Vision', 'OCR'],
     links: [
       {
         label: 'Repository',
@@ -132,14 +116,7 @@ export const projects: ProjectInput[] = [
     },
     problemSolved:
       'Managing hundreds of megabytes of event photos on free hosting while allowing non-technical administrators to publish new events is difficult. The platform uses GitHub as a headless CMS, jsDelivr as a global CDN, and runtime event discovery to deliver scalable media hosting without requiring redeployment or paid infrastructure.',
-    stack: [
-      'Next.js',
-      'TypeScript',
-      'GitHub API',
-      'jsDelivr',
-      'ISR',
-      'Tailwind CSS',
-    ],
+    stack: ['Next.js', 'TypeScript', 'GitHub API', 'jsDelivr', 'ISR', 'Tailwind CSS'],
     links: [
       {
         label: 'Website',
@@ -154,29 +131,35 @@ export const projects: ProjectInput[] = [
     dexNumber: 5,
     title: 'AI Security Scanner',
     summary:
-      'An AI-powered platform for analyzing repositories and identifying code quality and security issues.',
+      'A security scanner that statically analyzes repositories and probes live sites, then summarizes findings with AI.',
     status: 'prototype',
-    types: ['electric'],
+    types: ['fire'],
     cover: {
       src: '/projects/qwerty.png',
       alt: 'AI Security Scanner',
     },
     problemSolved:
-      'Developers often rely on multiple disconnected tools for repository analysis, vulnerability detection, and code review. Qwerty AI Scanner consolidates these workflows into a unified interface that analyzes projects, identifies potential issues, and provides AI-generated explanations and actionable recommendations.',
+      'Security checks are usually spread across separate tools for secrets, dependencies, headers and endpoints. The scanner clones a repository for static checks (secrets, dangerous functions, dependency audit, misconfiguration), probes the live site for TLS, headers, CORS, cookies and harmless injection tests, then correlates and scores the findings and has Gemini explain them, with scans running as queued jobs that report progress live.',
     stack: [
       'Next.js',
-      'TypeScript',
       'FastAPI',
       'Python',
-      'AI',
-      'GitHub API',
-      'Tailwind CSS',
+      'Gemini',
+      'PostgreSQL',
+      'Redis + RQ',
+      'WebSockets',
+      'GitHub OAuth',
     ],
     links: [
       {
         label: 'Live Demo',
         href: 'https://qwerty-iota-three.vercel.app/dashboard',
         kind: 'demo',
+      },
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/qwerty',
+        kind: 'repo',
       },
     ],
   },
@@ -195,14 +178,7 @@ export const projects: ProjectInput[] = [
     },
     problemSolved:
       'Traditional portfolio websites are static and forgettable. This project recreates the feel of Pokémon FireRed in the browser with a custom tile engine, collision detection, layered maps, NPC interactions, building interiors, camera movement, and interactive project exploration to create a memorable developer portfolio.',
-    stack: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Canvas',
-      'Tailwind CSS',
-      'Framer Motion',
-    ],
+    stack: ['Next.js', 'React', 'TypeScript', 'Canvas', 'Tailwind CSS', 'Framer Motion'],
     links: [
       {
         label: 'Live Site',
@@ -271,7 +247,7 @@ export const projects: ProjectInput[] = [
     status: 'production',
     types: ['fire'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/minecraft-manager-cover.jpg',
       alt: 'Minecraft Manager',
     },
     problemSolved:
@@ -295,13 +271,18 @@ export const projects: ProjectInput[] = [
     status: 'prototype',
     types: ['psychic'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/drafter.png',
       alt: 'Drafter',
     },
     problemSolved:
       'Creators often bounce between chatbots and docs to go from idea to shootable script. Drafter stages the whole pipeline — refine, angle, hooks, research, scene script, and visual directions — as a regeneratable workspace instead of a one-shot chat.',
     stack: ['Next.js', 'TypeScript', 'Python', 'FastAPI', 'SSE', 'PostgreSQL'],
     links: [
+      {
+        label: 'Live Site',
+        href: 'https://drafter.noicehax.dev',
+        kind: 'live',
+      },
       {
         label: 'Repository',
         href: 'https://github.com/NoiceHax/Drafter',
@@ -319,21 +300,18 @@ export const projects: ProjectInput[] = [
     status: 'production',
     types: ['psychic'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/ragnotebook.png',
       alt: 'PDFChat RAG Notebook',
     },
     problemSolved:
       'Generic chatbots invent answers about uploaded documents. This pipeline chunks PDFs with page metadata, embeds into ChromaDB, and generates answers with citations so every claim stays tied to source pages.',
-    stack: [
-      'React 19',
-      'Vite',
-      'FastAPI',
-      'PyMuPDF',
-      'ChromaDB',
-      'Gemini Embeddings',
-      'Groq',
-    ],
+    stack: ['React 19', 'Vite', 'FastAPI', 'PyMuPDF', 'ChromaDB', 'Gemini Embeddings', 'Groq'],
     links: [
+      {
+        label: 'Live Site',
+        href: 'https://rag.noicehax.dev',
+        kind: 'live',
+      },
       {
         label: 'Repository',
         href: 'https://github.com/NoiceHax/ragnotebook',
@@ -351,13 +329,18 @@ export const projects: ProjectInput[] = [
     status: 'production',
     types: ['electric'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/search-typeahead.png',
       alt: 'Search Typeahead System',
     },
     problemSolved:
       'Keystroke-path search needs single-digit millisecond lookups, relevance under both all-time and trending scores, and batched write pressure. This service implements prefix ranking, an in-process distributed cache, and aggregated counter updates against the ORCAS dataset.',
     stack: ['Node.js', 'TypeScript', 'Caching', 'ORCAS Dataset'],
     links: [
+      {
+        label: 'Live Site',
+        href: 'https://search.noicehax.dev',
+        kind: 'live',
+      },
       {
         label: 'Repository',
         href: 'https://github.com/NoiceHax/Search-Typeahead-System',
@@ -399,7 +382,7 @@ export const projects: ProjectInput[] = [
     status: 'prototype',
     types: ['normal'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/waltuh-cover.jpg',
       alt: 'Waltuh',
     },
     problemSolved:
@@ -423,13 +406,18 @@ export const projects: ProjectInput[] = [
     status: 'prototype',
     types: ['normal'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/github-analyzer.png',
       alt: 'GitHub Portfolio Analyzer',
     },
     problemSolved:
       'Developers struggle to see how recruiters read their GitHub. The analyzer scores profiles, reviews repository health, and generates README-oriented recommendations in a single responsive UI.',
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'GitHub API'],
     links: [
+      {
+        label: 'Live Site',
+        href: 'https://github.noicehax.dev',
+        kind: 'live',
+      },
       {
         label: 'Repository',
         href: 'https://github.com/NoiceHax/githubanalyzer',
@@ -471,13 +459,18 @@ export const projects: ProjectInput[] = [
     status: 'prototype',
     types: ['psychic'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/persona-chatbot.png',
       alt: 'Scaler Mentors Persona Chat',
     },
     problemSolved:
       'Generic tutoring chatbots lack a consistent teaching voice. Separate mentor personas (DSA, career strategy, intuitive explanations) keep tone and guidance style stable while sharing one LLM backend.',
     stack: ['React', 'Vite', 'Node.js', 'NVIDIA NIM', 'LLM'],
     links: [
+      {
+        label: 'Live Site',
+        href: 'https://persona.noicehax.dev',
+        kind: 'live',
+      },
       {
         label: 'Repository',
         href: 'https://github.com/NoiceHax/persona-chatbot',
@@ -519,7 +512,7 @@ export const projects: ProjectInput[] = [
     status: 'production',
     types: ['normal'],
     cover: {
-      src: '/assets/Miscellaneous/Town_Map.png',
+      src: '/projects/vibecoolertunes-cover.jpg',
       alt: 'vibecoolertunes',
     },
     problemSolved:
@@ -532,5 +525,185 @@ export const projects: ProjectInput[] = [
         kind: 'repo',
       },
     ],
+  },
+
+  {
+    slug: '65to70',
+    dexNumber: 20,
+    title: '65to70',
+    summary:
+      'A local-first browser extension that detects what you finish watching across sites, merges watchlists, and syncs to Simkl, Trakt or Letterboxd.',
+    status: 'prototype',
+    types: ['water'],
+    cover: {
+      src: '/projects/65to70.png',
+      alt: '65to70',
+    },
+    problemSolved:
+      'Watch history and watchlists end up scattered across streaming sites, and trackers want your data uploaded first. The extension asks for no host permissions at install, registers a site only when you switch it on, identifies titles through TMDB with an offline fallback index, and keeps history in IndexedDB until you choose to push it to a tracker you connected.',
+    stack: [
+      'TypeScript',
+      'WXT (MV3)',
+      'React 19',
+      'Dexie / IndexedDB',
+      'TMDB API',
+      'Vitest',
+      'GitHub Actions',
+    ],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/65to70',
+        kind: 'repo',
+      },
+    ],
+    featured: true,
+  },
+
+  {
+    slug: 'tastebin',
+    dexNumber: 21,
+    title: 'Tastebin',
+    summary:
+      'A self-hosted, invite-only pastebin with multi-file uploads, a built-in PDF reader, expiry, burn-after-reading and curl uploads.',
+    status: 'prototype',
+    types: ['water'],
+    cover: {
+      src: '/projects/tastebin.png',
+      alt: 'Tastebin',
+    },
+    problemSolved:
+      'Sharing code, files and PDFs privately without a public paste site. Pastes are unlisted and can expire or delete themselves after a set number of reads, and a link preview never spends a read because only an explicit Reveal counts. Uploads are stored once by hash and type-checked from their bytes.',
+    stack: [
+      'FastAPI',
+      'SQLAlchemy 2',
+      'Alembic',
+      'PostgreSQL',
+      'Next.js 16',
+      'CodeMirror 6',
+      'pdf.js',
+      'Docker',
+    ],
+    links: [],
+  },
+
+  {
+    slug: 'homelab-control-panel',
+    dexNumber: 22,
+    title: 'Homelab Control Panel',
+    summary:
+      'A self-hosted dashboard for managing Docker containers on a homelab over SSH, with a Minecraft server console and properties editor.',
+    status: 'prototype',
+    types: ['fire'],
+    cover: {
+      src: '/projects/homelab-control-panel.png',
+      alt: 'Homelab Control Panel',
+    },
+    problemSolved:
+      'Managing a homelab usually means SSHing in to run docker commands. The panel gives a role-gated web UI to start, stop and restart containers, stream logs and watch live host and container stats over WebSockets, with every change audit-logged. A Minecraft module shows server status, runs RCON commands and edits server.properties.',
+    stack: [
+      'FastAPI',
+      'SQLAlchemy',
+      'Docker SDK',
+      'asyncssh',
+      'Next.js 15',
+      'shadcn/ui',
+      'xterm.js',
+      'WebSockets',
+    ],
+    links: [],
+  },
+
+  {
+    slug: 'expensetrail',
+    dexNumber: 23,
+    title: 'ExpenseTrail (DevOps Capstone)',
+    summary:
+      'A small expense tracker taken from laptop to a monitored Kubernetes deploy: CI with security scans, Helm, Terraform for EKS, Argo CD and Grafana.',
+    status: 'prototype',
+    types: ['fire'],
+    cover: {
+      src: '/projects/expensetrail.png',
+      alt: 'ExpenseTrail',
+    },
+    problemSolved:
+      'A capstone showing the full automated path for a simple app. The pipeline tests, scans code and images (Bandit, pip-audit, gitleaks, Trivy) and pushes SHA-tagged images to GHCR; Helm deploys it with migrations and autoscaling, Argo CD keeps it in sync, and Prometheus and Grafana monitor it. Terraform ran against LocalStack rather than real AWS.',
+    stack: [
+      'FastAPI',
+      'PostgreSQL',
+      'GitHub Actions',
+      'Helm',
+      'Terraform',
+      'Argo CD',
+      'Prometheus / Grafana',
+      'Trivy',
+    ],
+    links: [],
+  },
+
+  {
+    slug: 'bohred',
+    dexNumber: 24,
+    title: 'Bohred',
+    summary:
+      'A periodic-table learning app with drag-and-drop placement, a quiz mode and badges, syncing progress to Firebase.',
+    status: 'production',
+    types: ['grass'],
+    cover: {
+      src: '/projects/bohred.png',
+      alt: 'Bohred',
+    },
+    problemSolved:
+      'Memorising the periodic table is dull. Students place elements into the grid by drag-and-drop, play a game mode and earn badges for streaks, groups and blocks mastered, with progress merged between the browser and Firestore under Google sign-in.',
+    stack: ['React 19', 'Vite', 'React Router 7', 'Firebase Auth', 'Firestore', 'Netlify'],
+    links: [
+      {
+        label: 'Live Site',
+        href: 'https://bohred.netlify.app',
+        kind: 'live',
+      },
+    ],
+  },
+
+  {
+    slug: 'starmap-wallpaper',
+    dexNumber: 25,
+    title: 'Starmap Wallpaper',
+    summary:
+      'Generates a wallpaper of the real night sky above your location (stars, constellations and planets) and applies it on Hyprland.',
+    status: 'production',
+    types: ['normal'],
+    cover: {
+      src: '/projects/starmap-wallpaper.png',
+      alt: 'Starmap Wallpaper',
+    },
+    problemSolved:
+      'A desktop wallpaper that shows the sky as it actually is right now. It computes star positions from the Hipparcos catalogue and planet positions with Skyfield, sizes and colours stars by magnitude, detects location and screen resolution, and redraws every 12 hours on a systemd timer.',
+    stack: ['Python', 'Skyfield', 'NumPy', 'pandas', 'matplotlib', 'systemd', 'Hyprland'],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/starmap-wallpaper',
+        kind: 'repo',
+      },
+    ],
+  },
+
+  {
+    slug: 'minecraft-server',
+    dexNumber: 26,
+    title: 'Minecraft Server',
+    summary:
+      'A self-hosted Paper Minecraft server on my homelab, run in Docker and managed end to end by Minecraft Manager.',
+    status: 'production',
+    types: ['fire'],
+    cover: {
+      src: '/projects/minecraft-server-cover.jpg',
+      alt: 'Minecraft block-letter sign with toy figures',
+    },
+    problemSolved:
+      "Friends wanted an always-available survival world without paying for hosting or leaving a 4 GB JVM running all day. The server runs Paper 26.2 on Java 25 in the itzg/minecraft-server container with Aikar's JVM flags, boots in about 14 seconds, and is reachable over the internet. Minecraft Manager watches its logs, shuts it down after 15 idle minutes, and lets friends check status or start it from Discord.",
+    stack: ['Docker', 'itzg/minecraft-server', 'Paper 26.2', 'Java 25', 'RCON', 'Discord', 'Linux'],
+    links: [],
   },
 ]

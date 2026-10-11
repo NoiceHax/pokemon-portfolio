@@ -2,10 +2,9 @@ import Image from 'next/image'
 import type { Project } from '@/content/schema'
 
 /**
- * Project cover art. Until real project imagery exists, we render a clean, on-brand
- * placeholder - a soft gradient tinted by the project's primary type with the dex
- * number and a Poké Ball motif - instead of a raw sprite sheet. When a project provides
- * a real (non-placeholder) cover image, that is shown instead.
+ * Project cover art. A project's real screenshot when it has one; until then (a cover
+ * pointing at the shared /Miscellaneous/ stand-in, or `isPlaceholder`), a big Poké Ball
+ * reading "Image incoming" on a gradient tinted by the project's primary type.
  */
 
 const TYPE_GRADIENT: Record<string, string> = {
@@ -51,21 +50,79 @@ export function ProjectCover({
   }
 
   const grad = TYPE_GRADIENT[project.types[0]] ?? TYPE_GRADIENT.normal
-  const dex = `No. ${String(project.dexNumber).padStart(3, '0')}`
   return (
     <div
-      className={`relative flex w-full items-center justify-center bg-gradient-to-br ${grad} ${className}`}
+      className={`group/cover relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-br ${grad} ${className}`}
       role="img"
-      aria-label={`${project.title} cover`}
+      aria-label={`${project.title} - screenshot coming soon`}
     >
-      {/* Faint Poké Ball motif */}
-      <span
-        aria-hidden
-        className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full border-2 border-ink/25"
-      >
-        <span className="h-2 w-2 rounded-full bg-ink/25" />
-      </span>
-      <span className="font-display text-2xl text-ink/50">{dex}</span>
+      <IncomingBall />
     </div>
+  )
+}
+
+/**
+ * A big Poké Ball filling most of the box, with "Image incoming" on its lower half.
+ * An SVG so it scales with whatever height the caller gives the cover (a card or a full
+ * entry) without breakpoint juggling. Shakes like a catch attempt when the card is hovered.
+ */
+function IncomingBall() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 200 200"
+      className="group-hover/cover:pokeball-wobble h-[86%] w-auto drop-shadow-md"
+    >
+      <defs>
+        <clipPath id="incoming-ball-clip">
+          <circle cx="100" cy="100" r="94" />
+        </clipPath>
+      </defs>
+      <g clipPath="url(#incoming-ball-clip)">
+        <rect width="200" height="100" className="fill-poke-red" />
+        <rect y="100" width="200" height="100" className="fill-surface-raised" />
+        <rect y="92" width="200" height="16" className="fill-ink" />
+        {/* Gloss on the red half. */}
+        <ellipse
+          cx="62"
+          cy="44"
+          rx="26"
+          ry="14"
+          className="fill-white"
+          opacity="0.35"
+          transform="rotate(-24 62 44)"
+        />
+      </g>
+      <circle cx="100" cy="100" r="94" fill="none" className="stroke-ink" strokeWidth="8" />
+      <circle cx="100" cy="100" r="24" className="fill-ink" />
+      <circle cx="100" cy="100" r="15" className="fill-surface-raised" />
+      <circle
+        cx="100"
+        cy="100"
+        r="9"
+        fill="none"
+        className="stroke-ink"
+        strokeOpacity="0.25"
+        strokeWidth="2"
+      />
+      <text
+        x="100"
+        y="146"
+        textAnchor="middle"
+        className="fill-ink"
+        style={{ fontFamily: 'var(--font-display)', fontSize: 13, letterSpacing: 1 }}
+      >
+        IMAGE
+      </text>
+      <text
+        x="100"
+        y="166"
+        textAnchor="middle"
+        className="fill-ink"
+        style={{ fontFamily: 'var(--font-display)', fontSize: 13, letterSpacing: 1 }}
+      >
+        INCOMING
+      </text>
+    </svg>
   )
 }

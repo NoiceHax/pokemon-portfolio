@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { ArrowLeft, ExternalLink } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import type { Project } from '@/content/schema'
 import { Panel, TypePill, StatusDot } from '@/recruiter/ui'
 import { ProjectCover } from './ProjectCover'
+import { ProjectLinks } from './ProjectLinks'
 
 /**
  * Full Pokédex entry (project detail). Renders the rich fields from the Project
@@ -37,6 +38,9 @@ export function PokedexEntry({ project }: { project: Project }) {
             <TypePill key={type} type={type} />
           ))}
         </div>
+
+        {/* The links are the main thing a visitor wants here, so they sit above the fold. */}
+        <ProjectLinks links={project.links} className="mt-4" />
 
         <div className="mt-4 overflow-hidden rounded-md border border-edge bg-surface-sunken">
           {/* Full width of the Home main column: max-w-6xl minus the 18rem sidebar, gap
@@ -88,26 +92,6 @@ export function PokedexEntry({ project }: { project: Project }) {
         {project.lessons?.length ? (
           <Section title="Lessons">
             <List items={project.lessons} />
-          </Section>
-        ) : null}
-
-        {project.links.length ? (
-          <Section title="Links">
-            <ul className="flex flex-wrap gap-3">
-              {project.links.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 font-mono text-sm text-poke-red-dark hover:underline"
-                  >
-                    {link.label}
-                    <ExternalLink aria-hidden className="h-3 w-3" />
-                  </a>
-                </li>
-              ))}
-            </ul>
           </Section>
         ) : null}
       </Panel>
