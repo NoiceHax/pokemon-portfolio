@@ -12,6 +12,17 @@ import type { ExperienceInput } from '@/content/schema'
  */
 
 export const experience: ExperienceInput = [
+  // Education: one stop on the route. Grouped members render in this order, BITS first.
+  {
+    slug: 'bits-pilani',
+    year: '2024 - Present',
+    location: 'BITS Pilani',
+    role: 'B.Sc. Computer Science',
+    description:
+      'Bachelor of Science in Computer Science from BITS Pilani, earned alongside the Scaler School of Technology programme.',
+    current: true,
+    group: 'Education',
+  },
   {
     slug: 'scaler-school-of-technology',
     year: '2024 - Present',
@@ -20,6 +31,7 @@ export const experience: ExperienceInput = [
     description:
       'Pursuing a Bachelor of Science in Computer Science while specializing in full stack development, artificial intelligence, system design, and software engineering through project based learning.',
     current: true,
+    group: 'Education',
   },
 
   {

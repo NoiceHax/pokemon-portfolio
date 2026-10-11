@@ -24,6 +24,12 @@ export const experienceMilestoneSchema = z.object({
   description: z.string().min(1),
   /** Marks the current/most-recent stage (highlighted on the route). */
   current: z.boolean().default(false),
+  /**
+   * Milestones sharing a group label (e.g. "Education") render together as one stop on the
+   * route, in the order they're authored here - so a degree and the programme it runs
+   * alongside read as a single entry. Members must be adjacent in the list.
+   */
+  group: z.string().min(1).optional(),
   isPlaceholder: z.boolean().default(false),
 })
 export type ExperienceMilestone = z.infer<typeof experienceMilestoneSchema>
