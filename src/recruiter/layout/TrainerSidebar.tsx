@@ -50,7 +50,7 @@ export function TrainerSidebar() {
         </ul>
       </nav>
 
-      {/* "A Cool Feature" - opens the hidden developer terminal (same as pressing `). */}
+      {/* "A Cool Feature" - opens the Who's That Pokémon? game. */}
       <CoolFeatureButton />
 
       {/* Latest Spotify track (hidden until Spotify creds are configured). */}

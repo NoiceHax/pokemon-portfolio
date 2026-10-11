@@ -28,6 +28,11 @@ const nextConfig = {
     // lucide-react is a barrel export; without this every icon import pulls the whole
     // icon set into the client bundle.
     optimizePackageImports: ['lucide-react'],
+    // /api/wtp/round-image reads the silhouettes from disk (they have no public URL), so
+    // they have to ship with that function.
+    outputFileTracingIncludes: {
+      '/api/wtp/round-image': ['./src/lib/wtp/data/silhouettes/**'],
+    },
   },
   /**
    * Baseline security headers. Defined here rather than in vercel.json so they also apply

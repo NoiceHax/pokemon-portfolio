@@ -15,6 +15,7 @@ import { getAnalyticsBuffer } from '@/lib/analytics'
 export function DevConsole() {
   const { play } = useAudio()
   const easterEggMusicRef = useRef(false)
+  const rootRef = useRef<HTMLDivElement>(null)
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
   const [lines, setLines] = useState<string[]>([
@@ -34,6 +35,13 @@ export function DevConsole() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === '`') {
+        // A backtick typed into some other text field (a game's guess box, a form) is
+        // just a character. Inside the console's own input it still closes it.
+        const t = e.target
+        const typing =
+          t instanceof HTMLElement &&
+          (t instanceof HTMLInputElement || t instanceof HTMLTextAreaElement || t.isContentEditable)
+        if (typing && !rootRef.current?.contains(t)) return
         e.preventDefault()
         setOpen((o) => {
           if (!o) {
@@ -51,20 +59,8 @@ export function DevConsole() {
         easterEggMusicRef.current = false
       }
     }
-    // Also openable from UI (the "A Cool Feature" button) - same effect as backtick.
-    const onOpenEvent = () => {
-      if (!easterEggMusicRef.current) {
-        easterEggMusicRef.current = true
-        play('jigglypuffsSong', { volume: MUSIC_VOLUME, loop: true })
-      }
-      setOpen(true)
-    }
     window.addEventListener('keydown', onKey)
-    window.addEventListener('open-dev-console', onOpenEvent)
-    return () => {
-      window.removeEventListener('keydown', onKey)
-      window.removeEventListener('open-dev-console', onOpenEvent)
-    }
+    return () => window.removeEventListener('keydown', onKey)
   }, [open, play])
 
   const run = (raw: string) => {
@@ -107,6 +103,7 @@ export function DevConsole() {
     // world's global key handler bails out whenever an element with this attribute exists,
     // so arrow/WASD/interact keys don't leak through to move the player behind the console.
     <div
+      ref={rootRef}
       data-input-capture="true"
       className="fixed inset-x-0 bottom-0 z-[100] max-h-[45vh] overflow-hidden border-t-2 border-poke-red bg-black/95 font-mono text-xs text-green-400"
     >

@@ -1,0 +1,7893 @@
+[
+ {
+  "id": 1,
+  "slug": "bulbasaur",
+  "name": "Bulbasaur",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Seed Pokémon",
+  "flavor": {
+   "text": "While it is young, it uses the nutrients that are stored in the seeds on its back in order to grow.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 6.9,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "034038939467",
+   "r": "420a5238d246",
+   "c": "571158e18990"
+  }
+ },
+ {
+  "id": 2,
+  "slug": "ivysaur",
+  "name": "Ivysaur",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Seed Pokémon",
+  "flavor": {
+   "text": "The bulb on its back grows as it absorbs nutrients. The bulb gives off a pleasant aroma when it blooms.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 13.0,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Bulbasaur",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "b830f5567b4e",
+   "r": "083bded2763f",
+   "c": "224b5f7f1413"
+  }
+ },
+ {
+  "id": 3,
+  "slug": "venusaur",
+  "name": "Venusaur",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Seed Pokémon",
+  "flavor": {
+   "text": "As it warms itself and absorbs the sunlight, its flower petals release a pleasant fragrance.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 100.0,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Ivysaur",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "fe71c70e890c",
+   "r": "d245a8784331",
+   "c": "aba4b7e53f6e"
+  }
+ },
+ {
+  "id": 4,
+  "slug": "charmander",
+  "name": "Charmander",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Lizard Pokémon",
+  "flavor": {
+   "text": "If it's healthy, the flame on the tip of its tail will burn vigorously, even if it gets a bit wet.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 8.5,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "493a94c6b4e3",
+   "r": "cddee3b8703c",
+   "c": "ea603c13d1dc"
+  }
+ },
+ {
+  "id": 5,
+  "slug": "charmeleon",
+  "name": "Charmeleon",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Flame Pokémon",
+  "flavor": {
+   "text": "If it becomes agitated during battle, it spouts intense flames, incinerating its surroundings.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 19.0,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Charmander",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "231e8617cfcd",
+   "r": "21937804dafa",
+   "c": "994580d78176"
+  }
+ },
+ {
+  "id": 6,
+  "slug": "charizard",
+  "name": "Charizard",
+  "gen": 1,
+  "types": [
+   "fire",
+   "flying"
+  ],
+  "genus": "Flame Pokémon",
+  "flavor": {
+   "text": "It uses its wings to fly high. The temperature of its fire increases as it gains experience in battle.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 90.5,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Charmeleon",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d30bd9b73537",
+   "r": "b3d8a6188390",
+   "c": "ec6db031b3e8"
+  }
+ },
+ {
+  "id": 7,
+  "slug": "squirtle",
+  "name": "Squirtle",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Tiny Turtle Pokémon",
+  "flavor": {
+   "text": "When it feels threatened, it draws its legs inside its shell and sprays water from its mouth.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 9.0,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "6812d78a7a69",
+   "r": "78f0f3227c2f",
+   "c": "0129cb6fb550"
+  }
+ },
+ {
+  "id": 8,
+  "slug": "wartortle",
+  "name": "Wartortle",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Turtle Pokémon",
+  "flavor": {
+   "text": "Its long, furry tail is a symbol of longevity, making it quite popular among older people.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 22.5,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Squirtle",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "cd1896c60d1a",
+   "r": "6b114be29234",
+   "c": "3d22df09087f"
+  }
+ },
+ {
+  "id": 9,
+  "slug": "blastoise",
+  "name": "Blastoise",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Shellfish Pokémon",
+  "flavor": {
+   "text": "It firmly plants its feet on the ground before shooting water from the jets on its back.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 85.5,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Wartortle",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "944ba3544804",
+   "r": "4ecd99219dbe",
+   "c": "95aca0313ce2"
+  }
+ },
+ {
+  "id": 10,
+  "slug": "caterpie",
+  "name": "Caterpie",
+  "gen": 1,
+  "types": [
+   "bug"
+  ],
+  "genus": "Worm Pokémon",
+  "flavor": {
+   "text": "It crawls into foliage where it camouflages itself among leaves that are the same color as its body.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 2.9,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3aad830a0802",
+   "r": "51981c314822",
+   "c": "b821c041eff9"
+  }
+ },
+ {
+  "id": 11,
+  "slug": "metapod",
+  "name": "Metapod",
+  "gen": 1,
+  "types": [
+   "bug"
+  ],
+  "genus": "Cocoon Pokémon",
+  "flavor": {
+   "text": "This is its pre- evolved form. At this stage, it can only harden, so it remains motionless to avoid attack.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 9.9,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Caterpie",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f4a34b8d6f43",
+   "r": "0fef7d9d352c",
+   "c": "2933891cb045"
+  }
+ },
+ {
+  "id": 12,
+  "slug": "butterfree",
+  "name": "Butterfree",
+  "gen": 1,
+  "types": [
+   "bug",
+   "flying"
+  ],
+  "genus": "Butterfly Pokémon",
+  "flavor": {
+   "text": "It flits from flower to flower, collecting honey. It can even identify distant flowers in bloom.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 32.0,
+  "color": "white",
+  "habitat": "forest",
+  "shape": "bug-wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Metapod",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8b8cef9a6d2d",
+   "r": "640e01874dc6",
+   "c": "c1be1ee2bea2"
+  }
+ },
+ {
+  "id": 13,
+  "slug": "weedle",
+  "name": "Weedle",
+  "gen": 1,
+  "types": [
+   "bug",
+   "poison"
+  ],
+  "genus": "Hairy Bug Pokémon",
+  "flavor": {
+   "text": "The barb on top of its head secretes a strong poison. It uses this toxic barb to protect itself.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 3.2,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "5e995b99a7ed",
+   "r": "ad1f3dee9bd5",
+   "c": "0b970f58a233"
+  }
+ },
+ {
+  "id": 14,
+  "slug": "kakuna",
+  "name": "Kakuna",
+  "gen": 1,
+  "types": [
+   "bug",
+   "poison"
+  ],
+  "genus": "Cocoon Pokémon",
+  "flavor": {
+   "text": "Nearly incapable of movement, it leans against stout trees while waiting for its evolution.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 10.0,
+  "color": "yellow",
+  "habitat": "forest",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Weedle",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "acdb6d101e0d",
+   "r": "d32789822daf",
+   "c": "581c9b6046dd"
+  }
+ },
+ {
+  "id": 15,
+  "slug": "beedrill",
+  "name": "Beedrill",
+  "gen": 1,
+  "types": [
+   "bug",
+   "poison"
+  ],
+  "genus": "Poison Bee Pokémon",
+  "flavor": {
+   "text": "It uses sharp, poisonous stings to defeat prey, then takes the victim back to its nest for food.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 29.5,
+  "color": "yellow",
+  "habitat": "forest",
+  "shape": "bug-wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Kakuna",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e1a81bd8cb64",
+   "r": "720a2e05c74b",
+   "c": "ba9d2c29b8ae"
+  }
+ },
+ {
+  "id": 16,
+  "slug": "pidgey",
+  "name": "Pidgey",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Tiny Bird Pokémon",
+  "flavor": {
+   "text": "It rapidly flaps its wings in the grass, stirring up a dust cloud that drives insect prey out into the open.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 1.8,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "61ed48420163",
+   "r": "85217d2aff06",
+   "c": "88a23c35edf2"
+  }
+ },
+ {
+  "id": 17,
+  "slug": "pidgeotto",
+  "name": "Pidgeotto",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Bird Pokémon",
+  "flavor": {
+   "text": "It slowly flies in a circular pattern, all the while keeping a sharp lookout for prey.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 30.0,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Pidgey",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f82f27cad599",
+   "r": "35cf2814e353",
+   "c": "d9ac2eadbb6e"
+  }
+ },
+ {
+  "id": 18,
+  "slug": "pidgeot",
+  "name": "Pidgeot",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Bird Pokémon",
+  "flavor": {
+   "text": "Its outstanding vision allows it to spot splashing MAGIKARP, even while flying at 3300 feet.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 39.5,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Pidgeotto",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1fd5682412cf",
+   "r": "9da438188a24",
+   "c": "14a6ddc73157"
+  }
+ },
+ {
+  "id": 19,
+  "slug": "rattata",
+  "name": "Rattata",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Mouse Pokémon",
+  "flavor": {
+   "text": "This POKéMON's impressive vitality allows it to live anywhere. It also multiplies very quickly.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 3.5,
+  "color": "purple",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c251804594aa",
+   "r": "bcc85a91ee8f",
+   "c": "58ea6a5fb43f"
+  }
+ },
+ {
+  "id": 20,
+  "slug": "raticate",
+  "name": "Raticate",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Mouse Pokémon",
+  "flavor": {
+   "text": "The webs on its hind legs enable it to cross rivers. It searches wide areas for food.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 18.5,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Rattata",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "9bcdae6eef9f",
+   "r": "9b67dfc92c1d",
+   "c": "426efa32ff80"
+  }
+ },
+ {
+  "id": 21,
+  "slug": "spearow",
+  "name": "Spearow",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Tiny Bird Pokémon",
+  "flavor": {
+   "text": "To protect its territory, it flies around ceaselessly, making high- pitched cries.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 2.0,
+  "color": "brown",
+  "habitat": "rough-terrain",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "96ac9c11bc5d",
+   "r": "d5f4be32731e",
+   "c": "ae24c241bcf7"
+  }
+ },
+ {
+  "id": 22,
+  "slug": "fearow",
+  "name": "Fearow",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Beak Pokémon",
+  "flavor": {
+   "text": "It uses its long beak to attack. It has a surprisingly long reach, so it must be treated with caution.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 38.0,
+  "color": "brown",
+  "habitat": "rough-terrain",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Spearow",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "b434e28b514b",
+   "r": "998a1dd54d34",
+   "c": "76a8860efd8c"
+  }
+ },
+ {
+  "id": 23,
+  "slug": "ekans",
+  "name": "Ekans",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Snake Pokémon",
+  "flavor": {
+   "text": "It flutters the tip of its tongue to seek out the scent of prey, then swallows the prey whole.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 6.9,
+  "color": "purple",
+  "habitat": "grassland",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3cb817771038",
+   "r": "bef56bcd2be1",
+   "c": "503f93e188c2"
+  }
+ },
+ {
+  "id": 24,
+  "slug": "arbok",
+  "name": "Arbok",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Cobra Pokémon",
+  "flavor": {
+   "text": "To intimidate foes, it spreads its chest wide and makes eerie sounds by expelling air from its mouth.",
+   "game": "crystal"
+  },
+  "heightM": 3.5,
+  "weightKg": 65.0,
+  "color": "purple",
+  "habitat": "grassland",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Ekans",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "60ab8e74b7bf",
+   "r": "0d6bc1219ce3",
+   "c": "5feeb2c60ef3"
+  }
+ },
+ {
+  "id": 25,
+  "slug": "pikachu",
+  "name": "Pikachu",
+  "gen": 1,
+  "types": [
+   "electric"
+  ],
+  "genus": "Mouse Pokémon",
+  "flavor": {
+   "text": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 6.0,
+  "color": "yellow",
+  "habitat": "forest",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Pichu",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8e28dddb9fd2",
+   "r": "31c353e02af4",
+   "c": "24fd93821a8f"
+  }
+ },
+ {
+  "id": 26,
+  "slug": "raichu",
+  "name": "Raichu",
+  "gen": 1,
+  "types": [
+   "electric"
+  ],
+  "genus": "Mouse Pokémon",
+  "flavor": {
+   "text": "If its electric pouches run empty, it raises its tail to gather electricity from the atmosphere.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 30.0,
+  "color": "yellow",
+  "habitat": "forest",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Pikachu",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "b152769f7824",
+   "r": "1f002784b428",
+   "c": "36d0bd4a0ba6"
+  }
+ },
+ {
+  "id": 27,
+  "slug": "sandshrew",
+  "name": "Sandshrew",
+  "gen": 1,
+  "types": [
+   "ground"
+  ],
+  "genus": "Mouse Pokémon",
+  "flavor": {
+   "text": "It prefers dry, sandy places because it uses the sand to protect itself when threatened.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 12.0,
+  "color": "yellow",
+  "habitat": "rough-terrain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "337da1568766",
+   "r": "248b965ac54b",
+   "c": "4ae29e0ea9f1"
+  }
+ },
+ {
+  "id": 28,
+  "slug": "sandslash",
+  "name": "Sandslash",
+  "gen": 1,
+  "types": [
+   "ground"
+  ],
+  "genus": "Mouse Pokémon",
+  "flavor": {
+   "text": "Adept at climbing trees, it rolls into a spiny ball, then attacks its enemies from above.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 29.5,
+  "color": "yellow",
+  "habitat": "rough-terrain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Sandshrew",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d068a1aae930",
+   "r": "cee5b6868283",
+   "c": "368c410fa09a"
+  }
+ },
+ {
+  "id": 29,
+  "slug": "nidoran-f",
+  "name": "Nidoran♀",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Poison Pin Pokémon",
+  "flavor": {
+   "text": "Small and very docile, it protects itself with its small, poisonous horn when attacked.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 7.0,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "993870e82de1",
+   "r": "5d54c819757b",
+   "c": "bacdab4b60fd"
+  }
+ },
+ {
+  "id": 30,
+  "slug": "nidorina",
+  "name": "Nidorina",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Poison Pin Pokémon",
+  "flavor": {
+   "text": "It has a docile nature. If it is threatened with attack, it raises the barbs that are all over its body.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 20.0,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Nidoran♀",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "acb32d09ddc4",
+   "r": "da8649dd923a",
+   "c": "5d6a81130922"
+  }
+ },
+ {
+  "id": 31,
+  "slug": "nidoqueen",
+  "name": "Nidoqueen",
+  "gen": 1,
+  "types": [
+   "poison",
+   "ground"
+  ],
+  "genus": "Drill Pokémon",
+  "flavor": {
+   "text": "The hard scales that cover its strong body serve as excellent protection from any attack.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 60.0,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Nidorina",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3ef0d7f6413f",
+   "r": "23e414ecfef8",
+   "c": "a6b15783f296"
+  }
+ },
+ {
+  "id": 32,
+  "slug": "nidoran-m",
+  "name": "Nidoran♂",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Poison Pin Pokémon",
+  "flavor": {
+   "text": "It constantly moves its large ears in many directions in order to detect danger right away.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 9.0,
+  "color": "purple",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e6fdef1e7095",
+   "r": "41a496167382",
+   "c": "380e5a8ccd79"
+  }
+ },
+ {
+  "id": 33,
+  "slug": "nidorino",
+  "name": "Nidorino",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Poison Pin Pokémon",
+  "flavor": {
+   "text": "It is easily agitated and uses its horn for offense as soon as it notices an attacker.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 19.5,
+  "color": "purple",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Nidoran♂",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "dc800fe3884e",
+   "r": "b837e304de01",
+   "c": "01524c5fcd55"
+  }
+ },
+ {
+  "id": 34,
+  "slug": "nidoking",
+  "name": "Nidoking",
+  "gen": 1,
+  "types": [
+   "poison",
+   "ground"
+  ],
+  "genus": "Drill Pokémon",
+  "flavor": {
+   "text": "It uses its thick arms, legs and tail to attack forcefully. Melee combat is its specialty.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 62.0,
+  "color": "purple",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Nidorino",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "b789ae3ede96",
+   "r": "743c26961fc4",
+   "c": "d09ad615b796"
+  }
+ },
+ {
+  "id": 35,
+  "slug": "clefairy",
+  "name": "Clefairy",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Fairy Pokémon",
+  "flavor": {
+   "text": "Though rarely seen, it becomes easier to spot, for some reason, on the night of a full moon.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 7.5,
+  "color": "pink",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Cleffa",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d96fd6e2bba4",
+   "r": "3c58eb615c37",
+   "c": "fd892804150e"
+  }
+ },
+ {
+  "id": 36,
+  "slug": "clefable",
+  "name": "Clefable",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Fairy Pokémon",
+  "flavor": {
+   "text": "Said to live in quiet, remote mountains, this type of fairy has a strong aversion to being seen.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 40.0,
+  "color": "pink",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Clefairy",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3620420f0279",
+   "r": "df6ce97e7e0e",
+   "c": "82a100446868"
+  }
+ },
+ {
+  "id": 37,
+  "slug": "vulpix",
+  "name": "Vulpix",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Fox Pokémon",
+  "flavor": {
+   "text": "As its body grows larger, its six warm tails become more beautiful, with a more luxurious coat of fur.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 9.9,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ed8c83992c3f",
+   "r": "49fa6c5835dd",
+   "c": "af5a059d3b1d"
+  }
+ },
+ {
+  "id": 38,
+  "slug": "ninetales",
+  "name": "Ninetales",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Fox Pokémon",
+  "flavor": {
+   "text": "It is said to live a thousand years, and each of its tails is loaded with supernatural powers.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 19.9,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Vulpix",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8becd7d1dbcf",
+   "r": "07af322727c6",
+   "c": "2786ec6502fc"
+  }
+ },
+ {
+  "id": 39,
+  "slug": "jigglypuff",
+  "name": "Jigglypuff",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Balloon Pokémon",
+  "flavor": {
+   "text": "It rolls its cute eyes as it sings a soothing lullaby. Its gentle song puts anyone who hears it to sleep.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 5.5,
+  "color": "pink",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Igglybuff",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "05c792d2bac3",
+   "r": "c1a6272426b3",
+   "c": "19829c8c589b"
+  }
+ },
+ {
+  "id": 40,
+  "slug": "wigglytuff",
+  "name": "Wigglytuff",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Balloon Pokémon",
+  "flavor": {
+   "text": "The rich, fluffy fur that covers its body feels so good that anyone who feels it can't stop touching it.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 12.0,
+  "color": "pink",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Jigglypuff",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "44529f3e7ac7",
+   "r": "69c35e5a8f6e",
+   "c": "193444d63ee2"
+  }
+ },
+ {
+  "id": 41,
+  "slug": "zubat",
+  "name": "Zubat",
+  "gen": 1,
+  "types": [
+   "poison",
+   "flying"
+  ],
+  "genus": "Bat Pokémon",
+  "flavor": {
+   "text": "During the day, it gathers with others and hangs from the ceilings of old buildings and caves.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 7.5,
+  "color": "purple",
+  "habitat": "cave",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ae788af76590",
+   "r": "885c86738c87",
+   "c": "f4b19d0467e7"
+  }
+ },
+ {
+  "id": 42,
+  "slug": "golbat",
+  "name": "Golbat",
+  "gen": 1,
+  "types": [
+   "poison",
+   "flying"
+  ],
+  "genus": "Bat Pokémon",
+  "flavor": {
+   "text": "When it plunges its fangs into its prey, it instantly draws and gulps down more than ten ounces of blood.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 55.0,
+  "color": "purple",
+  "habitat": "cave",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Zubat",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2568c491127d",
+   "r": "4c49d463d831",
+   "c": "6374f4ca01aa"
+  }
+ },
+ {
+  "id": 43,
+  "slug": "oddish",
+  "name": "Oddish",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Weed Pokémon",
+  "flavor": {
+   "text": "During the day, it stays in the cold underground to avoid the sun. It grows by bathing in moonlight.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 5.4,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7962cd6d42d2",
+   "r": "9879801e3d23",
+   "c": "e8fb1e6b6a4a"
+  }
+ },
+ {
+  "id": 44,
+  "slug": "gloom",
+  "name": "Gloom",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Weed Pokémon",
+  "flavor": {
+   "text": "The smell from its drool-like syrup and the pollen on its petals is so bad, it may make opponents faint.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 8.6,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Oddish",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "005147a5a748",
+   "r": "83017680b755",
+   "c": "33fe930cdc0e"
+  }
+ },
+ {
+  "id": 45,
+  "slug": "vileplume",
+  "name": "Vileplume",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Flower Pokémon",
+  "flavor": {
+   "text": "By shaking its big petals, it scatters toxic pollen into the air, turning the air yellow.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 18.6,
+  "color": "red",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Gloom",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "529b6b222220",
+   "r": "3a38128d5938",
+   "c": "c701ee05b81b"
+  }
+ },
+ {
+  "id": 46,
+  "slug": "paras",
+  "name": "Paras",
+  "gen": 1,
+  "types": [
+   "bug",
+   "grass"
+  ],
+  "genus": "Mushroom Pokémon",
+  "flavor": {
+   "text": "The tochukaso growing on this POKéMON's back orders it to extract juice from tree trunks.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 5.4,
+  "color": "red",
+  "habitat": "forest",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "9ef144dc8963",
+   "r": "53879945775b",
+   "c": "ba3621eeeb65"
+  }
+ },
+ {
+  "id": 47,
+  "slug": "parasect",
+  "name": "Parasect",
+  "gen": 1,
+  "types": [
+   "bug",
+   "grass"
+  ],
+  "genus": "Mushroom Pokémon",
+  "flavor": {
+   "text": "When nothing's left to extract from the bug, the mushrooms on its back leave spores on the bug's egg.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 29.5,
+  "color": "red",
+  "habitat": "forest",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Paras",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "529f979f930b",
+   "r": "fcf3326469df",
+   "c": "5a4e8f9066fb"
+  }
+ },
+ {
+  "id": 48,
+  "slug": "venonat",
+  "name": "Venonat",
+  "gen": 1,
+  "types": [
+   "bug",
+   "poison"
+  ],
+  "genus": "Insect Pokémon",
+  "flavor": {
+   "text": "The small bugs it eats appear only at night, so it sleeps in a hole in a tree until night falls.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 30.0,
+  "color": "purple",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "691f6b6d00bb",
+   "r": "af1d1cf82c52",
+   "c": "88a47692847c"
+  }
+ },
+ {
+  "id": 49,
+  "slug": "venomoth",
+  "name": "Venomoth",
+  "gen": 1,
+  "types": [
+   "bug",
+   "poison"
+  ],
+  "genus": "Poison Moth Pokémon",
+  "flavor": {
+   "text": "The scales it scatters will paralyze anyone who touches them, making that person unable to stand.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 12.5,
+  "color": "purple",
+  "habitat": "forest",
+  "shape": "bug-wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Venonat",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e9f681fb450a",
+   "r": "7f9e82bc2cb3",
+   "c": "36799b8e8b45"
+  }
+ },
+ {
+  "id": 50,
+  "slug": "diglett",
+  "name": "Diglett",
+  "gen": 1,
+  "types": [
+   "ground"
+  ],
+  "genus": "Mole Pokémon",
+  "flavor": {
+   "text": "It digs underground and chews on tree roots, sticking its head out only when the sun isn't bright.",
+   "game": "crystal"
+  },
+  "heightM": 0.2,
+  "weightKg": 0.8,
+  "color": "brown",
+  "habitat": "cave",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1b1f65465c70",
+   "r": "059c82632011",
+   "c": "45f624ea754a"
+  }
+ },
+ {
+  "id": 51,
+  "slug": "dugtrio",
+  "name": "Dugtrio",
+  "gen": 1,
+  "types": [
+   "ground"
+  ],
+  "genus": "Mole Pokémon",
+  "flavor": {
+   "text": "These DIGLETT triplets dig over 60 miles below sea level. No one knows what it's like underground.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 33.3,
+  "color": "brown",
+  "habitat": "cave",
+  "shape": "heads",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Diglett",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "70551cd6812f",
+   "r": "624fb09499f8",
+   "c": "c158481c8f03"
+  }
+ },
+ {
+  "id": 52,
+  "slug": "meowth",
+  "name": "Meowth",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Scratch Cat Pokémon",
+  "flavor": {
+   "text": "It loves things that sparkle. When it sees a shiny object, the gold coin on its head shines too.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 4.2,
+  "color": "yellow",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7e882964235e",
+   "r": "49121281505f",
+   "c": "b732507b3ee7"
+  }
+ },
+ {
+  "id": 53,
+  "slug": "persian",
+  "name": "Persian",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Classy Cat Pokémon",
+  "flavor": {
+   "text": "Behind its lithe, elegant appearance lies a barbaric side. It will tear apart its prey on a mere whim.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 32.0,
+  "color": "yellow",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Meowth",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d36128ac36f2",
+   "r": "85369dbf1c14",
+   "c": "40819f59d3f7"
+  }
+ },
+ {
+  "id": 54,
+  "slug": "psyduck",
+  "name": "Psyduck",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Duck Pokémon",
+  "flavor": {
+   "text": "The only time it can use its psychic power is when its sleeping brain cells happen to wake.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 19.6,
+  "color": "yellow",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f9b6f9a079d4",
+   "r": "88736963fadd",
+   "c": "718a3446b921"
+  }
+ },
+ {
+  "id": 55,
+  "slug": "golduck",
+  "name": "Golduck",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Duck Pokémon",
+  "flavor": {
+   "text": "It swims gracefully along on the quiet, slow-moving rivers and lakes of which it is so fond.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 76.6,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Psyduck",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "81edbcad8678",
+   "r": "08ed539c031f",
+   "c": "d7b53870709d"
+  }
+ },
+ {
+  "id": 56,
+  "slug": "mankey",
+  "name": "Mankey",
+  "gen": 1,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Pig Monkey Pokémon",
+  "flavor": {
+   "text": "It lives in groups in the treetops. If it loses sight of its group, it becomes infuriated by its loneliness.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 28.0,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d160d76408a7",
+   "r": "d7a083ca3b7d",
+   "c": "4869d203f0cd"
+  }
+ },
+ {
+  "id": 57,
+  "slug": "primeape",
+  "name": "Primeape",
+  "gen": 1,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Pig Monkey Pokémon",
+  "flavor": {
+   "text": "It will beat up anyone who makes it mad, even if it has to chase them until the end of the world.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 32.0,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Mankey",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "111fb63fdd54",
+   "r": "fd4c9d6b8384",
+   "c": "59d94f53dc95"
+  }
+ },
+ {
+  "id": 58,
+  "slug": "growlithe",
+  "name": "Growlithe",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Puppy Pokémon",
+  "flavor": {
+   "text": "It controls a big territory. If it detects an unknown smell, it roars loudly to force out the intruder.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 19.0,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7b2854edccfa",
+   "r": "a4d0c853fd01",
+   "c": "45492ca44431"
+  }
+ },
+ {
+  "id": 59,
+  "slug": "arcanine",
+  "name": "Arcanine",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Legendary Pokémon",
+  "flavor": {
+   "text": "An ancient picture scroll shows that people were attracted to its movement as it ran through prairies.",
+   "game": "crystal"
+  },
+  "heightM": 1.9,
+  "weightKg": 155.0,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Growlithe",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "88f90200bf4f",
+   "r": "afa961b1abbb",
+   "c": "890edcea5a15"
+  }
+ },
+ {
+  "id": 60,
+  "slug": "poliwag",
+  "name": "Poliwag",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Tadpole Pokémon",
+  "flavor": {
+   "text": "The swirl on its belly is its insides showing through the skin. It looks clearer after it eats.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 12.4,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2fc07a608795",
+   "r": "2a7848098c2b",
+   "c": "473d34f86b0b"
+  }
+ },
+ {
+  "id": 61,
+  "slug": "poliwhirl",
+  "name": "Poliwhirl",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Tadpole Pokémon",
+  "flavor": {
+   "text": "Though it is skilled at walking, it prefers to live underwater where there is less danger.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 20.0,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Poliwag",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d07baf6fbe0e",
+   "r": "d47a8365c322",
+   "c": "cd9d06d66988"
+  }
+ },
+ {
+  "id": 62,
+  "slug": "poliwrath",
+  "name": "Poliwrath",
+  "gen": 1,
+  "types": [
+   "water",
+   "fighting"
+  ],
+  "genus": "Tadpole Pokémon",
+  "flavor": {
+   "text": "It can use its well-developed arms and legs to run on the surface of the water for a split second.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 54.0,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Poliwhirl",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "a483ae32effb",
+   "r": "25908a614eef",
+   "c": "544492fcf4d1"
+  }
+ },
+ {
+  "id": 63,
+  "slug": "abra",
+  "name": "Abra",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Psi Pokémon",
+  "flavor": {
+   "text": "It hypnotizes itself so that it can teleport away when it senses danger, even if it is asleep.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 19.5,
+  "color": "brown",
+  "habitat": "urban",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "22be7f6b54f3",
+   "r": "701f57c3197e",
+   "c": "fc2fccc9089c"
+  }
+ },
+ {
+  "id": 64,
+  "slug": "kadabra",
+  "name": "Kadabra",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Psi Pokémon",
+  "flavor": {
+   "text": "When it closes its eyes, twice as many alpha particles come out of the surface of its body.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 56.5,
+  "color": "brown",
+  "habitat": "urban",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Abra",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "efb4043403bd",
+   "r": "ed5a788e6ca0",
+   "c": "8e247419195a"
+  }
+ },
+ {
+  "id": 65,
+  "slug": "alakazam",
+  "name": "Alakazam",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Psi Pokémon",
+  "flavor": {
+   "text": "It has an IQ of 5000. It calculates many things in order to gain the edge in every battle.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 48.0,
+  "color": "brown",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Kadabra",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "94a43eb0c5f8",
+   "r": "8c835330bfe2",
+   "c": "1916aa44dbb4"
+  }
+ },
+ {
+  "id": 66,
+  "slug": "machop",
+  "name": "Machop",
+  "gen": 1,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Superpower Pokémon",
+  "flavor": {
+   "text": "It trains by lifting rocks in the mountains. It can even pick up a GRAVELER with ease.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 19.5,
+  "color": "gray",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3f000cf4de29",
+   "r": "eb20fa450eac",
+   "c": "a1e2895a7798"
+  }
+ },
+ {
+  "id": 67,
+  "slug": "machoke",
+  "name": "Machoke",
+  "gen": 1,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Superpower Pokémon",
+  "flavor": {
+   "text": "This tough POKéMON always stays in the zone. Its muscles become thicker after every battle.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 70.5,
+  "color": "gray",
+  "habitat": "mountain",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Machop",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ab23fb5b39b4",
+   "r": "bfbf02ea7bc5",
+   "c": "3745b927e928"
+  }
+ },
+ {
+  "id": 68,
+  "slug": "machamp",
+  "name": "Machamp",
+  "gen": 1,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Superpower Pokémon",
+  "flavor": {
+   "text": "With four arms that react more quickly than it can think, it can execute many punches at once.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 130.0,
+  "color": "gray",
+  "habitat": "mountain",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Machoke",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "4ac0f41ebfa9",
+   "r": "e70cfc99f6dc",
+   "c": "ea6848b0e8ba"
+  }
+ },
+ {
+  "id": 69,
+  "slug": "bellsprout",
+  "name": "Bellsprout",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Flower Pokémon",
+  "flavor": {
+   "text": "If it notices anything that moves, it immediately flings its vine at the object.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 4.0,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "65861b278434",
+   "r": "f2f3ab39443b",
+   "c": "47c6add215bc"
+  }
+ },
+ {
+  "id": 70,
+  "slug": "weepinbell",
+  "name": "Weepinbell",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Flycatcher Pokémon",
+  "flavor": {
+   "text": "When it's hungry, it swings its razor-sharp leaves, slicing up any unlucky object nearby for food.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 6.4,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Bellsprout",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "a0ffaf5168a6",
+   "r": "f8b533942823",
+   "c": "e0195e7b9efe"
+  }
+ },
+ {
+  "id": 71,
+  "slug": "victreebel",
+  "name": "Victreebel",
+  "gen": 1,
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "genus": "Flycatcher Pokémon",
+  "flavor": {
+   "text": "Once ingested into this POKéMON's body, even the hardest object will melt into nothing.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 15.5,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Weepinbell",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "0c9f9d7f1e44",
+   "r": "d2a0d16d5492",
+   "c": "4280d8a6fabf"
+  }
+ },
+ {
+  "id": 72,
+  "slug": "tentacool",
+  "name": "Tentacool",
+  "gen": 1,
+  "types": [
+   "water",
+   "poison"
+  ],
+  "genus": "Jellyfish Pokémon",
+  "flavor": {
+   "text": "As it floats along on the waves, it uses its toxic feelers to stab anything it touches.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 45.5,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "tentacles",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f14ebdc9d3e4",
+   "r": "e3454dc5e969",
+   "c": "1fd7d585dacd"
+  }
+ },
+ {
+  "id": 73,
+  "slug": "tentacruel",
+  "name": "Tentacruel",
+  "gen": 1,
+  "types": [
+   "water",
+   "poison"
+  ],
+  "genus": "Jellyfish Pokémon",
+  "flavor": {
+   "text": "When its 80 feelers absorb water, it stretches to become like a net to entangle its prey.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 55.0,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "tentacles",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Tentacool",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "6a4156c7d058",
+   "r": "5ea86d20d356",
+   "c": "6bb3dfee0179"
+  }
+ },
+ {
+  "id": 74,
+  "slug": "geodude",
+  "name": "Geodude",
+  "gen": 1,
+  "types": [
+   "rock",
+   "ground"
+  ],
+  "genus": "Rock Pokémon",
+  "flavor": {
+   "text": "Proud of their sturdy bodies, they bash against each other in a contest to prove whose is harder.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 20.0,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "arms",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "5890f4e68255",
+   "r": "02f15b5e2665",
+   "c": "03bd6d2193c8"
+  }
+ },
+ {
+  "id": 75,
+  "slug": "graveler",
+  "name": "Graveler",
+  "gen": 1,
+  "types": [
+   "rock",
+   "ground"
+  ],
+  "genus": "Rock Pokémon",
+  "flavor": {
+   "text": "It travels by rolling on mountain paths. If it gains too much speed, it stops by running into huge rocks.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 105.0,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Geodude",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "34981304e0b4",
+   "r": "c8208d226eca",
+   "c": "fc106983fbc0"
+  }
+ },
+ {
+  "id": 76,
+  "slug": "golem",
+  "name": "Golem",
+  "gen": 1,
+  "types": [
+   "rock",
+   "ground"
+  ],
+  "genus": "Megaton Pokémon",
+  "flavor": {
+   "text": "Its rock-like body is so durable, even high-powered dynamite blasts fail to scratch its rugged hide.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 300.0,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Graveler",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1acf20c85473",
+   "r": "9b463f869865",
+   "c": "5e6e61dbc9a4"
+  }
+ },
+ {
+  "id": 77,
+  "slug": "ponyta",
+  "name": "Ponyta",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Fire Horse Pokémon",
+  "flavor": {
+   "text": "Training by jumping over grass that grows longer every day has made it a world-class jumper.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 30.0,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e2300ee0437b",
+   "r": "19029be96a9c",
+   "c": "21c938b185a3"
+  }
+ },
+ {
+  "id": 78,
+  "slug": "rapidash",
+  "name": "Rapidash",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Fire Horse Pokémon",
+  "flavor": {
+   "text": "It just loves to gallop. The faster it goes, the longer the swaying flames of its mane will become.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 95.0,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Ponyta",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "eba49f877943",
+   "r": "ef5497e38f15",
+   "c": "553bbbb4d3b3"
+  }
+ },
+ {
+  "id": 79,
+  "slug": "slowpoke",
+  "name": "Slowpoke",
+  "gen": 1,
+  "types": [
+   "water",
+   "psychic"
+  ],
+  "genus": "Dopey Pokémon",
+  "flavor": {
+   "text": "It is always so absent-minded that it won't react, even if its flavorful tail is bitten.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 36.0,
+  "color": "pink",
+  "habitat": "waters-edge",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "73dd66d5b628",
+   "r": "6449b81a971d",
+   "c": "b81f13d1e890"
+  }
+ },
+ {
+  "id": 80,
+  "slug": "slowbro",
+  "name": "Slowbro",
+  "gen": 1,
+  "types": [
+   "water",
+   "psychic"
+  ],
+  "genus": "Hermit Crab Pokémon",
+  "flavor": {
+   "text": "An attached SHELLDER won't let go because of the tasty flavor that oozes out of its tail.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 78.5,
+  "color": "pink",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Slowpoke",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "05f1493c1274",
+   "r": "9b013bc8dfba",
+   "c": "51131c133b8d"
+  }
+ },
+ {
+  "id": 81,
+  "slug": "magnemite",
+  "name": "Magnemite",
+  "gen": 1,
+  "types": [
+   "electric",
+   "steel"
+  ],
+  "genus": "Magnet Pokémon",
+  "flavor": {
+   "text": "The electricity emitted by the units on each side of its body cause it to become a strong magnet.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 6.0,
+  "color": "gray",
+  "habitat": "rough-terrain",
+  "shape": "arms",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "27ca16575d45",
+   "r": "7834bc158152",
+   "c": "a3de60e0add6"
+  }
+ },
+ {
+  "id": 82,
+  "slug": "magneton",
+  "name": "Magneton",
+  "gen": 1,
+  "types": [
+   "electric",
+   "steel"
+  ],
+  "genus": "Magnet Pokémon",
+  "flavor": {
+   "text": "When many MAGNETON gather together, the resulting magnetic storm disrupts radio waves.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 60.0,
+  "color": "gray",
+  "habitat": "rough-terrain",
+  "shape": "heads",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Magnemite",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "0cea2fb48a4e",
+   "r": "ad9c7de7f215",
+   "c": "dc25f69f15e7"
+  }
+ },
+ {
+  "id": 83,
+  "slug": "farfetchd",
+  "name": "Farfetch’d",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Wild Duck Pokémon",
+  "flavor": {
+   "text": "In order to prevent their extinction, more people have made an effort to breed these POKéMON.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 15.0,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e4a02cb4a0d0",
+   "r": "9943dfebdc9c",
+   "c": "bade1f164a45"
+  }
+ },
+ {
+  "id": 84,
+  "slug": "doduo",
+  "name": "Doduo",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Twin Bird Pokémon",
+  "flavor": {
+   "text": "It lives on a grassy plain where it can see a long way. If it sees an enemy, it runs away at 60 mph.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 39.2,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1a05e188d72a",
+   "r": "1baf7b357f8a",
+   "c": "d2cbbe40abc2"
+  }
+ },
+ {
+  "id": 85,
+  "slug": "dodrio",
+  "name": "Dodrio",
+  "gen": 1,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Triple Bird Pokémon",
+  "flavor": {
+   "text": "An enemy that takes its eyes off any of the three heads--even for a second--will get pecked severely.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 85.2,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Doduo",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "dc2640495cda",
+   "r": "6c8fa4775f07",
+   "c": "443052bc1c06"
+  }
+ },
+ {
+  "id": 86,
+  "slug": "seel",
+  "name": "Seel",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Sea Lion Pokémon",
+  "flavor": {
+   "text": "The light blue fur that covers it keeps it protected against the cold. It loves iceberg- filled oceans.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 90.0,
+  "color": "white",
+  "habitat": "sea",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ea76cd7fa30c",
+   "r": "b6de58678289",
+   "c": "de2eced464d4"
+  }
+ },
+ {
+  "id": 87,
+  "slug": "dewgong",
+  "name": "Dewgong",
+  "gen": 1,
+  "types": [
+   "water",
+   "ice"
+  ],
+  "genus": "Sea Lion Pokémon",
+  "flavor": {
+   "text": "It sleeps under shallow ocean waters during the day, then looks for food at night when it's cold.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 120.0,
+  "color": "white",
+  "habitat": "sea",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Seel",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "caf5ac620024",
+   "r": "640cc1b35e37",
+   "c": "c759b658470f"
+  }
+ },
+ {
+  "id": 88,
+  "slug": "grimer",
+  "name": "Grimer",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Sludge Pokémon",
+  "flavor": {
+   "text": "When two of these POKéMON's bodies are combined together, new poisons are created.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 30.0,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "arms",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f30b8e1a2834",
+   "r": "25ae63903331",
+   "c": "62f7c638ca71"
+  }
+ },
+ {
+  "id": 89,
+  "slug": "muk",
+  "name": "Muk",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Sludge Pokémon",
+  "flavor": {
+   "text": "As it moves, a very strong poison leaks from it, making the ground there barren for three years.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 30.0,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "arms",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Grimer",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "743b76f5d73a",
+   "r": "e11120fb111d",
+   "c": "739217e7073c"
+  }
+ },
+ {
+  "id": 90,
+  "slug": "shellder",
+  "name": "Shellder",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Bivalve Pokémon",
+  "flavor": {
+   "text": "Clamping on to an opponent reveals its vulnerable parts, so it uses this move only as a last resort.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 4.0,
+  "color": "purple",
+  "habitat": "sea",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7676c574f691",
+   "r": "0a78d546cb90",
+   "c": "7401af747fe2"
+  }
+ },
+ {
+  "id": 91,
+  "slug": "cloyster",
+  "name": "Cloyster",
+  "gen": 1,
+  "types": [
+   "water",
+   "ice"
+  ],
+  "genus": "Bivalve Pokémon",
+  "flavor": {
+   "text": "Even a missile can't break the spikes it uses to stab opponents. They're even harder than its shell.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 132.5,
+  "color": "purple",
+  "habitat": "sea",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Shellder",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e06c762016de",
+   "r": "432e91fcd51b",
+   "c": "7fc1673c7f5c"
+  }
+ },
+ {
+  "id": 92,
+  "slug": "gastly",
+  "name": "Gastly",
+  "gen": 1,
+  "types": [
+   "ghost",
+   "poison"
+  ],
+  "genus": "Gas Pokémon",
+  "flavor": {
+   "text": "It wraps its opponent in its gas- like body, slowly weakening its prey by poisoning it through the skin.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 0.1,
+  "color": "purple",
+  "habitat": "cave",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "99267e9cc0c8",
+   "r": "e2432d50daf6",
+   "c": "7917e78ef3a8"
+  }
+ },
+ {
+  "id": 93,
+  "slug": "haunter",
+  "name": "Haunter",
+  "gen": 1,
+  "types": [
+   "ghost",
+   "poison"
+  ],
+  "genus": "Gas Pokémon",
+  "flavor": {
+   "text": "It hides in the dark, planning to take the life of the next living thing that wanders close by.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 0.1,
+  "color": "purple",
+  "habitat": "cave",
+  "shape": "arms",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Gastly",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2d17e1447a42",
+   "r": "1d1d07bc09f5",
+   "c": "f755a6aa18be"
+  }
+ },
+ {
+  "id": 94,
+  "slug": "gengar",
+  "name": "Gengar",
+  "gen": 1,
+  "types": [
+   "ghost",
+   "poison"
+  ],
+  "genus": "Shadow Pokémon",
+  "flavor": {
+   "text": "Hiding in people's shadows at night, it absorbs their heat. The chill it causes makes the victims shake.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 40.5,
+  "color": "purple",
+  "habitat": "cave",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Haunter",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e701eea089f2",
+   "r": "3f5866d112ec",
+   "c": "00260fb30d5e"
+  }
+ },
+ {
+  "id": 95,
+  "slug": "onix",
+  "name": "Onix",
+  "gen": 1,
+  "types": [
+   "rock",
+   "ground"
+  ],
+  "genus": "Rock Snake Pokémon",
+  "flavor": {
+   "text": "As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.",
+   "game": "crystal"
+  },
+  "heightM": 8.8,
+  "weightKg": 210.0,
+  "color": "gray",
+  "habitat": "cave",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e099436a2872",
+   "r": "3c529ed87ce0",
+   "c": "689352fa72cf"
+  }
+ },
+ {
+  "id": 96,
+  "slug": "drowzee",
+  "name": "Drowzee",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Hypnosis Pokémon",
+  "flavor": {
+   "text": "When it twitches its nose, it can tell where someone is sleeping and what that person is dreaming about.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 32.4,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "069fca999d3d",
+   "r": "f263aa57dfe0",
+   "c": "a8fc3d7a0e7d"
+  }
+ },
+ {
+  "id": 97,
+  "slug": "hypno",
+  "name": "Hypno",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Hypnosis Pokémon",
+  "flavor": {
+   "text": "The longer it swings its pendulum, the longer the effects of its hypnosis last.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 75.6,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Drowzee",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8bbccd192391",
+   "r": "98cf8d518d2c",
+   "c": "74033bc428f8"
+  }
+ },
+ {
+  "id": 98,
+  "slug": "krabby",
+  "name": "Krabby",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "River Crab Pokémon",
+  "flavor": {
+   "text": "If it is unable to find food, it will absorb nutrients by swallowing a mouthful of sand.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 6.5,
+  "color": "red",
+  "habitat": "waters-edge",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f93aefd73441",
+   "r": "1ffaead149f0",
+   "c": "71f3b0cc6d7c"
+  }
+ },
+ {
+  "id": 99,
+  "slug": "kingler",
+  "name": "Kingler",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Pincer Pokémon",
+  "flavor": {
+   "text": "Its oversized claw is very powerful, but when it's not in battle, the claw just gets in the way.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 60.0,
+  "color": "red",
+  "habitat": "waters-edge",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Krabby",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d623c02311d1",
+   "r": "bb7e2647ca96",
+   "c": "559284b12428"
+  }
+ },
+ {
+  "id": 100,
+  "slug": "voltorb",
+  "name": "Voltorb",
+  "gen": 1,
+  "types": [
+   "electric"
+  ],
+  "genus": "Ball Pokémon",
+  "flavor": {
+   "text": "During the study of this POKéMON, it was discovered that its components are not found in nature.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 10.4,
+  "color": "red",
+  "habitat": "urban",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "047039e874e1",
+   "r": "5fcedca5b1da",
+   "c": "ee09b0d6df5a"
+  }
+ },
+ {
+  "id": 101,
+  "slug": "electrode",
+  "name": "Electrode",
+  "gen": 1,
+  "types": [
+   "electric"
+  ],
+  "genus": "Ball Pokémon",
+  "flavor": {
+   "text": "The more energy it charges up, the faster it gets. But this also makes it more likely to explode.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 66.6,
+  "color": "red",
+  "habitat": "urban",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Voltorb",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "b7322da81f34",
+   "r": "9d85e41cf9a9",
+   "c": "3c6b3c3f4ded"
+  }
+ },
+ {
+  "id": 102,
+  "slug": "exeggcute",
+  "name": "Exeggcute",
+  "gen": 1,
+  "types": [
+   "grass",
+   "psychic"
+  ],
+  "genus": "Egg Pokémon",
+  "flavor": {
+   "text": "If even one is separated from the group, the energy bond between the six will make them rejoin instantly.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 2.5,
+  "color": "pink",
+  "habitat": "forest",
+  "shape": "heads",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8dcc3a1ff2c2",
+   "r": "e06a5615e47c",
+   "c": "cef069a5b4c9"
+  }
+ },
+ {
+  "id": 103,
+  "slug": "exeggutor",
+  "name": "Exeggutor",
+  "gen": 1,
+  "types": [
+   "grass",
+   "psychic"
+  ],
+  "genus": "Coconut Pokémon",
+  "flavor": {
+   "text": "Living in a good environment makes it grow lots of heads. A head that drops off becomes an EXEGGCUTE.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 120.0,
+  "color": "yellow",
+  "habitat": "forest",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Exeggcute",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "166de5133f0d",
+   "r": "465630fca4f8",
+   "c": "16c0600af691"
+  }
+ },
+ {
+  "id": 104,
+  "slug": "cubone",
+  "name": "Cubone",
+  "gen": 1,
+  "types": [
+   "ground"
+  ],
+  "genus": "Lonely Pokémon",
+  "flavor": {
+   "text": "It lost its mother after its birth. It wears its mother's skull, never revealing its true face.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 6.5,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "822940e5545b",
+   "r": "7c57ce63b375",
+   "c": "d1239bf01032"
+  }
+ },
+ {
+  "id": 105,
+  "slug": "marowak",
+  "name": "Marowak",
+  "gen": 1,
+  "types": [
+   "ground"
+  ],
+  "genus": "Bone Keeper Pokémon",
+  "flavor": {
+   "text": "Somewhere in the world is a cemetery just for MAROWAK. It gets its bones from those graves.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 45.0,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Cubone",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c59f46419862",
+   "r": "0bfbb280c677",
+   "c": "c9b570b51614"
+  }
+ },
+ {
+  "id": 106,
+  "slug": "hitmonlee",
+  "name": "Hitmonlee",
+  "gen": 1,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Kicking Pokémon",
+  "flavor": {
+   "text": "It is also called the Kick Master. It uses its elastic legs to execute every known kick.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 49.8,
+  "color": "brown",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Tyrogue",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "759589849a82",
+   "r": "fbc6008da6fb",
+   "c": "b369b84f8284"
+  }
+ },
+ {
+  "id": 107,
+  "slug": "hitmonchan",
+  "name": "Hitmonchan",
+  "gen": 1,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Punching Pokémon",
+  "flavor": {
+   "text": "To increase the strength of all its punch moves, it spins its arms just before making contact.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 50.2,
+  "color": "brown",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Tyrogue",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7efa27697e37",
+   "r": "a2fa0f6b7ee6",
+   "c": "cad1269548d0"
+  }
+ },
+ {
+  "id": 108,
+  "slug": "lickitung",
+  "name": "Lickitung",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Licking Pokémon",
+  "flavor": {
+   "text": "It has a tongue that is over 6’6’’ long. It uses this long tongue to lick its body clean.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 65.5,
+  "color": "pink",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "644b19a96743",
+   "r": "69d1a40e5ffb",
+   "c": "0b31cd6f6bc3"
+  }
+ },
+ {
+  "id": 109,
+  "slug": "koffing",
+  "name": "Koffing",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Poison Gas Pokémon",
+  "flavor": {
+   "text": "If one gets close enough to it when it expels poisonous gas, the gas swirling inside it can be seen.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 1.0,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "333cb1bff6b4",
+   "r": "6e9c441b0ad4",
+   "c": "3e148c3ae572"
+  }
+ },
+ {
+  "id": 110,
+  "slug": "weezing",
+  "name": "Weezing",
+  "gen": 1,
+  "types": [
+   "poison"
+  ],
+  "genus": "Poison Gas Pokémon",
+  "flavor": {
+   "text": "When it inhales poisonous gases from garbage, its body expands, and its insides smell much worse.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 9.5,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "heads",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Koffing",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "871b2e283674",
+   "r": "41e6548cde57",
+   "c": "495c19fd76c5"
+  }
+ },
+ {
+  "id": 111,
+  "slug": "rhyhorn",
+  "name": "Rhyhorn",
+  "gen": 1,
+  "types": [
+   "ground",
+   "rock"
+  ],
+  "genus": "Spikes Pokémon",
+  "flavor": {
+   "text": "It can remember only one thing at a time. Once it starts rushing, it forgets why it started.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 115.0,
+  "color": "gray",
+  "habitat": "rough-terrain",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c20e14738663",
+   "r": "7caa74b46e6b",
+   "c": "3efcb74d796e"
+  }
+ },
+ {
+  "id": 112,
+  "slug": "rhydon",
+  "name": "Rhydon",
+  "gen": 1,
+  "types": [
+   "ground",
+   "rock"
+  ],
+  "genus": "Drill Pokémon",
+  "flavor": {
+   "text": "By lightly spinning its drill- like horn, it can easily shatter even a diamond in the rough.",
+   "game": "crystal"
+  },
+  "heightM": 1.9,
+  "weightKg": 120.0,
+  "color": "gray",
+  "habitat": "rough-terrain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Rhyhorn",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ad53a47683dd",
+   "r": "6866620010d4",
+   "c": "079ce7bf5662"
+  }
+ },
+ {
+  "id": 113,
+  "slug": "chansey",
+  "name": "Chansey",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Egg Pokémon",
+  "flavor": {
+   "text": "People try to catch it for its extremely nutritious eggs, but it rarely can be found.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 34.6,
+  "color": "pink",
+  "habitat": "urban",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "0899ab38abc5",
+   "r": "423a1d49e9f3",
+   "c": "59e93e420fea"
+  }
+ },
+ {
+  "id": 114,
+  "slug": "tangela",
+  "name": "Tangela",
+  "gen": 1,
+  "types": [
+   "grass"
+  ],
+  "genus": "Vine Pokémon",
+  "flavor": {
+   "text": "During battle, it constantly moves the vines that cover its body in order to annoy its opponent.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 35.0,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "278127038f65",
+   "r": "f58cd1dd0955",
+   "c": "6c1c37596bc6"
+  }
+ },
+ {
+  "id": 115,
+  "slug": "kangaskhan",
+  "name": "Kangaskhan",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Parent Pokémon",
+  "flavor": {
+   "text": "To avoid crushing the baby it carries in its pouch, it always sleeps standing up.",
+   "game": "crystal"
+  },
+  "heightM": 2.2,
+  "weightKg": 80.0,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f26d895d1abc",
+   "r": "f5f178ffa9e0",
+   "c": "ecdecae35a4f"
+  }
+ },
+ {
+  "id": 116,
+  "slug": "horsea",
+  "name": "Horsea",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Dragon Pokémon",
+  "flavor": {
+   "text": "When they're in a safe location, they can be seen playfully tangling their tails together.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 8.0,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d118e6b2cb42",
+   "r": "286f51c6b7ae",
+   "c": "707e90bd94b2"
+  }
+ },
+ {
+  "id": 117,
+  "slug": "seadra",
+  "name": "Seadra",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Dragon Pokémon",
+  "flavor": {
+   "text": "The male raises the young. If it is approached, it uses its toxic spikes to fend off the intruder.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 25.0,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Horsea",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c2be838c32fe",
+   "r": "bd6bf4c3cc04",
+   "c": "c6cdc41a5130"
+  }
+ },
+ {
+  "id": 118,
+  "slug": "goldeen",
+  "name": "Goldeen",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Goldfish Pokémon",
+  "flavor": {
+   "text": "During spawning season, they swim gracefully in the water, searching for their perfect mate.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 15.0,
+  "color": "red",
+  "habitat": "waters-edge",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2cc47fb0459f",
+   "r": "623293a481c4",
+   "c": "d6b50cd6e21b"
+  }
+ },
+ {
+  "id": 119,
+  "slug": "seaking",
+  "name": "Seaking",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Goldfish Pokémon",
+  "flavor": {
+   "text": "When autumn comes, the males patrol the area around their nests in order to protect their offspring.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 39.0,
+  "color": "red",
+  "habitat": "waters-edge",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Goldeen",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8e4e627bb23d",
+   "r": "3870c543a0f4",
+   "c": "b0c436b15638"
+  }
+ },
+ {
+  "id": 120,
+  "slug": "staryu",
+  "name": "Staryu",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Star Shape Pokémon",
+  "flavor": {
+   "text": "When the stars twinkle at night, it floats up from the sea floor, and its body's center core flickers.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 34.5,
+  "color": "brown",
+  "habitat": "sea",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "65d183c36515",
+   "r": "9721968dddda",
+   "c": "368564c6f12b"
+  }
+ },
+ {
+  "id": 121,
+  "slug": "starmie",
+  "name": "Starmie",
+  "gen": 1,
+  "types": [
+   "water",
+   "psychic"
+  ],
+  "genus": "Mysterious Pokémon",
+  "flavor": {
+   "text": "It is said that it uses the seven- colored core of its body to send electric waves into outer space.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 80.0,
+  "color": "purple",
+  "habitat": "sea",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Staryu",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "064eb338db51",
+   "r": "2ca157d6025e",
+   "c": "2df389c9445d"
+  }
+ },
+ {
+  "id": 122,
+  "slug": "mr-mime",
+  "name": "Mr. Mime",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Barrier Pokémon",
+  "flavor": {
+   "text": "It uses the mysterious power it has in its fingers to solidify air into an invisible wall.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 54.5,
+  "color": "pink",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "633e4745e739",
+   "r": "47784dfd399b",
+   "c": "82881ab50151"
+  }
+ },
+ {
+  "id": 123,
+  "slug": "scyther",
+  "name": "Scyther",
+  "gen": 1,
+  "types": [
+   "bug",
+   "flying"
+  ],
+  "genus": "Mantis Pokémon",
+  "flavor": {
+   "text": "It's very proud of its speed. It moves so fast that its opponent does not even know what knocked it down.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 56.0,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "bug-wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "98e778952802",
+   "r": "874ac408cffd",
+   "c": "5d134109ab0e"
+  }
+ },
+ {
+  "id": 124,
+  "slug": "jynx",
+  "name": "Jynx",
+  "gen": 1,
+  "types": [
+   "ice",
+   "psychic"
+  ],
+  "genus": "Human Shape Pokémon",
+  "flavor": {
+   "text": "It has several different cry patterns, each of which seems to have its own meaning.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 40.6,
+  "color": "red",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Smoochum",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "54a5eedb4095",
+   "r": "20ae6b4c6e0c",
+   "c": "54804a54f393"
+  }
+ },
+ {
+  "id": 125,
+  "slug": "electabuzz",
+  "name": "Electabuzz",
+  "gen": 1,
+  "types": [
+   "electric"
+  ],
+  "genus": "Electric Pokémon",
+  "flavor": {
+   "text": "When two ELECTABUZZ touch, they control the electric currents to communicate their feelings.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 30.0,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Elekid",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "fe52901dcbdb",
+   "r": "bbca9abcc27c",
+   "c": "95798bd3e6fb"
+  }
+ },
+ {
+  "id": 126,
+  "slug": "magmar",
+  "name": "Magmar",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Spitfire Pokémon",
+  "flavor": {
+   "text": "It moves more frequently in hot areas. It can heal itself by dipping its wound into lava.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 44.5,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Magby",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2db4db0ba8cf",
+   "r": "40f030b37902",
+   "c": "d92ed708d9ef"
+  }
+ },
+ {
+  "id": 127,
+  "slug": "pinsir",
+  "name": "Pinsir",
+  "gen": 1,
+  "types": [
+   "bug"
+  ],
+  "genus": "Stag Beetle Pokémon",
+  "flavor": {
+   "text": "When the temperature drops at night, it sleeps on treetops or among roots where it is well hidden.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 55.0,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "4d85b9af1b67",
+   "r": "0a9a565e744e",
+   "c": "6236d1930409"
+  }
+ },
+ {
+  "id": 128,
+  "slug": "tauros",
+  "name": "Tauros",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Wild Bull Pokémon",
+  "flavor": {
+   "text": "These violent POKéMON fight with other members of their herd in order to prove their strength.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 88.4,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "0baef25313f5",
+   "r": "d62f7331d4fd",
+   "c": "4d1a9aa5e05e"
+  }
+ },
+ {
+  "id": 129,
+  "slug": "magikarp",
+  "name": "Magikarp",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Fish Pokémon",
+  "flavor": {
+   "text": "This weak and pathetic POKéMON gets easily pushed along rivers when there are strong currents.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 10.0,
+  "color": "red",
+  "habitat": "waters-edge",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "dc453d2af903",
+   "r": "fb880769ee5c",
+   "c": "0053aee60d45"
+  }
+ },
+ {
+  "id": 130,
+  "slug": "gyarados",
+  "name": "Gyarados",
+  "gen": 1,
+  "types": [
+   "water",
+   "flying"
+  ],
+  "genus": "Atrocious Pokémon",
+  "flavor": {
+   "text": "It appears whenever there is world conflict, burning down any place it travels through.",
+   "game": "crystal"
+  },
+  "heightM": 6.5,
+  "weightKg": 235.0,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Magikarp",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3e8ee3bc8305",
+   "r": "c3c7f170d012",
+   "c": "b6117d869e35"
+  }
+ },
+ {
+  "id": 131,
+  "slug": "lapras",
+  "name": "Lapras",
+  "gen": 1,
+  "types": [
+   "water",
+   "ice"
+  ],
+  "genus": "Transport Pokémon",
+  "flavor": {
+   "text": "This gentle POKéMON loves to give people rides and provides a very comfortable way to get around.",
+   "game": "crystal"
+  },
+  "heightM": 2.5,
+  "weightKg": 220.0,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "00ba554a9c28",
+   "r": "572d94124f15",
+   "c": "1ca0a1d864e8"
+  }
+ },
+ {
+  "id": 132,
+  "slug": "ditto",
+  "name": "Ditto",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Transform Pokémon",
+  "flavor": {
+   "text": "When it encounters another DITTO, it will move faster than normal to duplicate that opponent exactly.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 4.0,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3e208eabf3e7",
+   "r": "249c58b02129",
+   "c": "4fac7d72ee35"
+  }
+ },
+ {
+  "id": 133,
+  "slug": "eevee",
+  "name": "Eevee",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Evolution Pokémon",
+  "flavor": {
+   "text": "Its ability to evolve into many forms allows it to adapt smoothly and perfectly to any environment.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 6.5,
+  "color": "brown",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d8c1a66d1579",
+   "r": "354deceaaec0",
+   "c": "3acbbb1be829"
+  }
+ },
+ {
+  "id": 134,
+  "slug": "vaporeon",
+  "name": "Vaporeon",
+  "gen": 1,
+  "types": [
+   "water"
+  ],
+  "genus": "Bubble Jet Pokémon",
+  "flavor": {
+   "text": "As it uses the fins on the tip of its tail to swim, it blends with the water perfectly.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 29.0,
+  "color": "blue",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Eevee",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "230f6d197d03",
+   "r": "fb24056a7d81",
+   "c": "5f321cdb4a9b"
+  }
+ },
+ {
+  "id": 135,
+  "slug": "jolteon",
+  "name": "Jolteon",
+  "gen": 1,
+  "types": [
+   "electric"
+  ],
+  "genus": "Lightning Pokémon",
+  "flavor": {
+   "text": "The negatively charged ions generated in its fur create a constant sparking noise.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 24.5,
+  "color": "yellow",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Eevee",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d49ddca44459",
+   "r": "924324d9af98",
+   "c": "254468c3cb55"
+  }
+ },
+ {
+  "id": 136,
+  "slug": "flareon",
+  "name": "Flareon",
+  "gen": 1,
+  "types": [
+   "fire"
+  ],
+  "genus": "Flame Pokémon",
+  "flavor": {
+   "text": "Once it has stored up enough heat, this POKéMON's body temperature can reach up to 1700 degrees.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 25.0,
+  "color": "red",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Eevee",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "6a99fb5d69f0",
+   "r": "de7d90e92da7",
+   "c": "4b5e2fb1a3b6"
+  }
+ },
+ {
+  "id": 137,
+  "slug": "porygon",
+  "name": "Porygon",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Virtual Pokémon",
+  "flavor": {
+   "text": "An artificial POKéMON created due to extensive research, it can perform only what is in its program.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 36.5,
+  "color": "pink",
+  "habitat": "urban",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "59bdcc7b21d9",
+   "r": "c7c416041392",
+   "c": "6d30530f95ce"
+  }
+ },
+ {
+  "id": 138,
+  "slug": "omanyte",
+  "name": "Omanyte",
+  "gen": 1,
+  "types": [
+   "rock",
+   "water"
+  ],
+  "genus": "Spiral Pokémon",
+  "flavor": {
+   "text": "In prehistoric times, it swam on the sea floor, eating plankton. Its fossils are sometimes found.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 7.5,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "tentacles",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3e1121204349",
+   "r": "5e6310972612",
+   "c": "1943068cbab8"
+  }
+ },
+ {
+  "id": 139,
+  "slug": "omastar",
+  "name": "Omastar",
+  "gen": 1,
+  "types": [
+   "rock",
+   "water"
+  ],
+  "genus": "Spiral Pokémon",
+  "flavor": {
+   "text": "Its heavy shell allowed it to reach only nearby food. This could be the reason it is extinct.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 35.0,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "tentacles",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Omanyte",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "44cb3bc107d2",
+   "r": "8c0a6a950288",
+   "c": "51ef92a86bb0"
+  }
+ },
+ {
+  "id": 140,
+  "slug": "kabuto",
+  "name": "Kabuto",
+  "gen": 1,
+  "types": [
+   "rock",
+   "water"
+  ],
+  "genus": "Shellfish Pokémon",
+  "flavor": {
+   "text": "Three hundred million years ago, it hid on the sea floor. It also has eyes on its back that glow.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 11.5,
+  "color": "brown",
+  "habitat": "sea",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ae002dc1e752",
+   "r": "2e780d9ceacc",
+   "c": "a48878403b47"
+  }
+ },
+ {
+  "id": 141,
+  "slug": "kabutops",
+  "name": "Kabutops",
+  "gen": 1,
+  "types": [
+   "rock",
+   "water"
+  ],
+  "genus": "Shellfish Pokémon",
+  "flavor": {
+   "text": "It was able to swim quickly through the water by compactly folding up its razor-sharp sickles.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 40.5,
+  "color": "brown",
+  "habitat": "sea",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Kabuto",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "bb9f9e7f7a2c",
+   "r": "46ba9167ecac",
+   "c": "1f129653a66c"
+  }
+ },
+ {
+  "id": 142,
+  "slug": "aerodactyl",
+  "name": "Aerodactyl",
+  "gen": 1,
+  "types": [
+   "rock",
+   "flying"
+  ],
+  "genus": "Fossil Pokémon",
+  "flavor": {
+   "text": "In prehistoric times, this POKéMON flew freely and fearlessly through the skies.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 59.0,
+  "color": "purple",
+  "habitat": "mountain",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "6025cf573370",
+   "r": "e1d8849b9567",
+   "c": "d6a19398491e"
+  }
+ },
+ {
+  "id": 143,
+  "slug": "snorlax",
+  "name": "Snorlax",
+  "gen": 1,
+  "types": [
+   "normal"
+  ],
+  "genus": "Sleeping Pokémon",
+  "flavor": {
+   "text": "This POKéMON's stomach is so strong, even eating moldy or rotten food will not affect it.",
+   "game": "crystal"
+  },
+  "heightM": 2.1,
+  "weightKg": 460.0,
+  "color": "black",
+  "habitat": "mountain",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7a5f82ab8d8d",
+   "r": "52027c3ea559",
+   "c": "70ca8e5527b8"
+  }
+ },
+ {
+  "id": 144,
+  "slug": "articuno",
+  "name": "Articuno",
+  "gen": 1,
+  "types": [
+   "ice",
+   "flying"
+  ],
+  "genus": "Freeze Pokémon",
+  "flavor": {
+   "text": "Legendary bird POKéMON. As it flies through the sky, it cools the air, causing snow to fall.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 55.4,
+  "color": "blue",
+  "habitat": "rare",
+  "shape": "wings",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "4f0bb3a2c8aa",
+   "r": "8ffc6cce546e",
+   "c": "2dfe861baa01"
+  }
+ },
+ {
+  "id": 145,
+  "slug": "zapdos",
+  "name": "Zapdos",
+  "gen": 1,
+  "types": [
+   "electric",
+   "flying"
+  ],
+  "genus": "Electric Pokémon",
+  "flavor": {
+   "text": "Legendary bird POKéMON. They say lightning caused by the flapping of its wings causes summer storms.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 52.6,
+  "color": "yellow",
+  "habitat": "rare",
+  "shape": "wings",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d419f762ffca",
+   "r": "6ee2bc745d4d",
+   "c": "07d387a2f1f1"
+  }
+ },
+ {
+  "id": 146,
+  "slug": "moltres",
+  "name": "Moltres",
+  "gen": 1,
+  "types": [
+   "fire",
+   "flying"
+  ],
+  "genus": "Flame Pokémon",
+  "flavor": {
+   "text": "Legendary bird POKéMON. It is said to migrate from the south along with the spring.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 60.0,
+  "color": "yellow",
+  "habitat": "rare",
+  "shape": "wings",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f32f462b0404",
+   "r": "cc6f355142f9",
+   "c": "8b65f218b1ca"
+  }
+ },
+ {
+  "id": 147,
+  "slug": "dratini",
+  "name": "Dratini",
+  "gen": 1,
+  "types": [
+   "dragon"
+  ],
+  "genus": "Dragon Pokémon",
+  "flavor": {
+   "text": "It sheds many layers of skin as it grows larger. During this process, it is protected by a rapid waterfall.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 3.3,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "08ed500e3444",
+   "r": "64f9d8e69fe5",
+   "c": "b7ba1bd9d415"
+  }
+ },
+ {
+  "id": 148,
+  "slug": "dragonair",
+  "name": "Dragonair",
+  "gen": 1,
+  "types": [
+   "dragon"
+  ],
+  "genus": "Dragon Pokémon",
+  "flavor": {
+   "text": "It is called the divine POKéMON. When its entire body brightens slightly, the weather changes.",
+   "game": "crystal"
+  },
+  "heightM": 4.0,
+  "weightKg": 16.5,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Dratini",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "17a60a55fd8d",
+   "r": "8fd0ff10a896",
+   "c": "1e11cd429d1b"
+  }
+ },
+ {
+  "id": 149,
+  "slug": "dragonite",
+  "name": "Dragonite",
+  "gen": 1,
+  "types": [
+   "dragon",
+   "flying"
+  ],
+  "genus": "Dragon Pokémon",
+  "flavor": {
+   "text": "It is said that somewhere in the ocean lies an island where these gather. Only they live there.",
+   "game": "crystal"
+  },
+  "heightM": 2.2,
+  "weightKg": 210.0,
+  "color": "brown",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Dragonair",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "eeaca1222d16",
+   "r": "c158538d96bc",
+   "c": "1ad221e9216b"
+  }
+ },
+ {
+  "id": 150,
+  "slug": "mewtwo",
+  "name": "Mewtwo",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Genetic Pokémon",
+  "flavor": {
+   "text": "Said to rest quietly in an undiscovered cave, this POKéMON was created solely for battling.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 122.0,
+  "color": "purple",
+  "habitat": "rare",
+  "shape": "upright",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "89456bcab606",
+   "r": "79f6d3f5bb76",
+   "c": "d1a2886160fe"
+  }
+ },
+ {
+  "id": 151,
+  "slug": "mew",
+  "name": "Mew",
+  "gen": 1,
+  "types": [
+   "psychic"
+  ],
+  "genus": "New Species Pokémon",
+  "flavor": {
+   "text": "Because it can learn any move, some people began research to see if it is the ancestor of all POKéMON.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 4.0,
+  "color": "pink",
+  "habitat": "rare",
+  "shape": "upright",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "bea1ae662221",
+   "r": "120f71dc980e",
+   "c": "fd764367e964"
+  }
+ },
+ {
+  "id": 152,
+  "slug": "chikorita",
+  "name": "Chikorita",
+  "gen": 2,
+  "types": [
+   "grass"
+  ],
+  "genus": "Leaf Pokémon",
+  "flavor": {
+   "text": "It loves to bask in the sunlight. It uses the leaf on its head to seek out warm places.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 6.4,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "13f3e5ac0aa1",
+   "r": "878c4ba080e7",
+   "c": "6660c2b4fa24"
+  }
+ },
+ {
+  "id": 153,
+  "slug": "bayleef",
+  "name": "Bayleef",
+  "gen": 2,
+  "types": [
+   "grass"
+  ],
+  "genus": "Leaf Pokémon",
+  "flavor": {
+   "text": "The scent that wafts from the leaves on its neck causes anyone who smells it to become energetic.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 15.8,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Chikorita",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "4be4177d7580",
+   "r": "5a8f24ecacc1",
+   "c": "6a98e73d904c"
+  }
+ },
+ {
+  "id": 154,
+  "slug": "meganium",
+  "name": "Meganium",
+  "gen": 2,
+  "types": [
+   "grass"
+  ],
+  "genus": "Herb Pokémon",
+  "flavor": {
+   "text": "Anyone who stands beside it becomes refreshed, just as if they were relaxing in a sunny forest.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 100.5,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Bayleef",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "9b355794d9d8",
+   "r": "c946203615e0",
+   "c": "b397b20d0797"
+  }
+ },
+ {
+  "id": 155,
+  "slug": "cyndaquil",
+  "name": "Cyndaquil",
+  "gen": 2,
+  "types": [
+   "fire"
+  ],
+  "genus": "Fire Mouse Pokémon",
+  "flavor": {
+   "text": "The fire that spouts from its back burns hottest when it is angry. The flaring flames intimidate foes.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 7.9,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "4803cff76cee",
+   "r": "80455ad70205",
+   "c": "2958a8da3072"
+  }
+ },
+ {
+  "id": 156,
+  "slug": "quilava",
+  "name": "Quilava",
+  "gen": 2,
+  "types": [
+   "fire"
+  ],
+  "genus": "Volcano Pokémon",
+  "flavor": {
+   "text": "Before battle, it turns its back on its opponent to demonstrate how ferociously its fire blazes.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 19.0,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Cyndaquil",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "508963620ff3",
+   "r": "4d0750798fdf",
+   "c": "382d2b0e8dbc"
+  }
+ },
+ {
+  "id": 157,
+  "slug": "typhlosion",
+  "name": "Typhlosion",
+  "gen": 2,
+  "types": [
+   "fire"
+  ],
+  "genus": "Volcano Pokémon",
+  "flavor": {
+   "text": "When heat from its body causes the air around it to shimmer, this is a sign that it is ready to battle.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 79.5,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Quilava",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "992171363e69",
+   "r": "6774818894f4",
+   "c": "216e69d37ec3"
+  }
+ },
+ {
+  "id": 158,
+  "slug": "totodile",
+  "name": "Totodile",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Big Jaw Pokémon",
+  "flavor": {
+   "text": "This rough critter chomps at any moving object it sees. Turning your back on it is not recommended.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 9.5,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "23e6face9e85",
+   "r": "f9ad0b12f64d",
+   "c": "d24cca3e11d6"
+  }
+ },
+ {
+  "id": 159,
+  "slug": "croconaw",
+  "name": "Croconaw",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Big Jaw Pokémon",
+  "flavor": {
+   "text": "The tips of its fangs are slanted backward. Once those fangs clamp down, the prey has no hope of escape.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 25.0,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Totodile",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "27ee6b1da213",
+   "r": "187795f04948",
+   "c": "0b7f40d819e5"
+  }
+ },
+ {
+  "id": 160,
+  "slug": "feraligatr",
+  "name": "Feraligatr",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Big Jaw Pokémon",
+  "flavor": {
+   "text": "Although it has a massive body, its powerful hind legs enable it to move quickly, even on the ground.",
+   "game": "crystal"
+  },
+  "heightM": 2.3,
+  "weightKg": 88.8,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Croconaw",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ce66d6016018",
+   "r": "7a0148261913",
+   "c": "e26686ae3de8"
+  }
+ },
+ {
+  "id": 161,
+  "slug": "sentret",
+  "name": "Sentret",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Scout Pokémon",
+  "flavor": {
+   "text": "When acting as a lookout, it warns others of danger by screeching and hitting the ground with its tail.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 6.0,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "054dee29022d",
+   "r": "b5b4a42799ee",
+   "c": "25d5f40728b0"
+  }
+ },
+ {
+  "id": 162,
+  "slug": "furret",
+  "name": "Furret",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Long Body Pokémon",
+  "flavor": {
+   "text": "It lives in narrow burrows that fit its slim body. The deeper the nests go, the more mazelike they become.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 32.5,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Sentret",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ba9e41f51d1b",
+   "r": "0488d2366120",
+   "c": "37e48107a6cd"
+  }
+ },
+ {
+  "id": 163,
+  "slug": "hoothoot",
+  "name": "Hoothoot",
+  "gen": 2,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Owl Pokémon",
+  "flavor": {
+   "text": "It begins to hoot at the same time every day. Some trainers use them in place of clocks.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 21.2,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2b992d5940a3",
+   "r": "ae20e4af85cd",
+   "c": "77b8c22cc299"
+  }
+ },
+ {
+  "id": 164,
+  "slug": "noctowl",
+  "name": "Noctowl",
+  "gen": 2,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Owl Pokémon",
+  "flavor": {
+   "text": "Its extremely soft feathers make no sound in flight. It silently sneaks up on prey without being detected.",
+   "game": "crystal"
+  },
+  "heightM": 1.6,
+  "weightKg": 40.8,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Hoothoot",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "b5d32265be6f",
+   "r": "4833dbcd8672",
+   "c": "8749d54b8768"
+  }
+ },
+ {
+  "id": 165,
+  "slug": "ledyba",
+  "name": "Ledyba",
+  "gen": 2,
+  "types": [
+   "bug",
+   "flying"
+  ],
+  "genus": "Five Star Pokémon",
+  "flavor": {
+   "text": "It is timid and clusters together with others. The fluid secreted by its feet indicates its location.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 10.8,
+  "color": "red",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1429cd214960",
+   "r": "5dc76bb894a6",
+   "c": "69f9b4399863"
+  }
+ },
+ {
+  "id": 166,
+  "slug": "ledian",
+  "name": "Ledian",
+  "gen": 2,
+  "types": [
+   "bug",
+   "flying"
+  ],
+  "genus": "Five Star Pokémon",
+  "flavor": {
+   "text": "In the daytime when it gets warm, it curls up inside a big leaf and drifts off into a deep slumber.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 35.6,
+  "color": "red",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Ledyba",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1ed9eb6d0eb4",
+   "r": "424ff1cd273e",
+   "c": "36ce04bc5ee1"
+  }
+ },
+ {
+  "id": 167,
+  "slug": "spinarak",
+  "name": "Spinarak",
+  "gen": 2,
+  "types": [
+   "bug",
+   "poison"
+  ],
+  "genus": "String Spit Pokémon",
+  "flavor": {
+   "text": "If prey becomes ensnared in its nest of spun string, it waits motionlessly until it becomes dark.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 8.5,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "cd3227764495",
+   "r": "87b6c726f797",
+   "c": "018f024703a1"
+  }
+ },
+ {
+  "id": 168,
+  "slug": "ariados",
+  "name": "Ariados",
+  "gen": 2,
+  "types": [
+   "bug",
+   "poison"
+  ],
+  "genus": "Long Leg Pokémon",
+  "flavor": {
+   "text": "Rather than making a nest in one specific spot, it wanders in search of food after darkness falls.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 33.5,
+  "color": "red",
+  "habitat": "forest",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Spinarak",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7a1ccfa6bd16",
+   "r": "2b9703ed37bd",
+   "c": "08450138f8c3"
+  }
+ },
+ {
+  "id": 169,
+  "slug": "crobat",
+  "name": "Crobat",
+  "gen": 2,
+  "types": [
+   "poison",
+   "flying"
+  ],
+  "genus": "Bat Pokémon",
+  "flavor": {
+   "text": "As a result of its pursuit of faster, yet more silent flight, a new set of wings grew on its hind legs.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 75.0,
+  "color": "purple",
+  "habitat": "cave",
+  "shape": "bug-wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Golbat",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "0831d52e73c9",
+   "r": "d1134a0f07ec",
+   "c": "5c9f1064ff34"
+  }
+ },
+ {
+  "id": 170,
+  "slug": "chinchou",
+  "name": "Chinchou",
+  "gen": 2,
+  "types": [
+   "water",
+   "electric"
+  ],
+  "genus": "Angler Pokémon",
+  "flavor": {
+   "text": "Its antennae, which evolved from a fin, have both positive and negative charges flowing through them.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 12.0,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "99542d4b9386",
+   "r": "a88d693868fd",
+   "c": "4950071d0272"
+  }
+ },
+ {
+  "id": 171,
+  "slug": "lanturn",
+  "name": "Lanturn",
+  "gen": 2,
+  "types": [
+   "water",
+   "electric"
+  ],
+  "genus": "Light Pokémon",
+  "flavor": {
+   "text": "This POKéMON uses the bright part of its body, which changed from a dorsal fin, to lure prey.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 22.5,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Chinchou",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "abf501350110",
+   "r": "08b5d83d20fd",
+   "c": "b5c18d2f140a"
+  }
+ },
+ {
+  "id": 172,
+  "slug": "pichu",
+  "name": "Pichu",
+  "gen": 2,
+  "types": [
+   "electric"
+  ],
+  "genus": "Tiny Mouse Pokémon",
+  "flavor": {
+   "text": "It is unskilled at storing electric power. Any kind of shock causes it to discharge energy spontaneously.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 2.0,
+  "color": "yellow",
+  "habitat": "forest",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "99d52b233533",
+   "r": "7489e273223c",
+   "c": "566eb9e107f5"
+  }
+ },
+ {
+  "id": 173,
+  "slug": "cleffa",
+  "name": "Cleffa",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Star Shape Pokémon",
+  "flavor": {
+   "text": "If the impact site of a meteorite is found, this POKéMON is certain to be within the immediate area.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 3.0,
+  "color": "pink",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "b7e28f8f973f",
+   "r": "5eca68ae0c86",
+   "c": "0fe94f193507"
+  }
+ },
+ {
+  "id": 174,
+  "slug": "igglybuff",
+  "name": "Igglybuff",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Balloon Pokémon",
+  "flavor": {
+   "text": "Instead of walking with its short legs, it moves around by bouncing on its soft, tender body.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 1.0,
+  "color": "pink",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8abf6109cb6c",
+   "r": "689dcf1e9939",
+   "c": "c014ee3e021f"
+  }
+ },
+ {
+  "id": 175,
+  "slug": "togepi",
+  "name": "Togepi",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Spike Ball Pokémon",
+  "flavor": {
+   "text": "It is considered to be a symbol of good luck. Its shell is said to be filled with happiness.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 1.5,
+  "color": "white",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "54a47a49db64",
+   "r": "001c0e4c28a2",
+   "c": "a2b111288ec1"
+  }
+ },
+ {
+  "id": 176,
+  "slug": "togetic",
+  "name": "Togetic",
+  "gen": 2,
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "genus": "Happiness Pokémon",
+  "flavor": {
+   "text": "Although it does not flap its wings very much, it can stay up in the air as it tags along after its trainer.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 3.2,
+  "color": "white",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Togepi",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1cbf56798e56",
+   "r": "625faf0dad8f",
+   "c": "026ca3be76c2"
+  }
+ },
+ {
+  "id": 177,
+  "slug": "natu",
+  "name": "Natu",
+  "gen": 2,
+  "types": [
+   "psychic",
+   "flying"
+  ],
+  "genus": "Tiny Bird Pokémon",
+  "flavor": {
+   "text": "It is extremely good at climbing tree trunks and likes to eat the new sprouts on the trees.",
+   "game": "crystal"
+  },
+  "heightM": 0.2,
+  "weightKg": 2.0,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7a1be1b4be6c",
+   "r": "c394ac69fe41",
+   "c": "f2847ae0f479"
+  }
+ },
+ {
+  "id": 178,
+  "slug": "xatu",
+  "name": "Xatu",
+  "gen": 2,
+  "types": [
+   "psychic",
+   "flying"
+  ],
+  "genus": "Mystic Pokémon",
+  "flavor": {
+   "text": "Once it begins to meditate at sunrise, the entire day will pass before it will move again.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 15.0,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Natu",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "39b63a561482",
+   "r": "8e99a3dd9044",
+   "c": "87e357735bb4"
+  }
+ },
+ {
+  "id": 179,
+  "slug": "mareep",
+  "name": "Mareep",
+  "gen": 2,
+  "types": [
+   "electric"
+  ],
+  "genus": "Wool Pokémon",
+  "flavor": {
+   "text": "It stores lots of air in its soft fur, allowing it to stay cool in summer and warm in winter.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 7.8,
+  "color": "white",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "15ff136a65a0",
+   "r": "7be4a08bfbb9",
+   "c": "16733810bcca"
+  }
+ },
+ {
+  "id": 180,
+  "slug": "flaaffy",
+  "name": "Flaaffy",
+  "gen": 2,
+  "types": [
+   "electric"
+  ],
+  "genus": "Wool Pokémon",
+  "flavor": {
+   "text": "Because of its rubbery, electricity-resistant skin, it can store lots of electricity in its fur.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 13.3,
+  "color": "pink",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Mareep",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "12ea19675104",
+   "r": "1759b8df1f43",
+   "c": "cf6448be34be"
+  }
+ },
+ {
+  "id": 181,
+  "slug": "ampharos",
+  "name": "Ampharos",
+  "gen": 2,
+  "types": [
+   "electric"
+  ],
+  "genus": "Light Pokémon",
+  "flavor": {
+   "text": "When it gets dark, the light from its bright, shiny tail can be seen from far away on the ocean's surface.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 61.5,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Flaaffy",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "da08eef71050",
+   "r": "903eb2cd6166",
+   "c": "cbc1b9d5c035"
+  }
+ },
+ {
+  "id": 182,
+  "slug": "bellossom",
+  "name": "Bellossom",
+  "gen": 2,
+  "types": [
+   "grass"
+  ],
+  "genus": "Flower Pokémon",
+  "flavor": {
+   "text": "When these dance together, their petals rub against each other, making pretty, relaxing sounds.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 5.8,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Gloom",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "a3c3b8f27c04",
+   "r": "2eec970d1def",
+   "c": "5fcdcaec00df"
+  }
+ },
+ {
+  "id": 183,
+  "slug": "marill",
+  "name": "Marill",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Aqua Mouse Pokémon",
+  "flavor": {
+   "text": "The fur on its body naturally repels water. It can stay dry, even when it plays in the water.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 8.5,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "34b9590abba1",
+   "r": "fa65a3a66ba9",
+   "c": "28f55ab894bc"
+  }
+ },
+ {
+  "id": 184,
+  "slug": "azumarill",
+  "name": "Azumarill",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Aqua Rabbit Pokémon",
+  "flavor": {
+   "text": "The bubble-like pattern on its stomach helps it camouflage itself when it's in the water.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 28.5,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Marill",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "85ae0e7b13dc",
+   "r": "688faddb697c",
+   "c": "fc66e023e2e5"
+  }
+ },
+ {
+  "id": 185,
+  "slug": "sudowoodo",
+  "name": "Sudowoodo",
+  "gen": 2,
+  "types": [
+   "rock"
+  ],
+  "genus": "Imitation Pokémon",
+  "flavor": {
+   "text": "If a tree branch shakes when there is no wind, it's a SUDOWOODO, not a tree. It hides from the rain.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 38.0,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "6ae33772a7b7",
+   "r": "4bc969d8968d",
+   "c": "27a6ec5a0034"
+  }
+ },
+ {
+  "id": 186,
+  "slug": "politoed",
+  "name": "Politoed",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Frog Pokémon",
+  "flavor": {
+   "text": "When it expands its throat to croak out a tune, nearby POLIWAG and POLIWHIRL gather immediately.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 33.9,
+  "color": "green",
+  "habitat": "waters-edge",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Poliwhirl",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7c009b0d476e",
+   "r": "60511ab7017a",
+   "c": "5b1bbb254e8f"
+  }
+ },
+ {
+  "id": 187,
+  "slug": "hoppip",
+  "name": "Hoppip",
+  "gen": 2,
+  "types": [
+   "grass",
+   "flying"
+  ],
+  "genus": "Cottonweed Pokémon",
+  "flavor": {
+   "text": "It can be carried away on even the gentlest breeze. It may even float all the way to the next town.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 0.5,
+  "color": "pink",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "da3d4759145a",
+   "r": "759f10481680",
+   "c": "d1dadd09c8c7"
+  }
+ },
+ {
+  "id": 188,
+  "slug": "skiploom",
+  "name": "Skiploom",
+  "gen": 2,
+  "types": [
+   "grass",
+   "flying"
+  ],
+  "genus": "Cottonweed Pokémon",
+  "flavor": {
+   "text": "As soon as it rains, it closes its flower and hides in the shade of a tree to avoid getting wet.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 1.0,
+  "color": "green",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Hoppip",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "a92c3aff7452",
+   "r": "2d65f97e7708",
+   "c": "897599ffdcfe"
+  }
+ },
+ {
+  "id": 189,
+  "slug": "jumpluff",
+  "name": "Jumpluff",
+  "gen": 2,
+  "types": [
+   "grass",
+   "flying"
+  ],
+  "genus": "Cottonweed Pokémon",
+  "flavor": {
+   "text": "Even in the fiercest wind, it can control its fluff to make its way to any place in the world it wants.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 3.0,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Skiploom",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2d4f750e3e37",
+   "r": "def2bdcae370",
+   "c": "b81287e47ca4"
+  }
+ },
+ {
+  "id": 190,
+  "slug": "aipom",
+  "name": "Aipom",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Long Tail Pokémon",
+  "flavor": {
+   "text": "It uses its tail to hang on to tree branches. It uses its momentum to swing from one branch to another.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 11.5,
+  "color": "purple",
+  "habitat": "forest",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7268fb99a9f9",
+   "r": "0d2249ee3cee",
+   "c": "3f61fed37a42"
+  }
+ },
+ {
+  "id": 191,
+  "slug": "sunkern",
+  "name": "Sunkern",
+  "gen": 2,
+  "types": [
+   "grass"
+  ],
+  "genus": "Seed Pokémon",
+  "flavor": {
+   "text": "It is very weak. Its only means of defense is to shake its leaves desperately at its attacker.",
+   "game": "crystal"
+  },
+  "heightM": 0.3,
+  "weightKg": 1.8,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ead7c520c892",
+   "r": "3a0bb81d7ca4",
+   "c": "e15d9bad7ab0"
+  }
+ },
+ {
+  "id": 192,
+  "slug": "sunflora",
+  "name": "Sunflora",
+  "gen": 2,
+  "types": [
+   "grass"
+  ],
+  "genus": "Sun Pokémon",
+  "flavor": {
+   "text": "As the hot season approaches, the petals on this POKéMON's face become more vivid and lively.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 8.5,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Sunkern",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "88ec7ecdaa3c",
+   "r": "953bfc48bb0c",
+   "c": "57cc20447d66"
+  }
+ },
+ {
+  "id": 193,
+  "slug": "yanma",
+  "name": "Yanma",
+  "gen": 2,
+  "types": [
+   "bug",
+   "flying"
+  ],
+  "genus": "Clear Wing Pokémon",
+  "flavor": {
+   "text": "It can see in all directions without moving its big eyes, helping it spot attackers and food right away.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 38.0,
+  "color": "red",
+  "habitat": "forest",
+  "shape": "bug-wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "bcfb79ce0b34",
+   "r": "74deb0cd8d12",
+   "c": "1696d8a7daac"
+  }
+ },
+ {
+  "id": 194,
+  "slug": "wooper",
+  "name": "Wooper",
+  "gen": 2,
+  "types": [
+   "water",
+   "ground"
+  ],
+  "genus": "Water Fish Pokémon",
+  "flavor": {
+   "text": "A mucous membrane covers its body. Touching it barehanded will cause a shooting pain.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 8.5,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d4ef1c7ef7cc",
+   "r": "22278c7b7888",
+   "c": "cc9ebc551449"
+  }
+ },
+ {
+  "id": 195,
+  "slug": "quagsire",
+  "name": "Quagsire",
+  "gen": 2,
+  "types": [
+   "water",
+   "ground"
+  ],
+  "genus": "Water Fish Pokémon",
+  "flavor": {
+   "text": "Its body is always slimy. It often bangs its head on the river bottom as it swims but seems not to care.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 75.0,
+  "color": "blue",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Wooper",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "58f376c2d48b",
+   "r": "94216c4d5dab",
+   "c": "d203e72c00ca"
+  }
+ },
+ {
+  "id": 196,
+  "slug": "espeon",
+  "name": "Espeon",
+  "gen": 2,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Sun Pokémon",
+  "flavor": {
+   "text": "The tip of its forked tail quivers when it is predicting its opponent's next move.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 26.5,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Eevee",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "46d6d82fe039",
+   "r": "1ba91c105d0d",
+   "c": "86b6b239e558"
+  }
+ },
+ {
+  "id": 197,
+  "slug": "umbreon",
+  "name": "Umbreon",
+  "gen": 2,
+  "types": [
+   "dark"
+  ],
+  "genus": "Moonlight Pokémon",
+  "flavor": {
+   "text": "On the night of a full moon, or when it gets excited, the ring patterns on its body glow yellow.",
+   "game": "crystal"
+  },
+  "heightM": 1.0,
+  "weightKg": 27.0,
+  "color": "black",
+  "habitat": "urban",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Eevee",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e01f2a2315d2",
+   "r": "da5993ffefea",
+   "c": "347d65ffa938"
+  }
+ },
+ {
+  "id": 198,
+  "slug": "murkrow",
+  "name": "Murkrow",
+  "gen": 2,
+  "types": [
+   "dark",
+   "flying"
+  ],
+  "genus": "Darkness Pokémon",
+  "flavor": {
+   "text": "It hides any shiny object it finds in a secret location. MURKROW and MEOWTH loot one another's stashes.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 2.1,
+  "color": "black",
+  "habitat": "forest",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "9a4b24c78c5c",
+   "r": "c38c8dc6688b",
+   "c": "08f86edcd106"
+  }
+ },
+ {
+  "id": 199,
+  "slug": "slowking",
+  "name": "Slowking",
+  "gen": 2,
+  "types": [
+   "water",
+   "psychic"
+  ],
+  "genus": "Royal Pokémon",
+  "flavor": {
+   "text": "Every time it yawns, SHELLDER injects more poison into it. The poison makes it more intelligent.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 79.5,
+  "color": "pink",
+  "habitat": "waters-edge",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Slowpoke",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "53e1fc0252c2",
+   "r": "7afca6a5d9e2",
+   "c": "ff206573c615"
+  }
+ },
+ {
+  "id": 200,
+  "slug": "misdreavus",
+  "name": "Misdreavus",
+  "gen": 2,
+  "types": [
+   "ghost"
+  ],
+  "genus": "Screech Pokémon",
+  "flavor": {
+   "text": "It loves to watch people it's scared. It frightens them by screaming loudly or appearing suddenly.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 1.0,
+  "color": "gray",
+  "habitat": "cave",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "1dcc1a36c8a7",
+   "r": "0c6115c32d9a",
+   "c": "1ddb9865d664"
+  }
+ },
+ {
+  "id": 201,
+  "slug": "unown",
+  "name": "Unown",
+  "gen": 2,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Symbol Pokémon",
+  "flavor": {
+   "text": "Because different types of UNOWN exist, it is said that they must have a variety of abilities.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 5.0,
+  "color": "black",
+  "habitat": "rare",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "cd267aacd0b1",
+   "r": "23d2fd4dc58f",
+   "c": "91f7ac0cf345"
+  }
+ },
+ {
+  "id": 202,
+  "slug": "wobbuffet",
+  "name": "Wobbuffet",
+  "gen": 2,
+  "types": [
+   "psychic"
+  ],
+  "genus": "Patient Pokémon",
+  "flavor": {
+   "text": "In order to conceal its black tail, it lives in a dark cave and only moves about at night.",
+   "game": "crystal"
+  },
+  "heightM": 1.3,
+  "weightKg": 28.5,
+  "color": "blue",
+  "habitat": "cave",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "64d1ac39f337",
+   "r": "7e1169003afe",
+   "c": "d0c2ca9ba5c4"
+  }
+ },
+ {
+  "id": 203,
+  "slug": "girafarig",
+  "name": "Girafarig",
+  "gen": 2,
+  "types": [
+   "normal",
+   "psychic"
+  ],
+  "genus": "Long Neck Pokémon",
+  "flavor": {
+   "text": "When it is in danger, its tail uses some sort of mysterious powers to drive away the enemy.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 41.5,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d0a21f1502d0",
+   "r": "01fba956d36c",
+   "c": "94210483137d"
+  }
+ },
+ {
+  "id": 204,
+  "slug": "pineco",
+  "name": "Pineco",
+  "gen": 2,
+  "types": [
+   "bug"
+  ],
+  "genus": "Bagworm Pokémon",
+  "flavor": {
+   "text": "It spits out a fluid that it uses to glue tree bark to its body. The fluid hardens when it touches air.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 7.2,
+  "color": "gray",
+  "habitat": "forest",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "a24c6a5baf01",
+   "r": "588b8cf839b0",
+   "c": "b7313e022d2b"
+  }
+ },
+ {
+  "id": 205,
+  "slug": "forretress",
+  "name": "Forretress",
+  "gen": 2,
+  "types": [
+   "bug",
+   "steel"
+  ],
+  "genus": "Bagworm Pokémon",
+  "flavor": {
+   "text": "Usually found hanging on to a fat tree trunk. It shoots out bits of its shell when it sees action.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 125.8,
+  "color": "purple",
+  "habitat": "forest",
+  "shape": "ball",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Pineco",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "53208cbf69ea",
+   "r": "8bfa359c30de",
+   "c": "a9b0495a9f5e"
+  }
+ },
+ {
+  "id": 206,
+  "slug": "dunsparce",
+  "name": "Dunsparce",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Land Snake Pokémon",
+  "flavor": {
+   "text": "It hides deep inside caves where no light ever reaches it and remains virtually motionless there.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 14.0,
+  "color": "yellow",
+  "habitat": "cave",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "a61e51a55ac7",
+   "r": "9ea16e735d53",
+   "c": "e6c1b317bd04"
+  }
+ },
+ {
+  "id": 207,
+  "slug": "gligar",
+  "name": "Gligar",
+  "gen": 2,
+  "types": [
+   "ground",
+   "flying"
+  ],
+  "genus": "Fly Scorpion Pokémon",
+  "flavor": {
+   "text": "It builds its nest on a steep cliff. When it is done gliding, it hops along the ground back to its nest.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 64.8,
+  "color": "purple",
+  "habitat": "mountain",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "425867e65ef8",
+   "r": "61bdecde7400",
+   "c": "72caeea24714"
+  }
+ },
+ {
+  "id": 208,
+  "slug": "steelix",
+  "name": "Steelix",
+  "gen": 2,
+  "types": [
+   "steel",
+   "ground"
+  ],
+  "genus": "Iron Snake Pokémon",
+  "flavor": {
+   "text": "The many small metal particles that cover this POKéMON's body reflect bright light well.",
+   "game": "crystal"
+  },
+  "heightM": 9.2,
+  "weightKg": 400.0,
+  "color": "gray",
+  "habitat": "cave",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Onix",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "25e280a16156",
+   "r": "63515bed7b96",
+   "c": "973089af1c42"
+  }
+ },
+ {
+  "id": 209,
+  "slug": "snubbull",
+  "name": "Snubbull",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Fairy Pokémon",
+  "flavor": {
+   "text": "In truth, it is a cowardly POKéMON. It growls eagerly in order to hide its fear from its opponent.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 7.8,
+  "color": "pink",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c90e7a2e56cf",
+   "r": "f825c90b2076",
+   "c": "c26a9559a377"
+  }
+ },
+ {
+  "id": 210,
+  "slug": "granbull",
+  "name": "Granbull",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Fairy Pokémon",
+  "flavor": {
+   "text": "It can make most any POKéMON run away simply by opening its mouth wide to reveal its big fangs.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 48.7,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Snubbull",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "64913d335acc",
+   "r": "5a0bfc4290bf",
+   "c": "426023202091"
+  }
+ },
+ {
+  "id": 211,
+  "slug": "qwilfish",
+  "name": "Qwilfish",
+  "gen": 2,
+  "types": [
+   "water",
+   "poison"
+  ],
+  "genus": "Balloon Pokémon",
+  "flavor": {
+   "text": "When faced with a larger opponent, it swallows as much water as it can to match the opponent's size.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 3.9,
+  "color": "gray",
+  "habitat": "sea",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ea7d9ca01e0a",
+   "r": "ed353ba2632d",
+   "c": "3548e8c63bc0"
+  }
+ },
+ {
+  "id": 212,
+  "slug": "scizor",
+  "name": "Scizor",
+  "gen": 2,
+  "types": [
+   "bug",
+   "steel"
+  ],
+  "genus": "Pincer Pokémon",
+  "flavor": {
+   "text": "This POKéMON's pincers, which contain steel, can crush any hard object it gets a hold of into bits.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 118.0,
+  "color": "red",
+  "habitat": "grassland",
+  "shape": "bug-wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Scyther",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c473053ad211",
+   "r": "0a9042a550ae",
+   "c": "06052f8e2ad4"
+  }
+ },
+ {
+  "id": 213,
+  "slug": "shuckle",
+  "name": "Shuckle",
+  "gen": 2,
+  "types": [
+   "bug",
+   "rock"
+  ],
+  "genus": "Mold Pokémon",
+  "flavor": {
+   "text": "The fluid secreted by its toes carves holes in rocks for nesting and can be mixed with BERRIES to make a drink.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 20.5,
+  "color": "yellow",
+  "habitat": "mountain",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8c3ce7d92770",
+   "r": "c35fe5b11453",
+   "c": "d8ca09c5f42b"
+  }
+ },
+ {
+  "id": 214,
+  "slug": "heracross",
+  "name": "Heracross",
+  "gen": 2,
+  "types": [
+   "bug",
+   "fighting"
+  ],
+  "genus": "Single Horn Pokémon",
+  "flavor": {
+   "text": "With its Herculean powers, it can easily throw around an object that is 100 times its own weight.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 54.0,
+  "color": "blue",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "4c12103497bb",
+   "r": "7b25078f8ba7",
+   "c": "4b6c80098f52"
+  }
+ },
+ {
+  "id": 215,
+  "slug": "sneasel",
+  "name": "Sneasel",
+  "gen": 2,
+  "types": [
+   "dark",
+   "ice"
+  ],
+  "genus": "Sharp Claw Pokémon",
+  "flavor": {
+   "text": "This cunning POKéMON hides under the cover of darkness, waiting to attack its prey.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 28.0,
+  "color": "black",
+  "habitat": "forest",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "9c2972c40954",
+   "r": "f54f6a9edd06",
+   "c": "e4ec249f160e"
+  }
+ },
+ {
+  "id": 216,
+  "slug": "teddiursa",
+  "name": "Teddiursa",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Little Bear Pokémon",
+  "flavor": {
+   "text": "It always licks honey. Its palm tastes sweet because of all the honey it has absorbed.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 8.8,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "97dc05c20bc3",
+   "r": "c0b7d93e7e34",
+   "c": "46cb05eecb12"
+  }
+ },
+ {
+  "id": 217,
+  "slug": "ursaring",
+  "name": "Ursaring",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Hibernator Pokémon",
+  "flavor": {
+   "text": "Although it has a large body, it is quite skilled at climbing trees. It eats and sleeps in the treetops.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 125.8,
+  "color": "brown",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Teddiursa",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "a782f6170f79",
+   "r": "4cb1445c4c9d",
+   "c": "958a18259d8f"
+  }
+ },
+ {
+  "id": 218,
+  "slug": "slugma",
+  "name": "Slugma",
+  "gen": 2,
+  "types": [
+   "fire"
+  ],
+  "genus": "Lava Pokémon",
+  "flavor": {
+   "text": "These group together in areas that are hotter than normal. If it cools off, its skin hardens.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 35.0,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2dc06cd67dac",
+   "r": "1a0c2ec5c3ba",
+   "c": "80d43f4e30df"
+  }
+ },
+ {
+  "id": 219,
+  "slug": "magcargo",
+  "name": "Magcargo",
+  "gen": 2,
+  "types": [
+   "fire",
+   "rock"
+  ],
+  "genus": "Lava Pokémon",
+  "flavor": {
+   "text": "Its body is as hot as lava and is always billowing. Flames will occasionally burst from its shell.",
+   "game": "crystal"
+  },
+  "heightM": 0.8,
+  "weightKg": 55.0,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Slugma",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "537951c6fe62",
+   "r": "b6a02902a02a",
+   "c": "afa5faa3ee95"
+  }
+ },
+ {
+  "id": 220,
+  "slug": "swinub",
+  "name": "Swinub",
+  "gen": 2,
+  "types": [
+   "ice",
+   "ground"
+  ],
+  "genus": "Pig Pokémon",
+  "flavor": {
+   "text": "It uses the tip of its nose to dig for food. Its nose is so tough that even frozen ground poses no problem.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 6.5,
+  "color": "brown",
+  "habitat": "cave",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "376ea3d762e8",
+   "r": "c50e2cbbd090",
+   "c": "c31cf4c72128"
+  }
+ },
+ {
+  "id": 221,
+  "slug": "piloswine",
+  "name": "Piloswine",
+  "gen": 2,
+  "types": [
+   "ice",
+   "ground"
+  ],
+  "genus": "Swine Pokémon",
+  "flavor": {
+   "text": "Although its legs are short, its rugged hooves prevent it from slipping, even on icy ground.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 55.8,
+  "color": "brown",
+  "habitat": "cave",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Swinub",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "355464c2fe53",
+   "r": "4043182adb50",
+   "c": "41e759e6bb45"
+  }
+ },
+ {
+  "id": 222,
+  "slug": "corsola",
+  "name": "Corsola",
+  "gen": 2,
+  "types": [
+   "water",
+   "rock"
+  ],
+  "genus": "Coral Pokémon",
+  "flavor": {
+   "text": "The points on its head absorb nutrients from clean water. They cannot survive in polluted water.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 5.0,
+  "color": "pink",
+  "habitat": "sea",
+  "shape": "armor",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "6c424c0a491b",
+   "r": "a324f507e472",
+   "c": "a5c83df2ec80"
+  }
+ },
+ {
+  "id": 223,
+  "slug": "remoraid",
+  "name": "Remoraid",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Jet Pokémon",
+  "flavor": {
+   "text": "To escape from an attacker, it may shoot water out of its mouth, then use that force to swim backward.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 12.0,
+  "color": "gray",
+  "habitat": "sea",
+  "shape": "fish",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ba378c11a4c5",
+   "r": "855fea3e6665",
+   "c": "4a18da460853"
+  }
+ },
+ {
+  "id": 224,
+  "slug": "octillery",
+  "name": "Octillery",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Jet Pokémon",
+  "flavor": {
+   "text": "Its instinct is to bury itself in holes. It often steals the nesting holes of others to sleep in them.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 28.5,
+  "color": "red",
+  "habitat": "sea",
+  "shape": "tentacles",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Remoraid",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "2330523c4113",
+   "r": "bee03dc85658",
+   "c": "5aca6193cd76"
+  }
+ },
+ {
+  "id": 225,
+  "slug": "delibird",
+  "name": "Delibird",
+  "gen": 2,
+  "types": [
+   "ice",
+   "flying"
+  ],
+  "genus": "Delivery Pokémon",
+  "flavor": {
+   "text": "It always carries its food with it, wherever it goes. If attacked, it throws its food at the opponent.",
+   "game": "crystal"
+  },
+  "heightM": 0.9,
+  "weightKg": 16.0,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "ea190e11d9f8",
+   "r": "1e2db3548e49",
+   "c": "9aec8aac8f71"
+  }
+ },
+ {
+  "id": 226,
+  "slug": "mantine",
+  "name": "Mantine",
+  "gen": 2,
+  "types": [
+   "water",
+   "flying"
+  ],
+  "genus": "Kite Pokémon",
+  "flavor": {
+   "text": "It swims along freely, eating things that swim into its mouth. Its whole body is very coarse.",
+   "game": "crystal"
+  },
+  "heightM": 2.1,
+  "weightKg": 220.0,
+  "color": "purple",
+  "habitat": "sea",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c0e416ad54f5",
+   "r": "48f40c25b760",
+   "c": "9fa0170dcc22"
+  }
+ },
+ {
+  "id": 227,
+  "slug": "skarmory",
+  "name": "Skarmory",
+  "gen": 2,
+  "types": [
+   "steel",
+   "flying"
+  ],
+  "genus": "Armor Bird Pokémon",
+  "flavor": {
+   "text": "The feathers that it sheds are very sharp. It is said that people once used the feathers as swords.",
+   "game": "crystal"
+  },
+  "heightM": 1.7,
+  "weightKg": 50.5,
+  "color": "gray",
+  "habitat": "rough-terrain",
+  "shape": "wings",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c1b057d0cff5",
+   "r": "1fbab1fbc628",
+   "c": "095ba2ce4133"
+  }
+ },
+ {
+  "id": 228,
+  "slug": "houndour",
+  "name": "Houndour",
+  "gen": 2,
+  "types": [
+   "dark",
+   "fire"
+  ],
+  "genus": "Dark Pokémon",
+  "flavor": {
+   "text": "Around dawn, its ominous howl echoes through the area to announce that this is its territory.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 10.8,
+  "color": "black",
+  "habitat": "rough-terrain",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "194286c17b74",
+   "r": "79fd043a5a42",
+   "c": "970ed9139385"
+  }
+ },
+ {
+  "id": 229,
+  "slug": "houndoom",
+  "name": "Houndoom",
+  "gen": 2,
+  "types": [
+   "dark",
+   "fire"
+  ],
+  "genus": "Dark Pokémon",
+  "flavor": {
+   "text": "The pungent- smelling flame that shoots from its mouth results from toxins burning in its body.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 35.0,
+  "color": "black",
+  "habitat": "rough-terrain",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Houndour",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "0dd82734718f",
+   "r": "d6750f4c963d",
+   "c": "67ba4d0d15c1"
+  }
+ },
+ {
+  "id": 230,
+  "slug": "kingdra",
+  "name": "Kingdra",
+  "gen": 2,
+  "types": [
+   "water",
+   "dragon"
+  ],
+  "genus": "Dragon Pokémon",
+  "flavor": {
+   "text": "It stores energy by sleeping at underwater depths at which no other life forms can survive.",
+   "game": "crystal"
+  },
+  "heightM": 1.8,
+  "weightKg": 152.0,
+  "color": "blue",
+  "habitat": "sea",
+  "shape": "blob",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Seadra",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "67ab890fc9ef",
+   "r": "a642bc60a980",
+   "c": "6aba007d00fd"
+  }
+ },
+ {
+  "id": 231,
+  "slug": "phanpy",
+  "name": "Phanpy",
+  "gen": 2,
+  "types": [
+   "ground"
+  ],
+  "genus": "Long Nose Pokémon",
+  "flavor": {
+   "text": "During the deserted morning hours, it comes ashore where it deftly uses its trunk to take a shower.",
+   "game": "crystal"
+  },
+  "heightM": 0.5,
+  "weightKg": 33.5,
+  "color": "blue",
+  "habitat": "rough-terrain",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8ccb9d7e16d3",
+   "r": "1aea733d8a29",
+   "c": "15201b63765e"
+  }
+ },
+ {
+  "id": 232,
+  "slug": "donphan",
+  "name": "Donphan",
+  "gen": 2,
+  "types": [
+   "ground"
+  ],
+  "genus": "Armor Pokémon",
+  "flavor": {
+   "text": "Because this POKéMON's skin is so tough, a normal attack won't even leave a scratch on it.",
+   "game": "crystal"
+  },
+  "heightM": 1.1,
+  "weightKg": 120.0,
+  "color": "gray",
+  "habitat": "rough-terrain",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Phanpy",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "7e53d38a5b8c",
+   "r": "09b05032cf62",
+   "c": "93463d10e763"
+  }
+ },
+ {
+  "id": 233,
+  "slug": "porygon2",
+  "name": "Porygon2",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Virtual Pokémon",
+  "flavor": {
+   "text": "This manmade POKéMON evolved from the latest technology. It may have unprogrammed reactions.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 32.5,
+  "color": "red",
+  "habitat": "urban",
+  "shape": "legs",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Porygon",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "4bc769b5e157",
+   "r": "0ca8f80eec3b",
+   "c": "267a17e16ad0"
+  }
+ },
+ {
+  "id": 234,
+  "slug": "stantler",
+  "name": "Stantler",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Big Horn Pokémon",
+  "flavor": {
+   "text": "The round balls found on the fallen antlers can be ground into a powder that aids in sleeping.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 71.2,
+  "color": "brown",
+  "habitat": "forest",
+  "shape": "quadruped",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c3eaa7f87c33",
+   "r": "cb8e4695c234",
+   "c": "d74cdf9c3fbb"
+  }
+ },
+ {
+  "id": 235,
+  "slug": "smeargle",
+  "name": "Smeargle",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Painter Pokémon",
+  "flavor": {
+   "text": "The color of the mysterious fluid secreted from its tail is predetermined for each SMEARGLE.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 58.0,
+  "color": "white",
+  "habitat": "urban",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3800518408bc",
+   "r": "0f2c33c46bf9",
+   "c": "5a5dfe14d72d"
+  }
+ },
+ {
+  "id": 236,
+  "slug": "tyrogue",
+  "name": "Tyrogue",
+  "gen": 2,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Scuffle Pokémon",
+  "flavor": {
+   "text": "To brush up on its fighting skills, it will challenge anyone. It has a very strong competitive spirit.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 21.0,
+  "color": "purple",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "3fecd347311e",
+   "r": "9362730fc50d",
+   "c": "2cb16ee7d404"
+  }
+ },
+ {
+  "id": 237,
+  "slug": "hitmontop",
+  "name": "Hitmontop",
+  "gen": 2,
+  "types": [
+   "fighting"
+  ],
+  "genus": "Handstand Pokémon",
+  "flavor": {
+   "text": "After doing a handstand to throw off the opponent's timing, it presents its fancy kick moves.",
+   "game": "crystal"
+  },
+  "heightM": 1.4,
+  "weightKg": 48.0,
+  "color": "brown",
+  "habitat": "urban",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Tyrogue",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f8bece3ff0c7",
+   "r": "c49be65675ae",
+   "c": "b81ba76350e6"
+  }
+ },
+ {
+  "id": 238,
+  "slug": "smoochum",
+  "name": "Smoochum",
+  "gen": 2,
+  "types": [
+   "ice",
+   "psychic"
+  ],
+  "genus": "Kiss Pokémon",
+  "flavor": {
+   "text": "The sensitivity of its lips develops most quickly. It uses them to try to identify unknown objects.",
+   "game": "crystal"
+  },
+  "heightM": 0.4,
+  "weightKg": 6.0,
+  "color": "pink",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "f2dcad601307",
+   "r": "7b1e44b97297",
+   "c": "910d2ed25284"
+  }
+ },
+ {
+  "id": 239,
+  "slug": "elekid",
+  "name": "Elekid",
+  "gen": 2,
+  "types": [
+   "electric"
+  ],
+  "genus": "Electric Pokémon",
+  "flavor": {
+   "text": "It loves violent thunder. The space between its horns flickers bluish- white when it is charging energy.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 23.5,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "e0f062c4703a",
+   "r": "c6d30498fdca",
+   "c": "47a9cc154c58"
+  }
+ },
+ {
+  "id": 240,
+  "slug": "magby",
+  "name": "Magby",
+  "gen": 2,
+  "types": [
+   "fire"
+  ],
+  "genus": "Live Coal Pokémon",
+  "flavor": {
+   "text": "It naturally spits an 1100-degree flame. It is said when many appear, it heralds a volcanic eruption.",
+   "game": "crystal"
+  },
+  "heightM": 0.7,
+  "weightKg": 21.4,
+  "color": "red",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "afa670ab8c13",
+   "r": "6945fbb6ed00",
+   "c": "9ec6f1591160"
+  }
+ },
+ {
+  "id": 241,
+  "slug": "miltank",
+  "name": "Miltank",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Milk Cow Pokémon",
+  "flavor": {
+   "text": "In order to milk a MILTANK, one must have a knack for rhythmically pulling up and down on its udders.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 75.5,
+  "color": "pink",
+  "habitat": "grassland",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "c490b84b2b5f",
+   "r": "587608efb420",
+   "c": "178c3cea136f"
+  }
+ },
+ {
+  "id": 242,
+  "slug": "blissey",
+  "name": "Blissey",
+  "gen": 2,
+  "types": [
+   "normal"
+  ],
+  "genus": "Happiness Pokémon",
+  "flavor": {
+   "text": "Biting into one of the delicious eggs that BLISSEY provides will make everyone around smile with joy.",
+   "game": "crystal"
+  },
+  "heightM": 1.5,
+  "weightKg": 46.8,
+  "color": "pink",
+  "habitat": "urban",
+  "shape": "humanoid",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Chansey",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "621381c1e933",
+   "r": "07c35fec4e73",
+   "c": "42a1da6835ef"
+  }
+ },
+ {
+  "id": 243,
+  "slug": "raikou",
+  "name": "Raikou",
+  "gen": 2,
+  "types": [
+   "electric"
+  ],
+  "genus": "Thunder Pokémon",
+  "flavor": {
+   "text": "This rough POKéMON stores energy inside its body, then sweeps across the land, shooting off electricity.",
+   "game": "crystal"
+  },
+  "heightM": 1.9,
+  "weightKg": 178.0,
+  "color": "yellow",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "8bb149c8ae2b",
+   "r": "1b29495b5a40",
+   "c": "6ca4316f821c"
+  }
+ },
+ {
+  "id": 244,
+  "slug": "entei",
+  "name": "Entei",
+  "gen": 2,
+  "types": [
+   "fire"
+  ],
+  "genus": "Volcano Pokémon",
+  "flavor": {
+   "text": "This brawny POKéMON courses around the earth, spouting flames hotter than a volcano's magma.",
+   "game": "crystal"
+  },
+  "heightM": 2.1,
+  "weightKg": 198.0,
+  "color": "brown",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "67f25fda9af4",
+   "r": "46b0683b8450",
+   "c": "a6e83f24d97a"
+  }
+ },
+ {
+  "id": 245,
+  "slug": "suicune",
+  "name": "Suicune",
+  "gen": 2,
+  "types": [
+   "water"
+  ],
+  "genus": "Aurora Pokémon",
+  "flavor": {
+   "text": "This divine POKéMON blows around the world, always in search of a pure reservoir.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 187.0,
+  "color": "blue",
+  "habitat": "grassland",
+  "shape": "quadruped",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "d373328a73b0",
+   "r": "89f367c4fd35",
+   "c": "05e39adc12f1"
+  }
+ },
+ {
+  "id": 246,
+  "slug": "larvitar",
+  "name": "Larvitar",
+  "gen": 2,
+  "types": [
+   "rock",
+   "ground"
+  ],
+  "genus": "Rock Skin Pokémon",
+  "flavor": {
+   "text": "Born deep underground, this POKéMON becomes a pupa after eating enough dirt to make a mountain.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 72.0,
+  "color": "green",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "6cbcdfc9975e",
+   "r": "3c140046de8f",
+   "c": "bd8dc460fab3"
+  }
+ },
+ {
+  "id": 247,
+  "slug": "pupitar",
+  "name": "Pupitar",
+  "gen": 2,
+  "types": [
+   "rock",
+   "ground"
+  ],
+  "genus": "Hard Shell Pokémon",
+  "flavor": {
+   "text": "It will not stay still, even while it's a pupa. It already has arms and legs under its solid shell.",
+   "game": "crystal"
+  },
+  "heightM": 1.2,
+  "weightKg": 152.0,
+  "color": "gray",
+  "habitat": "mountain",
+  "shape": "squiggle",
+  "legendary": false,
+  "evolution": {
+   "stage": 2,
+   "from": "Larvitar",
+   "evolvesFurther": true
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "5e1b9645a272",
+   "r": "6855de3628bd",
+   "c": "7379954a261b"
+  }
+ },
+ {
+  "id": 248,
+  "slug": "tyranitar",
+  "name": "Tyranitar",
+  "gen": 2,
+  "types": [
+   "rock",
+   "dark"
+  ],
+  "genus": "Armor Pokémon",
+  "flavor": {
+   "text": "In just one of its mighty hands, it has the power to make the ground shake and mountains crumble.",
+   "game": "crystal"
+  },
+  "heightM": 2.0,
+  "weightKg": 202.0,
+  "color": "green",
+  "habitat": "mountain",
+  "shape": "upright",
+  "legendary": false,
+  "evolution": {
+   "stage": 3,
+   "from": "Pupitar",
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "fb43f1a043ae",
+   "r": "5b7fa338bb22",
+   "c": "277a00e3feb6"
+  }
+ },
+ {
+  "id": 249,
+  "slug": "lugia",
+  "name": "Lugia",
+  "gen": 2,
+  "types": [
+   "psychic",
+   "flying"
+  ],
+  "genus": "Diving Pokémon",
+  "flavor": {
+   "text": "It has an incredible ability to calm raging storms. It is said that LUGIA appears when storms start.",
+   "game": "crystal"
+  },
+  "heightM": 5.2,
+  "weightKg": 216.0,
+  "color": "white",
+  "habitat": "rare",
+  "shape": "wings",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "32863752dd9e",
+   "r": "7f15c9630798",
+   "c": "abbdf7b82d40"
+  }
+ },
+ {
+  "id": 250,
+  "slug": "ho-oh",
+  "name": "Ho-Oh",
+  "gen": 2,
+  "types": [
+   "fire",
+   "flying"
+  ],
+  "genus": "Rainbow Pokémon",
+  "flavor": {
+   "text": "It will reveal itself before a pure-hearted trainer by shining its bright rainbow-colored wings.",
+   "game": "crystal"
+  },
+  "heightM": 3.8,
+  "weightKg": 199.0,
+  "color": "red",
+  "habitat": "rare",
+  "shape": "wings",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "492be5763b6d",
+   "r": "b12a2acfde41",
+   "c": "ae2887d6a30b"
+  }
+ },
+ {
+  "id": 251,
+  "slug": "celebi",
+  "name": "Celebi",
+  "gen": 2,
+  "types": [
+   "psychic",
+   "grass"
+  ],
+  "genus": "Time Travel Pokémon",
+  "flavor": {
+   "text": "Revered as a guardian of the forest, CELEBI appears wherever beautiful forests exist.",
+   "game": "crystal"
+  },
+  "heightM": 0.6,
+  "weightKg": 5.0,
+  "color": "green",
+  "habitat": "forest",
+  "shape": "humanoid",
+  "legendary": true,
+  "evolution": {
+   "stage": 1,
+   "from": null,
+   "evolvesFurther": false
+  },
+  "hasCry": true,
+  "assets": {
+   "s": "64010b168fe8",
+   "r": "178495d4ed6d",
+   "c": "b3b12c5b4832"
+  }
+ }
+]

@@ -3,6 +3,7 @@ import { fontSans, fontDisplay, fontPokemon } from './fonts'
 import { SettingsProvider } from '@/providers/SettingsProvider'
 import { AudioProvider } from '@/providers/AudioProvider'
 import { DevConsole } from '@/components/easter-eggs/DevConsole'
+import { WtpHost } from '@/components/whos-that-pokemon/WtpHost'
 import { ServiceWorkerCleanup } from '@/components/ServiceWorkerCleanup'
 import { SITE_URL } from '@/lib/seo'
 import './globals.css'
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
             <ServiceWorkerCleanup />
             <DevConsole />
+            <WtpHost />
           </AudioProvider>
         </SettingsProvider>
       </body>

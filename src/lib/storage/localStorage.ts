@@ -37,4 +37,6 @@ export const STORAGE_KEYS = {
   spotifyTrack: 'tc.spotify.track',
   /** Last known trainers-visited count (instant paint, refresh in background). */
   visitCount: 'tc.visits.count',
+  /** Who's That Pokémon? personal best score and streak. */
+  wtpBest: 'tc.wtp.best',
 } as const

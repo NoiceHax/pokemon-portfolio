@@ -1,0 +1,5 @@
+requests>=2.31
+pillow>=10.3
+numpy>=1.26
+scipy>=1.12
+rembg[cpu]>=2.0.57

@@ -37,3 +37,7 @@ next-env.d.ts
 
 # Local screenshot runs (scripts/screenshot.mjs)
 screenshots/
+
+# Who's That Pokémon pipeline: raw PokeAPI downloads + venv
+scripts/whos-that-pokemon/.cache/
+scripts/whos-that-pokemon/.venv/

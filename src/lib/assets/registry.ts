@@ -41,6 +41,9 @@ export const sprites = {
   charizard: `${ASSET_ROOT}/sprites/charizard.png`,
   /** Large detailed trainer (Red) hero sprite - used as the Trainer Card avatar. */
   trainerHero: `${ASSET_ROOT}/sprites/red_hero.png`,
+  /** Decorative silhouette on the sidebar's Who's That Pokémon? card
+   *  (scripts/whos-that-pokemon/silhouette.py). Per-round art comes from the API. */
+  wtpTeaser: `${ASSET_ROOT}/sprites/wtp_teaser.webp`,
 } as const
 
 /** Full-scene reference maps for the Adventure world. */

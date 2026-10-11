@@ -44,3 +44,25 @@ CREATE TABLE IF NOT EXISTS counters (
   name   TEXT PRIMARY KEY,
   value  BIGINT NOT NULL DEFAULT 0
 );
+
+-- Who's That Pokémon? run sequence numbers. The game state itself lives in a signed token
+-- held by the client; this row only records the latest step of each run so an older token
+-- can't be replayed (to re-roll a round or drop a hint). Pruned after two days.
+CREATE TABLE IF NOT EXISTS wtp_runs (
+  run_id      TEXT PRIMARY KEY,
+  seq         INTEGER NOT NULL,
+  ended       BOOLEAN NOT NULL DEFAULT false,
+  updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS wtp_runs_updated_idx ON wtp_runs (updated_at);
+
+-- Who's That Pokémon? leaderboard. One row per run; a run ends when it's submitted.
+CREATE TABLE IF NOT EXISTS wtp_leaderboard (
+  run_id       TEXT PRIMARY KEY,
+  name         TEXT NOT NULL,
+  score        INTEGER NOT NULL,
+  best_streak  INTEGER NOT NULL,
+  correct      INTEGER NOT NULL,
+  created_at   TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS wtp_leaderboard_score_idx ON wtp_leaderboard (score DESC, created_at);
