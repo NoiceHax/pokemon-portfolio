@@ -55,7 +55,7 @@ export const profile: Profile = {
   featuredProjectSlugs: [
     'learnflow-ai',
     'divyalipi-ai',
-    '65to70',
+    'flick-n-pick',
     'aasrah',
     'chinnaswamy-farm-stay',
     'shree-solar',

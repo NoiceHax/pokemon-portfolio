@@ -57,6 +57,7 @@ const nextConfig = {
   // Old /recruiter URLs → /home (bookmark + external link compatibility).
   async redirects() {
     return [
+      { source: '/home/pokedex/65to70', destination: '/home/pokedex/flick-n-pick', permanent: true },
       { source: '/recruiter', destination: '/home', permanent: true },
       { source: '/recruiter/:path*', destination: '/home/:path*', permanent: true },
     ]

@@ -39,7 +39,7 @@ function guideScript(experience: ChosenExperience): DialogueScript {
         ]
       : [
           'Welcome to Cerulean City!',
-          'This is where Chandan sharpened his skills.',
+          'Explore the buildings to browse projects, experience, and writing.',
           'Face a building door and press Enter to head inside - each holds part of his story.',
         ]
   return lines('guide', 'Guide', body)
@@ -87,24 +87,24 @@ export function buildDialogueRegistry(
       'The lab to the west logs every project - go see his work firsthand.',
     ]),
     'npc-lass': lines('npc-lass', 'Lass', [
-      'You battle with Pokémon; Chandan battles with bugs - and wins.',
-      'The Gym holds the story of his toughest challenges.',
+      'The Gym has details about Chandan’s work experience.',
+      'Open its door to browse roles and projects.',
     ]),
     'npc-shopkeeper': lines('npc-shopkeeper', 'Shopkeeper', [
-      'Every good trainer keeps their tools sharp.',
-      'Chandan trades in TypeScript, React, and a lot of coffee.',
+      'You can find the technologies used in each project in the lab.',
+      'Look through the project pages for implementation details.',
     ]),
     'npc-hiker': lines('npc-hiker', 'Hiker', [
-      "I've climbed a lot of mountains. Chandan's climbed a few learning curves.",
-      'Read his journal up the road - the trail notes are worth it.',
+      "The journal collects notes about development and recent work.",
+      'Head up the road to read the entries.',
     ]),
     'npc-kid': lines('npc-kid', 'Youngster', [
-      'When I grow up I wanna ship code like Chandan!',
-      'He says: start small, keep building, never stop being curious.',
+      'Each building opens a different part of the portfolio.',
+      'Walk up to a door, face it, and interact to see what is inside.',
     ]),
     'npc-lady': lines('npc-lady', 'Townsfolk', [
       'This whole town runs on one engine, written from scratch.',
-      'No shortcuts - just careful, readable code.',
+      'The buildings link to the same pages as the portfolio navigation.',
     ]),
   }
 }

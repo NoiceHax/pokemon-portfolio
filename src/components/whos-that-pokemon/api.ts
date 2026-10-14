@@ -13,6 +13,7 @@ export interface Round {
   silhouette: string
   gen: 1 | 2
   hintCount: number
+  namePattern: string
 }
 
 export type Hint =

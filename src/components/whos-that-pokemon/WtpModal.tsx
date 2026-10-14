@@ -79,7 +79,7 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
       setRound(res.round)
       setHints([])
       setReveal(null)
-      setGuessText('')
+      setGuessText(res.round.namePattern)
       setPhase('round')
     },
     [call],
@@ -222,28 +222,79 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
                 <>
                   <HintList hints={hints} />
                   <form
-                    className="mt-3 flex gap-2"
+                    className="mt-3 flex flex-col gap-3"
                     onSubmit={(e) => {
                       e.preventDefault()
-                      if (guessText.trim() && !busy) void submitGuess(guessText)
+                      if (guessText && !guessText.includes('_') && !busy)
+                        void submitGuess(guessText)
                     }}
                   >
-                    <input
-                      ref={inputRef}
-                      value={guessText}
-                      onChange={(e) => setGuessText(e.target.value)}
-                      maxLength={40}
-                      autoComplete="off"
-                      autoCapitalize="off"
-                      autoCorrect="off"
-                      spellCheck={false}
-                      aria-label="Your guess"
-                      placeholder="It's…"
-                      className="min-w-0 flex-1 rounded-card border border-edge bg-surface px-3 py-2 font-mono text-base text-ink placeholder:text-ink-faint focus:border-poke-red focus:outline-none"
-                    />
+                    <p id="wtp-blanks" className="text-center font-mono text-sm text-ink-soft">
+                      Fill in the missing letters. The shown letters are free.
+                    </p>
+                    <div
+                      className="flex flex-wrap justify-center gap-1.5"
+                      role="group"
+                      aria-describedby="wtp-blanks"
+                      aria-label="Pokemon name"
+                    >
+                      {Array.from(round.namePattern).map((letter, index) =>
+                        letter !== '_' ? (
+                          <span
+                            key={index}
+                            className="grid h-11 min-w-7 place-items-center rounded border border-edge bg-surface-sunken px-1 font-mono text-lg font-bold text-ink"
+                          >
+                            {letter === ' ' ? '\u00a0' : letter}
+                          </span>
+                        ) : (
+                          <input
+                            key={index}
+                            ref={index === round.namePattern.indexOf('_') ? inputRef : undefined}
+                            data-letter-index={index}
+                            aria-label={`Missing letter ${index + 1} of ${round.namePattern.length}`}
+                            value={guessText[index] === '_' ? '' : (guessText[index] ?? '')}
+                            disabled={busy}
+                            onChange={(e) => {
+                              const value = e.target.value
+                                .replace(/[^a-z]/gi, '')
+                                .slice(-1)
+                                .toUpperCase()
+                              setGuessText(
+                                (current) =>
+                                  current.slice(0, index) +
+                                  (value || '_') +
+                                  current.slice(index + 1),
+                              )
+                              if (value) {
+                                const next = round.namePattern.indexOf('_', index + 1)
+                                e.currentTarget.form
+                                  ?.querySelector<HTMLInputElement>(`[data-letter-index="${next}"]`)
+                                  ?.focus()
+                              }
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Backspace' && !e.currentTarget.value) {
+                                const previous = round.namePattern.lastIndexOf('_', index - 1)
+                                e.currentTarget.form
+                                  ?.querySelector<HTMLInputElement>(
+                                    `[data-letter-index="${previous}"]`,
+                                  )
+                                  ?.focus()
+                              }
+                            }}
+                            onFocus={(e) => e.target.select()}
+                            autoComplete="off"
+                            autoCapitalize="characters"
+                            autoCorrect="off"
+                            spellCheck={false}
+                            className="h-11 w-8 rounded border-2 border-poke-red/50 bg-surface text-center font-mono text-lg uppercase text-ink focus:border-poke-red focus:outline-none focus:ring-2 focus:ring-poke-red/30"
+                          />
+                        ),
+                      )}
+                    </div>
                     <button
                       type="submit"
-                      disabled={busy || !guessText.trim()}
+                      disabled={busy || !guessText || guessText.includes('_')}
                       className="rounded-card bg-poke-red px-4 py-2 font-display text-xs text-white transition-colors hover:bg-poke-red-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red focus-visible:ring-offset-2 disabled:opacity-50"
                     >
                       Guess!
@@ -485,7 +536,7 @@ function Intro({
   return (
     <div className="flex flex-col gap-3">
       <ul className="flex flex-col gap-1 font-mono text-sm text-ink-soft">
-        <li>· A silhouette appears. Name the Pokémon.</li>
+        <li>· Recognize the silhouette and fill in the missing letters.</li>
         <li>· 100 points each; every hint costs {HINT_COST}. Streaks add a bonus.</li>
         <li>· Three misses and the run is over.</li>
       </ul>

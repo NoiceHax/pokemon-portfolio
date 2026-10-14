@@ -528,16 +528,16 @@ export const projects: ProjectInput[] = [
   },
 
   {
-    slug: '65to70',
+    slug: 'flick-n-pick',
     dexNumber: 20,
-    title: '65to70',
+    title: "Flick n' Pick",
     summary:
       'A local-first browser extension that detects what you finish watching across sites, merges watchlists, and syncs to Simkl, Trakt or Letterboxd.',
     status: 'prototype',
     types: ['water'],
     cover: {
-      src: '/projects/65to70.png',
-      alt: '65to70',
+      src: '/projects/flick-n-pick.png',
+      alt: "Flick n' Pick",
     },
     problemSolved:
       'Watch history and watchlists end up scattered across streaming sites, and trackers want your data uploaded first. The extension asks for no host permissions at install, registers a site only when you switch it on, identifies titles through TMDB with an offline fallback index, and keeps history in IndexedDB until you choose to push it to a tracker you connected.',

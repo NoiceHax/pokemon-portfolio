@@ -1,5 +1,6 @@
 import { HINT_COUNT, newRun, startRound } from '@/lib/wtp/game'
 import { commit, error, readMove } from '@/lib/wtp/http'
+import { namePattern } from '@/lib/wtp/namePattern'
 
 /**
  * POST { token? } → the next round: a silhouette image URL and the generation, never the
@@ -22,6 +23,7 @@ export async function POST(request: Request) {
       silhouette: `/api/wtp/round-image?t=${encodeURIComponent(token)}`,
       gen: pokemon.gen,
       hintCount: HINT_COUNT,
+      namePattern: namePattern(pokemon.name),
     },
   }))
 }
