@@ -16,9 +16,8 @@ export interface Round {
   namePattern: string
 }
 
-export type Hint =
-  | { kind: 'types'; label: string; types: string[] }
-  | { kind: 'text'; label: string; text: string }
+export type { Hint } from '@/lib/wtp/game'
+import type { Hint } from '@/lib/wtp/game'
 
 export interface Reveal {
   correct: boolean
@@ -66,7 +65,7 @@ type Move<T> = { token: string; run: PublicRun } & T
 
 export const wtpApi = {
   round: (token: string | null) => post<Move<{ round: Round }>>('round', token ? { token } : {}),
-  hint: (token: string) => post<Move<{ hint: Hint }>>('hint', { token }),
+  hint: (token: string, index: number) => post<Move<{ hint: Hint }>>('hint', { token, index }),
   guess: (token: string, guess: string) =>
     post<Move<{ result: Reveal }>>('guess', { token, guess }),
   submit: (token: string, name: string) => post<{ ok: true }>('leaderboard', { token, name }),

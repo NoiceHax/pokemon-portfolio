@@ -17,7 +17,6 @@ import { RecruiterPreview } from './RecruiterPreview'
 import { AdventureOnboarding } from './AdventureOnboarding'
 import { resolveDestination, getDestination, type RecruiterDestinationId } from '@/world/world/recruiterPortals'
 import { setAdventureTransition, getAdventureTransition, clearAdventureTransition } from '@/lib/adventureTransition'
-import { MuteButton } from '@/components/ui/MuteButton'
 
 // Keyed by KeyboardEvent.code (the PHYSICAL key), not `.key`. Using `.key` breaks when a
 // modifier is held: releasing "d" while Shift is down fires keyup with key "D", which
@@ -237,10 +236,6 @@ export function WorldRenderer({
     >
       {/* The four-layer Scene: Background → Entity → Foreground → Overlay. */}
       <Scene engine={engine} snapshot={snapshot} registry={registry} zoom={zoom} />
-
-      <div className="absolute right-4 top-4 z-40">
-        <MuteButton className="border-ink/40 bg-surface-raised/90" />
-      </div>
 
       <TouchControls
         onMoveStart={(d) => engine.setHeld(d)}

@@ -16,7 +16,6 @@ import {
   type Round,
 } from './api'
 import { recordBest } from './events'
-import { GAME_TYPE_CLASSES } from './typeColors'
 
 /**
  * Who's That Pokémon? - the anime's mid-episode segment as a game. A silhouette appears on
@@ -86,14 +85,41 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
   )
 
   const takeHint = async () => {
-    if (!token) return
-    const res = await call(() => wtpApi.hint(token))
+    if (!token || !round || busy) return
+    // Prefer an empty slot; if all are typed, confirm the first editable letter.
+    const index =
+      guessText.indexOf('_') >= 0 ? guessText.indexOf('_') : round.namePattern.indexOf('_')
+    if (index < 0) return
+    const res = await call(() => wtpApi.hint(token, index))
     if (!res) return
     setToken(res.token)
     setRun(res.run)
     setHints((h) => [...h, res.hint])
-    inputRef.current?.focus()
+    const { index: revealedIndex, letter } = res.hint
+    setGuessText(
+      (current) => current.slice(0, revealedIndex) + letter + current.slice(revealedIndex + 1),
+    )
+    setRound((current) =>
+      current
+        ? {
+            ...current,
+            namePattern:
+              current.namePattern.slice(0, revealedIndex) +
+              letter +
+              current.namePattern.slice(revealedIndex + 1),
+          }
+        : current,
+    )
   }
+
+  // Wait for the revealed slot to become fixed before focusing the next blank.
+  useEffect(() => {
+    if (!open || phase !== 'round' || hints.length === 0) return
+    const inputs = dialogRef.current?.querySelectorAll<HTMLInputElement>('[data-letter-index]')
+    const next = inputs && (Array.from(inputs).find((input) => !input.value) ?? inputs[0])
+    if (next) next.focus()
+    else dialogRef.current?.querySelector<HTMLButtonElement>('button[type="submit"]')?.focus()
+  }, [hints.length, open, phase])
 
   const submitGuess = async (text: string) => {
     if (!token) return
@@ -230,7 +256,8 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
                     }}
                   >
                     <p id="wtp-blanks" className="text-center font-mono text-sm text-ink-soft">
-                      Fill in the missing letters. The shown letters are free.
+                      Fill in the missing letters. Starting letters are free; reveals cost 15 points
+                      each.
                     </p>
                     <div
                       className="flex flex-wrap justify-center gap-1.5"
@@ -242,7 +269,12 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
                         letter !== '_' ? (
                           <span
                             key={index}
-                            className="grid h-11 min-w-7 place-items-center rounded border border-edge bg-surface-sunken px-1 font-mono text-lg font-bold text-ink"
+                            aria-label={
+                              hints.some((hint) => hint.index === index)
+                                ? `Revealed letter ${index + 1}: ${letter}`
+                                : undefined
+                            }
+                            className={`grid h-11 min-w-7 place-items-center rounded border px-1 font-mono text-lg font-bold ${hints.some((hint) => hint.index === index) ? 'border-poke-red bg-poke-red/10 text-poke-red' : 'border-edge bg-surface-sunken text-ink'}`}
                           >
                             {letter === ' ' ? '\u00a0' : letter}
                           </span>
@@ -308,8 +340,8 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
                       className="rounded-card border border-edge px-3 py-1.5 font-mono text-sm text-ink-soft transition-colors hover:border-poke-red hover:text-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red disabled:opacity-50"
                     >
                       {hintsLeft > 0
-                        ? `Hint (−${HINT_COST} pts) · ${hintsLeft} left`
-                        : 'No hints left'}
+                        ? `Reveal a letter (−${HINT_COST} pts) · ${hintsLeft} left`
+                        : 'All letters revealed'}
                     </button>
                     <button
                       type="button"
@@ -448,38 +480,17 @@ function Stage({
 }
 
 function HintList({ hints }: { hints: Hint[] }) {
-  if (hints.length === 0) {
-    return (
-      <p className="mt-3 text-center font-mono text-sm text-ink-faint">
-        Guess with no hints for the full 100 points.
-      </p>
-    )
-  }
+  const latest = hints[hints.length - 1]
   return (
-    <ul className="mt-3 flex flex-col gap-1.5" aria-live="polite">
-      {hints.map((h, i) => (
-        <li
-          key={i}
-          className="rounded-card border border-edge bg-surface px-3 py-1.5 font-mono text-sm text-ink"
-        >
-          <span className="mr-2 text-xs uppercase tracking-wide text-ink-faint">{h.label}</span>
-          {h.kind === 'types' ? (
-            <span className="inline-flex gap-1.5">
-              {h.types.map((t) => (
-                <span
-                  key={t}
-                  className={`rounded-full px-2 py-0.5 text-xs capitalize ${GAME_TYPE_CLASSES[t] ?? 'bg-stone-400 text-white'}`}
-                >
-                  {t}
-                </span>
-              ))}
-            </span>
-          ) : (
-            h.text
-          )}
-        </li>
-      ))}
-    </ul>
+    <p
+      className="mt-3 text-center font-mono text-sm text-ink-soft"
+      role="status"
+      aria-live="polite"
+    >
+      {latest
+        ? `Letter ${latest.index + 1} is ${latest.letter}. ${hints.length * HINT_COST} points used on reveals.`
+        : 'Need help spelling? Reveal a missing letter below.'}
+    </p>
   )
 }
 
@@ -537,7 +548,7 @@ function Intro({
     <div className="flex flex-col gap-3">
       <ul className="flex flex-col gap-1 font-mono text-sm text-ink-soft">
         <li>· Recognize the silhouette and fill in the missing letters.</li>
-        <li>· 100 points each; every hint costs {HINT_COST}. Streaks add a bonus.</li>
+        <li>· 100 points each; revealing a letter costs {HINT_COST}. Streaks add a bonus.</li>
         <li>· Three misses and the run is over.</li>
       </ul>
       <button

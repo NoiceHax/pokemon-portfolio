@@ -1,4 +1,4 @@
-import { HINT_COUNT, newRun, startRound } from '@/lib/wtp/game'
+import { newRun, startRound } from '@/lib/wtp/game'
 import { commit, error, readMove } from '@/lib/wtp/http'
 import { namePattern } from '@/lib/wtp/namePattern'
 
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     round: {
       silhouette: `/api/wtp/round-image?t=${encodeURIComponent(token)}`,
       gen: pokemon.gen,
-      hintCount: HINT_COUNT,
+      hintCount: namePattern(pokemon.name).split('_').length - 1,
       namePattern: namePattern(pokemon.name),
     },
   }))
