@@ -553,7 +553,7 @@ export const projects: ProjectInput[] = [
     links: [
       {
         label: 'Repository',
-        href: 'https://github.com/NoiceHax/65to70',
+        href: 'https://github.com/NoiceHax/flick-n-pick',
         kind: 'repo',
       },
     ],
