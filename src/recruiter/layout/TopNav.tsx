@@ -24,14 +24,21 @@ export function TopNav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
         <Link
           href="/home"
-          className="flex items-center gap-2 font-display text-lg font-bold uppercase tracking-wide text-poke-red"
+          className="group/logo flex items-center gap-2 font-display text-lg font-bold uppercase tracking-wide text-poke-red"
         >
-          <span
+          {/* Poké Ball mark. Wobbles like a catch attempt on hover (same keyframes as the
+              project covers' placeholder ball). */}
+          <svg
             aria-hidden
-            className="grid h-6 w-6 place-items-center rounded-full border-2 border-poke-red"
+            viewBox="0 0 24 24"
+            className="h-6 w-6 shrink-0 group-hover/logo:pokeball-wobble"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-poke-red" />
-          </span>
+            <path d="M2 12a10 10 0 0 1 20 0Z" className="fill-poke-red" />
+            <path d="M2 12a10 10 0 0 0 20 0Z" className="fill-white" />
+            <path d="M2 12h20" className="stroke-ink" strokeWidth="2" />
+            <circle cx="12" cy="12" r="10" fill="none" className="stroke-ink" strokeWidth="2" />
+            <circle cx="12" cy="12" r="3.5" className="fill-white stroke-ink" strokeWidth="2" />
+          </svg>
           NOICEHAX
         </Link>
 
