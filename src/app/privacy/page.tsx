@@ -56,7 +56,9 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong>Visit count.</strong> An anonymous, aggregate counter of page visits. It
-                does not identify you.
+                does not identify you. The number shown is the daily unique-visitor total
+                from Cloudflare&apos;s aggregate traffic statistics for this site, which
+                Cloudflare already collects as the site&apos;s network provider.
               </li>
               <li>
                 <strong>Abuse prevention.</strong> To stop spam and brute-force attempts, the
