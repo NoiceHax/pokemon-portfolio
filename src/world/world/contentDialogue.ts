@@ -51,7 +51,7 @@ export function journeyScript(): DialogueScript {
   const journey = getExperience()
   return script('npc-journey', 'Elder', [
     "Every trainer's journey shapes who they become.",
-    ...journey.map((m) => `${m.year} · ${m.location}: ${m.role}.`),
+    ...journey.map((m) => `${m.year} · ${m.location}${m.role ? `: ${m.role}` : ''}.`),
   ])
 }
 

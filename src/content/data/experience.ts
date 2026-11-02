@@ -27,9 +27,8 @@ export const experience: ExperienceInput = [
     slug: 'scaler-school-of-technology',
     year: '2024 - Present',
     location: 'Scaler School of Technology',
-    role: 'B.S. Computer Science',
     description:
-      'Pursuing a Bachelor of Science in Computer Science while specializing in full stack development, artificial intelligence, system design, and software engineering through project based learning.',
+      'Specializing in full stack development, artificial intelligence, system design, and software engineering through project based learning.',
     current: true,
     group: 'Education',
   },

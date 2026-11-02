@@ -88,7 +88,9 @@ function MilestoneBody({ m }: { m: ExperienceMilestone }) {
           {m.current ? ' · Now' : ''}
         </span>
       </div>
-      <p className="mt-2 font-display text-base font-bold uppercase text-ink">{m.role}</p>
+      {m.role ? (
+        <p className="mt-2 font-display text-base font-bold uppercase text-ink">{m.role}</p>
+      ) : null}
       <p className="mt-1 font-mono text-sm text-ink-soft">{m.description}</p>
     </div>
   )

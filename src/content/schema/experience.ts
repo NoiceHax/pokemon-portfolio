@@ -19,7 +19,7 @@ export const experienceMilestoneSchema = z.object({
   /** Pokémon location used as the metaphor, e.g. "Pallet Town". */
   location: z.string().min(1),
   /** Real role/stage, e.g. "BSc CS" or "Sr. Engineer". */
-  role: z.string().min(1),
+  role: z.string().default(''),
   /** One-line description of the stage. */
   description: z.string().min(1),
   /** Marks the current/most-recent stage (highlighted on the route). */
