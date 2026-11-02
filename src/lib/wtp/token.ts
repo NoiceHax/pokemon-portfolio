@@ -53,7 +53,7 @@ export function seal(payload: object, { encrypt = false } = {}): string {
 
 /** Verify + parse. Returns null for anything tampered, malformed or unsigned. */
 export function open<T>(token: unknown): T | null {
-  if (typeof token !== 'string' || token.length > 4096 || !secret()) return null
+  if (typeof token !== 'string' || token.length > 16384 || !secret()) return null
   const parts = token.split('.')
   if (parts.length !== 3) return null
   const [mode, body, sig] = parts as [string, string, string]

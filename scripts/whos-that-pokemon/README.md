@@ -1,6 +1,6 @@
 # Who's That Pokémon? data pipeline
 
-These scripts build the game's data and art for Gen 1 + 2 (#1–251), starting from raw PokeAPI. They are run by hand, and their output is committed, so neither the site build nor the deploy needs Python.
+These scripts build the game's data and art for Generations 1–9 (#1–1025), starting from raw PokeAPI. They are run by hand, and their output is committed, so neither the site build nor the deploy needs Python. The game at `/minigame/guess` lets players choose generations and difficulty before starting a run.
 
 | Step | Script | Output |
 |---|---|---|
@@ -28,11 +28,21 @@ Every asset gets its own random token, so a filename never reveals the dex numbe
 ```sh
 python -m venv scripts/whos-that-pokemon/.venv
 scripts/whos-that-pokemon/.venv/Scripts/python -m pip install -r scripts/whos-that-pokemon/requirements.txt
-scripts/whos-that-pokemon/.venv/Scripts/python -I scripts/whos-that-pokemon/fetch.py
+scripts/whos-that-pokemon/.venv/Scripts/python -I scripts/whos-that-pokemon/fetch.py --through-gen 9
 scripts/whos-that-pokemon/.venv/Scripts/python -I scripts/whos-that-pokemon/silhouette.py
 ```
 
 On macOS/Linux the venv binary is `.venv/bin/python`.
 
 - `ffmpeg` must be on PATH, to convert the cries from .ogg to .mp3 for Safari.
-- The first run of `silhouette.py` downloads the model, about 170 MB, into `~/.u2net/`.
+- The first run of `silhouette.py` downloads the model, about 170 MB, into `.cache/models/` (override with `U2NET_HOME`).
+- Fetching uses six workers with per-file cache locks and atomic writes. `--workers` changes concurrency; `--through-gen 1` through `9` chooses the last generation to include.
+- Gen 1–2 retain the original Gen 2 typings. Later Pokémon use their current typings, and flavor text falls back to an available English entry from a later game.
+
+To overlap model inference with downloading, run `silhouette.py --prepare-masks 1025` in a separate terminal, then `silhouette.py --wait-for-masks` to export the assets as masks become ready. `--start-id` lets a preparation batch begin at a later dex number. Set `OMP_NUM_THREADS` to adjust model CPU usage (default: 4).
+
+When extending an existing pool, add `--reuse-assets` to retain already exported artwork and cries. New WebP exports use quality 86 with compression effort 4; this keeps export time practical for the full pool while preserving the same segmentation and alpha-edge pipeline.
+
+## Verification
+
+Run `node scripts/whos-that-pokemon/check-game.cjs` after exporting assets. It checks all Pokémon and difficulties, randomized starting positions, hints without duplicate charges, generation filtering, pool exhaustion, and token round trips.

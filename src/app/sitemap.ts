@@ -46,6 +46,7 @@ const STATIC_PATHS = [
   '/home/pokemon-center',
   '/hall-of-fame',
   '/privacy',
+  '/minigame/guess',
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

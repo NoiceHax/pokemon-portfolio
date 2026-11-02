@@ -33,10 +33,16 @@ import secrets
 import shutil
 import subprocess
 import sys
+import argparse
+import time
+
+# Keep downloaded model files with the rest of the pipeline cache. Limit ONNX
+# threads so processing artwork can run alongside the local development server.
+os.environ.setdefault('U2NET_HOME', os.path.join(os.path.dirname(os.path.abspath(__file__)), '.cache', 'models'))
+os.environ.setdefault('OMP_NUM_THREADS', '4')
 
 import numpy as np
 from PIL import Image
-from rembg import new_session, remove
 from scipy import ndimage
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -63,6 +69,7 @@ def model_mask(session, rgba, pid):
     cached = os.path.join(CACHE, "masks", f"{pid}.png")
     if os.path.exists(cached):
         return np.asarray(Image.open(cached)) > 127
+    from rembg import remove
     masks = []
     for bg in ((255, 255, 255), (0, 0, 0)):
         flat = Image.new("RGB", rgba.size, bg)
@@ -72,6 +79,11 @@ def model_mask(session, rgba, pid):
     os.makedirs(os.path.dirname(cached), exist_ok=True)
     Image.fromarray((mask * 255).astype(np.uint8)).save(cached)
     return mask
+
+
+def create_session():
+    from rembg import new_session
+    return new_session('isnet-general-use')
 
 
 def combine(alpha_mask, predicted):
@@ -115,8 +127,29 @@ def to_cry_mp3(src, dst):
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")  # names like Nidoran♀ on a cp1252 console
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--prepare-masks', type=int, metavar='LAST_ID', help='Prepare masks while artwork is downloading, up to this dex id')
+    parser.add_argument('--start-id', type=int, default=1, help='First dex id to prepare (for separate batches)')
+    parser.add_argument('--wait-for-masks', action='store_true', help='Use masks from a separate preparation process instead of loading another model')
+    parser.add_argument('--reuse-assets', action='store_true', help='Keep existing exported images and audio when extending the dataset')
+    args = parser.parse_args()
+    if args.prepare_masks:
+        session = None
+        for pid in range(args.start_id, args.prepare_masks + 1):
+            if os.path.exists(os.path.join(CACHE, 'masks', f'{pid}.png')):
+                continue
+            art_path = os.path.join(CACHE, 'art', f'{pid}.png')
+            while not os.path.exists(art_path):
+                time.sleep(2)
+            if session is None:
+                session = create_session()
+            model_mask(session, Image.open(art_path).convert('RGBA'), pid)
+            if pid % 10 == 0:
+                print(f'  prepared mask {pid}/{args.prepare_masks}', flush=True)
+        return
     with open(os.path.join(CACHE, "records.json"), encoding="utf-8") as f:
         records = json.load(f)
+    print(f'Exporting {len(records)} Pokémon from cached masks and artwork...', flush=True)
     old_tokens = {}
     if os.path.exists(OUT_JSON):
         with open(OUT_JSON, encoding="utf-8") as f:
@@ -139,8 +172,17 @@ def main():
         art = Image.open(os.path.join(CACHE, "art", f"{pid}.png")).convert("RGBA")
         alpha = np.asarray(art.split()[3])
         alpha_mask = alpha > 32
+        if args.wait_for_masks:
+            mask_path = os.path.join(CACHE, 'masks', f'{pid}.png')
+            while True:
+                try:
+                    with Image.open(mask_path) as mask_image:
+                        mask_image.load()
+                    break
+                except (FileNotFoundError, OSError):
+                    time.sleep(1)
         if session is None and not os.path.exists(os.path.join(CACHE, "masks", f"{pid}.png")):
-            session = new_session("isnet-general-use")
+            session = create_session()
         predicted = model_mask(session, art, pid)
         iou = (alpha_mask & predicted).sum() / max((alpha_mask | predicted).sum(), 1)
 
@@ -168,18 +210,23 @@ def main():
             (sil_img, os.path.join(OUT_SILHOUETTES, f"{tokens['s']}.webp")),
             (reveal, os.path.join(OUT_ASSETS, "r", f"{tokens['r']}.webp")),
         ):
-            out = img.crop(box).resize((SIZE, SIZE), Image.LANCZOS)
-            out.save(path, "WEBP", quality=86, method=6)
+            if not args.reuse_assets or not os.path.exists(path) or os.path.getsize(path) == 0:
+                out = img.crop(box).resize((SIZE, SIZE), Image.LANCZOS)
+                temp_path = path + '.tmp'
+                out.save(temp_path, "WEBP", quality=86, method=4)
+                os.replace(temp_path, path)
         thumbs.append(sil_img.crop(box).resize((96, 96), Image.LANCZOS))
 
         if rec["hasCry"]:
-            to_cry_mp3(os.path.join(CACHE, "cry", f"{pid}.ogg"), os.path.join(OUT_ASSETS, "c", f"{tokens['c']}.mp3"))
+            cry_path = os.path.join(OUT_ASSETS, "c", f"{tokens['c']}.mp3")
+            if not args.reuse_assets or not os.path.exists(cry_path) or os.path.getsize(cry_path) == 0:
+                to_cry_mp3(os.path.join(CACHE, "cry", f"{pid}.ogg"), cry_path)
         if pid == TEASER_ID:
             sil_img.crop(box).resize((128, 128), Image.LANCZOS).save(TEASER, "WEBP", quality=90)
 
         report.append((pid, rec["name"], round(float(iou), 3), round(float(coverage), 3)))
         if pid % 25 == 0:
-            print(f"  processed {pid}/{len(records)}")
+            print(f"  processed {pid}/{len(records)}", flush=True)
 
     # QA contact sheet: every silhouette on white, 16 per row.
     cols = 16

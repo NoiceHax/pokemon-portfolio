@@ -1,4 +1,5 @@
 /** Client side of /api/wtp/*. Shapes mirror the route handlers. */
+import type { GameSettings, Generation } from '@/lib/wtp/settings'
 
 export interface PublicRun {
   score: number
@@ -11,7 +12,7 @@ export interface PublicRun {
 
 export interface Round {
   silhouette: string
-  gen: 1 | 2
+  gen: Generation
   hintCount: number
   namePattern: string
 }
@@ -64,8 +65,9 @@ async function post<T>(path: string, body: object): Promise<T> {
 type Move<T> = { token: string; run: PublicRun } & T
 
 export const wtpApi = {
-  round: (token: string | null) => post<Move<{ round: Round }>>('round', token ? { token } : {}),
-  hint: (token: string, index: number) => post<Move<{ hint: Hint }>>('hint', { token, index }),
+  round: (token: string | null, settings?: GameSettings) =>
+    post<Move<{ round: Round }>>('round', token ? { token } : { settings }),
+  hint: (token: string) => post<Move<{ hint: Hint }>>('hint', { token }),
   guess: (token: string, guess: string) =>
     post<Move<{ result: Reveal }>>('guess', { token, guess }),
   submit: (token: string, name: string) => post<{ ok: true }>('leaderboard', { token, name }),

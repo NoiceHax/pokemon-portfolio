@@ -1,6 +1,6 @@
 import { newRun, startRound } from '@/lib/wtp/game'
 import { commit, error, readMove } from '@/lib/wtp/http'
-import { namePattern } from '@/lib/wtp/namePattern'
+import { parseSettings } from '@/lib/wtp/settings'
 
 /**
  * POST { token? } → the next round: a silhouette image URL and the generation, never the
@@ -14,7 +14,9 @@ export const dynamic = 'force-dynamic'
 export async function POST(request: Request) {
   const move = await readMove(request, 'round', { allowNew: true })
   if (move instanceof Response) return move
-  const run = move.run ?? newRun()
+  const settings = parseSettings(move.body.settings)
+  if (!settings) return error('Choose at least one generation and a valid difficulty.', 422)
+  const run = move.run ?? newRun(settings)
   const fromSeq = run.seq
   const pokemon = startRound(run)
   if (!pokemon) return error('Every Pokémon has been shown. Start a new run.', 409)
@@ -22,8 +24,8 @@ export async function POST(request: Request) {
     round: {
       silhouette: `/api/wtp/round-image?t=${encodeURIComponent(token)}`,
       gen: pokemon.gen,
-      hintCount: namePattern(pokemon.name).split('_').length - 1,
-      namePattern: namePattern(pokemon.name),
+      hintCount: run.current!.namePattern!.split('_').length - 1,
+      namePattern: run.current!.namePattern!,
     },
   }))
 }

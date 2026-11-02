@@ -16,6 +16,7 @@ import {
   type Round,
 } from './api'
 import { recordBest } from './events'
+import { DEFAULT_SETTINGS, GENERATIONS, type GameSettings } from '@/lib/wtp/settings'
 
 /**
  * Who's That Pokémon? - the anime's mid-episode segment as a game. A silhouette appears on
@@ -31,10 +32,19 @@ type Phase = 'intro' | 'round' | 'reveal' | 'over'
 const CRY_VOLUME = 0.12
 const HINT_COST = 15
 
-export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+export function WtpModal({
+  open,
+  onClose,
+  embedded = false,
+}: {
+  open: boolean
+  onClose: () => void
+  embedded?: boolean
+}) {
   const { muted, reducedMotion: forcedReduced } = useSettings()
   const reduced = usePrefersReducedMotion() || forcedReduced
 
+  const [settings, setSettings] = useState<GameSettings>(DEFAULT_SETTINGS)
   const [phase, setPhase] = useState<Phase>('intro')
   const [token, setToken] = useState<string | null>(null)
   const [run, setRun] = useState<PublicRun | null>(null)
@@ -71,7 +81,7 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
 
   const nextRound = useCallback(
     async (fromToken: string | null) => {
-      const res = await call(() => wtpApi.round(fromToken))
+      const res = await call(() => wtpApi.round(fromToken, settings))
       if (!res) return
       setToken(res.token)
       setRun(res.run)
@@ -81,16 +91,12 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
       setGuessText(res.round.namePattern)
       setPhase('round')
     },
-    [call],
+    [call, settings],
   )
 
   const takeHint = async () => {
     if (!token || !round || busy) return
-    // Prefer an empty slot; if all are typed, confirm the first editable letter.
-    const index =
-      guessText.indexOf('_') >= 0 ? guessText.indexOf('_') : round.namePattern.indexOf('_')
-    if (index < 0) return
-    const res = await call(() => wtpApi.hint(token, index))
+    const res = await call(() => wtpApi.hint(token))
     if (!res) return
     setToken(res.token)
     setRun(res.run)
@@ -150,7 +156,7 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
   // Esc closes; Tab stays inside the dialog. Both stand down while another keyboard-owning
   // layer (the backtick DevConsole) is open on top, so its Esc doesn't close the game too.
   useEffect(() => {
-    if (!open) return
+    if (!open || embedded) return
     const onKey = (e: KeyboardEvent) => {
       if (e.defaultPrevented) return
       const layers = document.querySelectorAll('[data-input-capture="true"]')
@@ -176,7 +182,7 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [open, onClose])
+  }, [open, onClose, embedded])
 
   if (!open) return null
 
@@ -187,17 +193,25 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
     <div
       ref={overlayRef}
       data-input-capture="true"
-      className="fixed inset-0 z-[90] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      className={
+        embedded
+          ? 'w-full'
+          : 'fixed inset-0 z-[90] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm'
+      }
       onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose()
+        if (!embedded && e.target === e.currentTarget) onClose()
       }}
     >
       <div
         ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
+        role={embedded ? 'region' : 'dialog'}
+        aria-modal={embedded ? undefined : true}
         aria-labelledby="wtp-title"
-        className="max-h-[calc(100dvh-2rem)] w-full max-w-lg overflow-y-auto"
+        className={
+          embedded
+            ? 'mx-auto w-full max-w-3xl'
+            : 'max-h-[calc(100dvh-2rem)] w-full max-w-lg overflow-y-auto'
+        }
       >
         <Panel className="p-4 sm:p-5">
           <header className="mb-3 flex items-start justify-between gap-3">
@@ -209,26 +223,40 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
                 Who&apos;s That Pokémon?
               </h2>
               <p className="font-mono text-xs text-ink-faint">
-                Gen I &amp; II · #001–251
-                {round && phase !== 'intro'
-                  ? ` · this one is Gen ${round.gen === 1 ? 'I' : 'II'}`
-                  : ''}
+                {settings.difficulty} · Generations {settings.generations.join(', ')}
+                {round && phase !== 'intro' ? ` · this one is Gen ${round.gen}` : ''}
               </p>
             </div>
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Close Who's That Pokémon?"
-              className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-edge text-ink-soft transition-colors hover:border-poke-red hover:text-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
-            >
-              <X aria-hidden className="h-4 w-4" />
-            </button>
+            {!embedded ? (
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close Who's That Pokémon?"
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-edge text-ink-soft transition-colors hover:border-poke-red hover:text-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red"
+              >
+                <X aria-hidden className="h-4 w-4" />
+              </button>
+            ) : phase !== 'intro' ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setToken(null)
+                  setPhase('intro')
+                }}
+                className="shrink-0 rounded border border-edge px-3 py-2 text-sm hover:border-poke-red"
+                disabled={busy}
+              >
+                New game
+              </button>
+            ) : null}
           </header>
 
           {run && phase !== 'intro' ? <Scoreboard run={run} /> : null}
 
           {phase === 'intro' ? (
             <Intro
+              settings={settings}
+              onSettingsChange={setSettings}
               busy={busy}
               error={error}
               primaryRef={primaryRef}
@@ -256,8 +284,8 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
                     }}
                   >
                     <p id="wtp-blanks" className="text-center font-mono text-sm text-ink-soft">
-                      Fill in the missing letters. Starting letters are free; reveals cost 15 points
-                      each.
+                      Fill in the missing letters. Each hint gives a clue and a random letter for 15
+                      points.
                     </p>
                     <div
                       className="flex flex-wrap justify-center gap-1.5"
@@ -340,7 +368,7 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
                       className="rounded-card border border-edge px-3 py-1.5 font-mono text-sm text-ink-soft transition-colors hover:border-poke-red hover:text-poke-red focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red disabled:opacity-50"
                     >
                       {hintsLeft > 0
-                        ? `Reveal a letter (−${HINT_COST} pts) · ${hintsLeft} left`
+                        ? `Hint + letter (−${HINT_COST} pts) · ${hintsLeft} left`
                         : 'All letters revealed'}
                     </button>
                     <button
@@ -375,7 +403,7 @@ export function WtpModal({ open, onClose }: { open: boolean; onClose: () => void
               primaryRef={primaryRef}
               onRestart={() => {
                 setToken(null)
-                void nextRound(null)
+                setPhase('intro')
               }}
             />
           ) : null}
@@ -480,17 +508,24 @@ function Stage({
 }
 
 function HintList({ hints }: { hints: Hint[] }) {
-  const latest = hints[hints.length - 1]
   return (
-    <p
-      className="mt-3 text-center font-mono text-sm text-ink-soft"
+    <div
+      className="mt-3 rounded border border-edge bg-surface-sunken p-3 text-sm text-ink-soft"
       role="status"
       aria-live="polite"
     >
-      {latest
-        ? `Letter ${latest.index + 1} is ${latest.letter}. ${hints.length * HINT_COST} points used on reveals.`
-        : 'Need help spelling? Reveal a missing letter below.'}
-    </p>
+      {hints.length ? (
+        <ul className="space-y-2">
+          {hints.map((hint, i) => (
+            <li key={hint.index}>
+              <strong>Hint {i + 1}:</strong> {hint.clue} Letter {hint.index + 1} is {hint.letter}.
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Need a clue? A hint also reveals one random missing letter.</p>
+      )}
+    </div>
   )
 }
 
@@ -534,6 +569,8 @@ function RevealPanel({
 }
 
 function Intro({
+  settings,
+  onSettingsChange,
   busy,
   error,
   primaryRef,
@@ -543,19 +580,92 @@ function Intro({
   error: string | null
   primaryRef: React.RefObject<HTMLButtonElement>
   onStart: () => void
+  settings: GameSettings
+  onSettingsChange: (settings: GameSettings) => void
 }) {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4">
+      <fieldset disabled={busy} className="rounded-card border border-edge p-4">
+        <legend className="px-2 font-semibold">Choose generations</legend>
+        <div className="mb-3 flex gap-4 text-sm">
+          <button
+            type="button"
+            className="text-poke-red underline"
+            onClick={() =>
+              onSettingsChange({ ...settings, generations: GENERATIONS.map((gen) => gen.id) })
+            }
+          >
+            Select all
+          </button>
+          <button
+            type="button"
+            className="text-ink-soft underline"
+            onClick={() => onSettingsChange({ ...settings, generations: [] })}
+          >
+            Clear
+          </button>
+        </div>
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {GENERATIONS.map((gen) => (
+            <label
+              key={gen.id}
+              className="flex cursor-pointer items-center gap-3 rounded border border-edge p-2 text-sm has-[:checked]:border-poke-red has-[:checked]:bg-poke-red/5"
+            >
+              <input
+                type="checkbox"
+                className="h-5 w-5 shrink-0 accent-poke-red"
+                checked={settings.generations.includes(gen.id)}
+                onChange={(e) =>
+                  onSettingsChange({
+                    ...settings,
+                    generations: e.target.checked
+                      ? [...settings.generations, gen.id].sort((a, b) => a - b)
+                      : settings.generations.filter((id) => id !== gen.id),
+                  })
+                }
+              />
+              Gen {gen.id} · {gen.region}
+            </label>
+          ))}
+        </div>
+        {settings.generations.length === 0 ? (
+          <p className="mt-2 text-sm text-poke-red">Choose at least one generation.</p>
+        ) : null}
+      </fieldset>
+      <fieldset disabled={busy} className="rounded-card border border-edge p-4">
+        <legend className="px-2 font-semibold">Difficulty</legend>
+        <div className="flex flex-col gap-2">
+          {(['easy', 'normal', 'hard'] as const).map((difficulty) => (
+            <label key={difficulty} className="flex cursor-pointer items-center gap-3 text-sm">
+              <input
+                type="radio"
+                name="wtp-difficulty"
+                className="h-4 w-4 accent-poke-red"
+                checked={settings.difficulty === difficulty}
+                onChange={() => onSettingsChange({ ...settings, difficulty })}
+              />
+              <span>
+                <strong className="capitalize">{difficulty}</strong> ·{' '}
+                {difficulty === 'easy'
+                  ? 'Half the letters shown'
+                  : difficulty === 'normal'
+                    ? 'A quarter of the letters shown'
+                    : 'All letters hidden'}
+              </span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
       <ul className="flex flex-col gap-1 font-mono text-sm text-ink-soft">
         <li>· Recognize the silhouette and fill in the missing letters.</li>
-        <li>· 100 points each; revealing a letter costs {HINT_COST}. Streaks add a bonus.</li>
+        <li>· 100 points each; a clue + letter costs {HINT_COST}. Streaks add a bonus.</li>
         <li>· Three misses and the run is over.</li>
       </ul>
       <button
         ref={primaryRef}
         type="button"
         onClick={onStart}
-        disabled={busy}
+        disabled={busy || settings.generations.length === 0}
         className="self-center rounded-card bg-poke-red px-5 py-2.5 font-display text-xs text-white transition-colors hover:bg-poke-red-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-poke-red focus-visible:ring-offset-2 disabled:opacity-50"
       >
         {busy ? 'Loading…' : 'Start'}

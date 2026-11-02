@@ -1,5 +1,5 @@
 """
-Who's That Pokémon? - step 1: pull the raw data for Gen 1 + 2 (#1-251) from PokeAPI.
+Who's That Pokémon? - step 1: pull the raw data for Generations 1-9 (#1-1025) from PokeAPI.
 
 For each Pokémon we read three PokeAPI resources - pokemon/{id}, pokemon-species/{id} and
 evolution-chain/{id} - and keep only the fields the game uses for hints. We also download
@@ -19,22 +19,37 @@ import os
 import re
 import sys
 import time
+import argparse
+import tempfile
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(HERE, ".cache")
 API = "https://pokeapi.co/api/v2"
-LAST_ID = 251
+GEN_ENDS = [151, 251, 386, 493, 649, 721, 809, 905, 1025]
 
-# Gen 1/2 games only, so every Pokédex entry is era-authentic. Earlier = preferred.
+# Prefer the original games for Gen 1/2; later species fall back to available English text.
 FLAVOR_VERSIONS = ["crystal", "yellow", "gold", "silver", "red", "blue"]
 
 session = requests.Session()
 session.headers["User-Agent"] = "trainer-chandan-portfolio/1.0 (whos-that-pokemon build script)"
+cache_locks = {}
+cache_locks_guard = threading.Lock()
 
 
 def cached_get(url, path, binary=False):
+    # Related species share evolution-chain files. Serialize those cache writes,
+    # since Windows cannot replace a file another worker has open for reading.
+    with cache_locks_guard:
+        lock = cache_locks.setdefault(path, threading.Lock())
+    with lock:
+        return _cached_get(url, path, binary)
+
+
+def _cached_get(url, path, binary=False):
     """GET url, caching the body at path. Sleeps briefly on a miss to stay polite."""
     full = os.path.join(CACHE, path)
     if os.path.exists(full):
@@ -54,8 +69,10 @@ def cached_get(url, path, binary=False):
             print(f"  retry {url}: {e}", file=sys.stderr)
             time.sleep(2 ** attempt)
     os.makedirs(os.path.dirname(full), exist_ok=True)
-    with open(full, "wb") as f:
+    with tempfile.NamedTemporaryFile(dir=os.path.dirname(full), delete=False) as f:
         f.write(res.content)
+        temp_path = f.name
+    os.replace(temp_path, full)
     time.sleep(0.1)
     return res.content if binary else res.json()
 
@@ -84,7 +101,10 @@ def pick_flavor(species):
     for v in FLAVOR_VERSIONS:
         if v in by_version:
             return {"text": by_version[v], "game": v}
-    return None
+    if by_version:
+        version, text = next(iter(by_version.items()))
+        return {"text": text, "game": version}
+    return {"text": "No field notes have been recorded yet.", "game": "unknown"}
 
 
 def walk_chain(node, stage=1, parent=None, out=None):
@@ -116,19 +136,35 @@ def species_id(url):
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--through-gen', type=int, choices=range(1, 10), default=9)
+    parser.add_argument('--workers', type=int, default=6)
+    args = parser.parse_args()
+    last_id = GEN_ENDS[args.through_gen - 1]
     os.makedirs(CACHE, exist_ok=True)
-    raw = {}
-    for pid in range(1, LAST_ID + 1):
+
+    def fetch_species(pid):
         mon = cached_get(f"{API}/pokemon/{pid}", f"api/pokemon/{pid}.json")
         spec = cached_get(f"{API}/pokemon-species/{pid}", f"api/species/{pid}.json")
         chain_id = species_id(spec["evolution_chain"]["url"])
         chain = cached_get(f"{API}/evolution-chain/{chain_id}", f"api/chain/{chain_id}.json")
-        raw[pid] = (mon, spec, chain)
-        if pid % 25 == 0:
-            print(f"  fetched {pid}/{LAST_ID}")
+        art_url = mon["sprites"]["other"]["official-artwork"]["front_default"]
+        if not art_url:
+            raise ValueError(f"Missing official artwork for {pid}")
+        cached_get(art_url, f"art/{pid}.png", binary=True)
+        cry_url = (mon.get("cries") or {}).get("legacy") or (mon.get("cries") or {}).get("latest")
+        if cry_url:
+            cached_get(cry_url, f"cry/{pid}.ogg", binary=True)
+        return pid, (mon, spec, chain)
 
-    # Display names, for resolving evolves-from (only within #1-251 - a Gen 3+ relative
-    # would be an off-era spoiler, so it's dropped).
+    raw = {}
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        for pid, data in pool.map(fetch_species, range(1, last_id + 1)):
+            raw[pid] = data
+            if pid % 25 == 0:
+                print(f"  fetched {pid}/{last_id}", flush=True)
+
+    # Display names for evolution clues within the downloaded pool.
     display = {raw[i][1]["name"]: english(raw[i][1]["names"], "name") for i in raw}
 
     records = []
@@ -144,8 +180,8 @@ def main():
             "id": pid,
             "slug": spec["name"],
             "name": name,
-            "gen": 1 if spec["generation"]["name"] == "generation-i" else 2,
-            "types": era_types(mon),
+            "gen": species_id(spec["generation"]["url"]),
+            "types": era_types(mon) if pid <= 251 else [t["type"]["name"] for t in mon["types"]],
             "genus": english(spec["genera"], "genus"),
             "flavor": pick_flavor(spec),
             "heightM": mon["height"] / 10,

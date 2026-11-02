@@ -3,6 +3,7 @@ import { NORMALIZED_NAMES, POKEMON, getPokemon, type WtpPokemon } from './data'
 import { isMatch } from './match'
 import { namePattern } from './namePattern'
 import { open, randomId, seal } from './token'
+import { DEFAULT_SETTINGS, type GameSettings } from './settings'
 
 /**
  * Who's That Pokémon? game rules. The whole run lives in one encrypted, signed token the
@@ -32,7 +33,8 @@ export interface RunState {
   misses: number
   used: number[]
   /** The unanswered round, if any: the answer's dex id and hints revealed so far. */
-  current: { id: number; hints: number; revealedLetters?: number[] } | null
+  current: { id: number; hints: number; namePattern?: string; revealedLetters?: number[] } | null
+  settings?: GameSettings
   startedAt: number
 }
 
@@ -46,7 +48,7 @@ export interface PublicRun {
   over: boolean
 }
 
-export function newRun(): RunState {
+export function newRun(settings: GameSettings = DEFAULT_SETTINGS): RunState {
   return {
     v: 1,
     runId: randomId(),
@@ -59,6 +61,7 @@ export function newRun(): RunState {
     used: [],
     current: null,
     startedAt: Date.now(),
+    settings: { ...settings, generations: [...settings.generations] },
   }
 }
 
@@ -73,7 +76,14 @@ export function openRun(token: unknown): RunState | null {
 
 export function isOver(run: RunState): boolean {
   // The pool only counts as exhausted once the last round has been answered.
-  return run.misses >= MAX_LIVES || (run.current === null && run.used.length >= POKEMON.length)
+  return (
+    run.misses >= MAX_LIVES || (run.current === null && run.used.length >= pokemonPool(run).length)
+  )
+}
+
+function pokemonPool(run: RunState): WtpPokemon[] {
+  const settings = run.settings ?? DEFAULT_SETTINGS
+  return POKEMON.filter((p) => settings.generations.includes(p.gen))
 }
 
 /** False for runs played faster than a person could, which the leaderboard turns away. */
@@ -103,12 +113,16 @@ function miss(run: RunState) {
  */
 export function startRound(run: RunState): WtpPokemon | null {
   const usedSet = new Set(run.used)
-  const pool = POKEMON.filter((p) => !usedSet.has(p.id))
+  const pool = pokemonPool(run).filter((p) => !usedSet.has(p.id))
   if (pool.length === 0) return null
   if (run.current) miss(run)
   const pick = pool[crypto.randomInt(pool.length)]!
   run.used.push(pick.id)
-  run.current = { id: pick.id, hints: 0 }
+  run.current = {
+    id: pick.id,
+    hints: 0,
+    namePattern: namePattern(pick.name, run.settings?.difficulty),
+  }
   run.seq += 1
   return pick
 }
@@ -117,6 +131,21 @@ export interface Hint {
   kind: 'letter'
   index: number
   letter: string
+  clue: string
+}
+
+/** Facts are separate from the name reveal and never contain the answer. */
+function cluesFor(p: WtpPokemon): string[] {
+  return [
+    `Type: ${p.types.join(' / ')}.`,
+    `This Pokémon is ${p.heightM} m tall and weighs ${p.weightKg} kg.`,
+    ...(p.habitat ? [`Its habitat is ${p.habitat.replace(/-/g, ' ')}.`] : []),
+    ...(p.color ? [`Its main Pokédex color is ${p.color}.`] : []),
+    `It is at evolution stage ${p.evolution.stage}${p.evolution.evolvesFurther ? ' and can evolve further' : ' and does not evolve further'}.`,
+    `It is ${p.legendary ? 'a legendary or mythical Pokémon' : 'neither legendary nor mythical'}.`,
+    ...(p.shape ? [`Its body shape is described as ${p.shape.replace(/-/g, ' ')}.`] : []),
+    `It was introduced in Generation ${p.gen}.`,
+  ]
 }
 
 /** Reveal only an editable, previously unrevealed letter. Never charge twice for a slot. */
@@ -125,15 +154,23 @@ export function takeHint(run: RunState, requestedIndex?: number): Hint | null {
   const p = getPokemon(run.current.id)
   if (!p) return null
   const revealed = run.current.revealedLetters ?? []
-  const pattern = namePattern(p.name)
-  const index =
-    requestedIndex ??
-    Array.from(pattern).findIndex((letter, i) => letter === '_' && !revealed.includes(i))
+  const pattern = run.current.namePattern ?? namePattern(p.name, 'hard')
+  const candidates = Array.from(pattern).flatMap((letter, i) =>
+    letter === '_' && !revealed.includes(i) ? [i] : [],
+  )
+  if (candidates.length === 0) return null
+  const index = requestedIndex ?? candidates[crypto.randomInt(candidates.length)]!
   if (!Number.isInteger(index) || pattern[index] !== '_' || revealed.includes(index)) return null
   run.current.revealedLetters = [...revealed, index]
   run.current.hints += 1
   run.seq += 1
-  return { kind: 'letter', index, letter: p.name.toUpperCase()[index]! }
+  const clues = cluesFor(p)
+  return {
+    kind: 'letter',
+    index,
+    letter: p.name.toUpperCase()[index]!,
+    clue: clues[(run.current.hints - 1) % clues.length]!,
+  }
 }
 
 export function pointsFor(hints: number, streak: number): number {

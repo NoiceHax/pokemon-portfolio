@@ -56,12 +56,15 @@ export function WtpHost() {
     pathname === '/' ||
     pathname.startsWith('/home') ||
     pathname.startsWith('/control-room') ||
-    pathname.startsWith('/trade')
+    pathname.startsWith('/trade') ||
+    pathname.startsWith('/minigame/guess')
 
   return (
     <>
       {!hidden && !open ? <WtpLauncher desktopOnly={pathname.startsWith('/adventure')} /> : null}
-      {loaded ? <WtpModal open={open} onClose={close} /> : null}
+      {loaded && !pathname.startsWith('/minigame/guess') ? (
+        <WtpModal open={open} onClose={close} />
+      ) : null}
     </>
   )
 }

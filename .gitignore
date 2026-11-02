@@ -41,3 +41,4 @@ screenshots/
 # Who's That Pokémon pipeline: raw PokeAPI downloads + venv
 scripts/whos-that-pokemon/.cache/
 scripts/whos-that-pokemon/.venv/
+scripts/whos-that-pokemon/__pycache__/

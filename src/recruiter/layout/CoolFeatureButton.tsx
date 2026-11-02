@@ -12,8 +12,7 @@ import {
 } from '@/components/whos-that-pokemon/events'
 
 /**
- * "A Cool Feature" - the sidebar doorway to Who's That Pokémon? (the game itself is mounted
- * once in the root layout and opened by a window event). Shows a mystery silhouette on the
+ * "A Cool Feature" opens the Who's That Pokémon? popup. Shows a mystery silhouette on the
  * anime's blue burst and this browser's best score, once there is one.
  */
 export function CoolFeatureButton() {
