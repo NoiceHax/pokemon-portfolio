@@ -43,12 +43,10 @@ export function PokedexEntry({ project }: { project: Project }) {
         <ProjectLinks links={project.links} className="mt-4" />
 
         <div className="mt-4 overflow-hidden rounded-md border border-edge bg-surface-sunken">
-          {/* Full width of the Home main column: max-w-6xl minus the 18rem sidebar, gap
-              and padding caps the box near 750px, so it never needs more than that. */}
           <ProjectCover
             project={project}
             className="h-56"
-            sizes="(min-width: 1024px) 750px, 100vw"
+            sizes="(min-width: 1024px) calc(100vw - 24rem), 100vw"
           />
         </div>
 

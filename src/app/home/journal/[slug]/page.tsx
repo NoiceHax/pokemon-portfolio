@@ -108,21 +108,23 @@ export default async function JournalEntryPage({ params }: EntryPageProps) {
         Back to Journal
       </Link>
 
-      <Panel className="p-6">
+      <Panel className="p-5 sm:p-8">
         <div className="flex items-center gap-2">
           <span
-            className={`rounded border px-1.5 py-0.5 font-mono text-xs uppercase ${meta.classes}`}
+            className={`rounded border px-1.5 py-0.5 font-mono text-sm uppercase ${meta.classes}`}
           >
             {meta.label}
           </span>
-          <span className="font-mono text-xs text-ink-faint">
+          <span className="font-mono text-sm text-ink-faint">
             #{String(fm.entryNumber).padStart(2, '0')}
           </span>
         </div>
 
-        <h1 className="mt-2 break-words font-display text-2xl font-bold text-ink sm:text-3xl">{fm.title}</h1>
+        <h1 className="mt-2 break-words font-display text-2xl font-bold text-ink sm:text-3xl">
+          {fm.title}
+        </h1>
 
-        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-ink-faint">
+        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-sm text-ink-faint">
           <span className="flex items-center gap-1">
             <Calendar aria-hidden className="h-3 w-3" />
             {fm.date}

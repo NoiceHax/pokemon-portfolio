@@ -40,8 +40,8 @@ export function TrainerSidebar() {
                 className="flex min-h-11 items-center gap-3 border-b border-edge py-3 font-mono text-sm text-ink-soft transition-colors hover:text-poke-red focus:outline-none focus-visible:text-poke-red"
               >
                 <item.icon aria-hidden className="h-4 w-4 shrink-0" />
-                <span className="flex min-w-0 flex-1 items-baseline justify-between gap-2">
-                  <span className="truncate">{item.label}</span>
+                <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                  <span>{item.label}</span>
                   <span className="shrink-0 font-mono text-xs text-ink-faint">{item.meaning}</span>
                 </span>
               </Link>

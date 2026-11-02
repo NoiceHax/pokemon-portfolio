@@ -1,12 +1,5 @@
 import Link from 'next/link'
-import {
-  BookOpen,
-  Map,
-  NotebookPen,
-  HeartPulse,
-  ArrowRight,
-  type LucideIcon,
-} from 'lucide-react'
+import { BookOpen, Map, NotebookPen, HeartPulse, ArrowRight, type LucideIcon } from 'lucide-react'
 import { Panel } from '@/recruiter/ui'
 
 /**
@@ -60,7 +53,7 @@ const ACTIONS: Action[] = [
 
 export function QuickActions() {
   return (
-    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 2xl:grid-cols-4">
       {ACTIONS.map((action) => (
         <li key={action.title}>
           <Link

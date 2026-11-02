@@ -7,7 +7,7 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <footer className="mt-12 border-t border-edge">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 font-mono text-xs text-ink-faint sm:flex-row">
+      <div className="mx-auto flex w-full flex-col items-center justify-between gap-2 px-4 py-4 font-mono text-xs text-ink-faint sm:flex-row sm:px-6 lg:px-8">
         <p>© 2024 NOICEHAX | Research Division</p>
         <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
           <Link href="/home" className="transition-colors hover:text-poke-red">

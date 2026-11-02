@@ -35,8 +35,8 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="min-h-screen bg-surface text-ink">
       <TopNav />
-      <div className="mx-auto max-w-6xl px-4 py-6">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_18rem]">
+      <div className="mx-auto w-full px-4 py-6 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
           <main className="min-w-0">{children}</main>
           <div className="lg:sticky lg:top-20 lg:h-fit">
             <TrainerSidebar />

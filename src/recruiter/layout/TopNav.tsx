@@ -21,7 +21,7 @@ export function TopNav() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-edge bg-surface/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+      <nav className="mx-auto flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/home"
           className="group/logo flex items-center gap-2 font-display text-lg font-bold uppercase tracking-wide text-poke-red"
@@ -43,7 +43,7 @@ export function TopNav() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="hidden items-center gap-6 xl:flex">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
               <Link
@@ -69,7 +69,7 @@ export function TopNav() {
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-label={open ? 'Close menu' : 'Open menu'}
-            className="grid h-11 w-11 place-items-center rounded-md border border-edge text-ink-soft md:hidden"
+            className="grid h-11 w-11 place-items-center rounded-md border border-edge text-ink-soft xl:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -77,7 +77,7 @@ export function TopNav() {
       </nav>
 
       {open ? (
-        <ul className="flex flex-col gap-1 border-t border-edge px-4 py-2 md:hidden">
+        <ul className="flex flex-col gap-1 border-t border-edge px-4 py-2 sm:px-6 lg:px-8 xl:hidden">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
               <Link

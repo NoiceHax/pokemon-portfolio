@@ -5,37 +5,42 @@
 @layer components {
   /* Journal MDX prose. Kept minimal and readable - matches the notebook feel without
      pulling in a full typography plugin. */
+  .prose-journal {
+    overflow-wrap: anywhere;
+  }
+  .prose-journal pre code {
+    padding: 0;
+    font-size: inherit;
+  }
   .prose-journal h1 {
-    /* leading-loose (not the tighter fixed line-height on text-2xl) - Press Start 2P's
-       glyph metrics need extra headroom or its ascenders get clipped. */
     @apply mb-3 mt-6 font-display text-2xl font-bold leading-loose text-ink;
   }
   .prose-journal h2 {
-    @apply mb-2 mt-5 font-display text-xl font-bold leading-loose text-ink;
+    @apply mb-3 mt-8 font-display text-2xl font-bold leading-relaxed text-ink;
   }
   .prose-journal h3 {
-    @apply mb-2 mt-4 font-display text-lg font-bold leading-loose text-ink;
+    @apply mb-2 mt-6 font-display text-xl font-bold leading-relaxed text-ink;
   }
   .prose-journal p {
-    @apply my-3 break-words text-base leading-relaxed text-ink;
+    @apply my-4 break-words text-lg leading-loose text-ink sm:text-xl;
   }
   .prose-journal ul {
-    @apply my-3 list-disc space-y-1 break-words pl-5 text-base text-ink;
+    @apply my-3 list-disc space-y-2 break-words pl-6 text-lg leading-loose text-ink sm:text-xl;
   }
   .prose-journal ol {
-    @apply my-3 list-decimal space-y-1 break-words pl-5 text-base text-ink;
+    @apply my-3 list-decimal space-y-2 break-words pl-6 text-lg leading-loose text-ink sm:text-xl;
   }
   .prose-journal a {
     @apply break-words text-poke-red underline;
   }
   .prose-journal blockquote {
-    @apply my-4 border-l-2 border-poke-red pl-4 font-mono text-base italic text-ink-soft;
+    @apply my-4 border-l-2 border-poke-red pl-4 text-lg italic leading-loose text-ink-soft sm:text-xl;
   }
   .prose-journal code {
-    @apply rounded bg-surface-sunken px-1 py-0.5 font-mono text-sm text-ink;
+    @apply rounded bg-surface-sunken px-1 py-0.5 font-mono text-base text-ink;
   }
   .prose-journal pre {
-    @apply my-4 overflow-x-auto rounded-md border border-edge bg-surface-sunken p-3 font-mono text-sm;
+    @apply my-4 overflow-x-auto rounded-md border border-edge bg-surface-sunken p-4 font-mono text-base;
   }
 }
 
@@ -49,11 +54,14 @@
 
   body {
     font-family: theme('fontFamily.sans');
-    /* Readable default for VT323; uses the bumped `base` token (18px), not a raised root. */
+    /* Give the original pixel glyphs breathing room without replacing the face. */
     font-size: theme('fontSize.base');
     line-height: theme('lineHeight.relaxed');
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    letter-spacing: 0.025em;
+    word-spacing: 0.08em;
+    -webkit-font-smoothing: auto;
+    text-rendering: auto;
+    font-variant-ligatures: none;
   }
 
   /* Mobile: keep form controls at >=16px so iOS Safari doesn't auto-zoom on focus. */
@@ -79,6 +87,16 @@
 }
 
 @layer utilities {
+  /* Press Start 2P has one weight. Synthetic bold fills in the small gaps in
+     letters such as M and N; extra leading also keeps tall pixel glyphs clear. */
+  .font-display {
+    font-family: theme('fontFamily.display');
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.035em;
+    font-synthesis: none;
+  }
+
   /* CRT scanlines - a faint horizontal line pattern layered over the screen. */
   .crt-scanlines {
     background-image: repeating-linear-gradient(
