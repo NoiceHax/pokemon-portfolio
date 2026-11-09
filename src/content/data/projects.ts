@@ -706,4 +706,242 @@ export const projects: ProjectInput[] = [
     stack: ['Docker', 'itzg/minecraft-server', 'Paper 26.2', 'Java 25', 'RCON', 'Discord', 'Linux'],
     links: [],
   },
+
+  {
+    slug: 'llm-gateway',
+    dexNumber: 27,
+    title: 'LLM Gateway',
+    summary:
+      'An OpenAI-compatible gateway over a pool of NVIDIA NIM API keys that routes each app to the best healthy model, scored on capability, speed and live uptime.',
+    status: 'production',
+    types: ['fire', 'psychic'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'LLM Gateway',
+    },
+    problemSolved:
+      "Six of my self-hosted apps each held their own API key, each found out separately when a key was throttled, and each was pinned to one model that took the feature down when it disappeared. The gateway owns the keys instead: a rate-limited round-robin pool that cools a key on 429 and parks it on 401, and per-project model lists ranked on every request by capability, measured tokens per second and recent success rate. A 429 counts against the key and a 500 against the model, so one spent key never looks like an outage. Apps change one environment variable, and failover happens before the first streamed byte.",
+    stack: ['Python', 'FastAPI', 'httpx', 'NVIDIA NIM', 'OpenAI API', 'Docker'],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/llm-gateway',
+        kind: 'repo',
+      },
+    ],
+  },
+
+  {
+    slug: 'oss-looker',
+    dexNumber: 28,
+    title: 'OSS Looker',
+    summary:
+      'A tool that scouts GitHub for open-source repositories worth contributing to and tracks the pull requests I open on them.',
+    status: 'production',
+    types: ['normal'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'OSS Looker',
+    },
+    problemSolved:
+      'Finding a repo that will actually review an outside contribution takes longer than writing the fix. OSS Looker searches GitHub (and the Google Summer of Code organisations) for candidates in my languages, scores each repo on activity and how quickly maintainers respond, and keeps a short daily list. Once a PR is open it tracks its state changes, so nothing goes stale unnoticed. It is a stdlib-only Python CLI with SQLite storage, run on systemd timers.',
+    stack: ['Python', 'GitHub API', 'SQLite', 'systemd'],
+    links: [],
+  },
+
+  {
+    slug: 'minty-review',
+    dexNumber: 29,
+    title: 'minty-review',
+    summary:
+      'An AI pull request reviewer in the spirit of CodeRabbit, running on my homelab and posting its reviews to Discord.',
+    status: 'production',
+    types: ['psychic'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'minty-review',
+    },
+    problemSolved:
+      "Waiting for a human reviewer is the slowest part of a small team's PR loop. A listener holds one IMAP IDLE connection to Gmail, so GitHub's mail about a new PR or push triggers a review within seconds, with no polling or webhooks. Each review is a fresh Claude Code session that can only read, grep and glob the checked-out PR head, so it can explore the codebase for context but cannot change anything. The same setup reviews every push to this portfolio, fixes what it finds behind lint, typecheck and build checks, and redeploys.",
+    stack: ['Python', 'Claude Code', 'IMAP', 'tmux', 'GitHub Actions', 'Discord'],
+    links: [],
+  },
+
+  {
+    slug: 'redbot',
+    dexNumber: 30,
+    title: 'redbot',
+    summary:
+      'A local app that finds LinkedIn leads from keyword searches, stores and deduplicates them, and exports CSVs.',
+    status: 'prototype',
+    types: ['water'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'redbot',
+    },
+    problemSolved:
+      'Building a lead list by hand means searching, opening profiles one at a time and copying them into a spreadsheet. redbot runs keyword search jobs through a Playwright browser using your own LinkedIn session, collects profiles with polite delays and per-job limits, deduplicates them in SQLite and exports CSVs, with live job progress over WebSockets. Profile collection sits behind a provider interface, so the jobs, storage and exports do not depend on where the data comes from. Non-technical users start it by double-clicking a batch file that installs everything on first run.',
+    stack: ['FastAPI', 'SQLAlchemy', 'Alembic', 'SQLite', 'Playwright', 'Next.js 15', 'WebSockets'],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/redbot',
+        kind: 'repo',
+      },
+    ],
+  },
+
+  {
+    slug: 'tv-adblock',
+    dexNumber: 31,
+    title: 'TV Adblock',
+    summary:
+      'One bash script that debloats an Android TV over Wi-Fi ADB and points it at a self-hosted ad-blocking DNS-over-TLS resolver.',
+    status: 'prototype',
+    types: ['fire'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'TV Adblock',
+    },
+    problemSolved:
+      "Smart TV apps ignore the router's DNS, so network-wide ad blocking misses them. The script sets Android's Private DNS to my own AdGuard Home resolver over DNS-over-TLS, but first checks that it answers on port 853 with a valid certificate, because a TV pointed at a dead resolver loses its internet. It also disables (never uninstalls) bloatware, can install SmartTube, has a dry run and a full undo, and prints rules for streaming services whose ads come from their own hostnames.",
+    stack: ['Bash', 'ADB', 'Android TV', 'DNS-over-TLS', 'AdGuard Home'],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/tv-adblock',
+        kind: 'repo',
+      },
+    ],
+  },
+
+  {
+    slug: 'spotify-playlist-watcher',
+    dexNumber: 32,
+    title: 'Spotify Playlist Watcher',
+    summary:
+      'Keeps a Spotify playlist in step with my Liked Songs: Discord alerts for differences and genre-filtered auto-adding.',
+    status: 'production',
+    types: ['normal'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'Spotify Playlist Watcher',
+    },
+    problemSolved:
+      "I keep one playlist for every rock and metal song I like and kept forgetting to add new ones. The watcher polls Liked Songs and the playlist, reports liked-but-missing and unliked tracks to Discord once each, and adds missing rock tracks itself. Spotify no longer exposes genres, so the genre comes from the iTunes Search API, with MusicBrainz artist tags settling vague answers and vetoing wrong ones. Lookups are cached in SQLite forever, and tracks removed on purpose are never re-added.",
+    stack: ['Python', 'Spotify Web API', 'iTunes Search API', 'MusicBrainz', 'SQLite', 'Docker'],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/spotify-playlist-watcher',
+        kind: 'repo',
+      },
+    ],
+  },
+
+  {
+    slug: 'linux-power-tools',
+    dexNumber: 33,
+    title: 'Linux Power Tools',
+    summary:
+      'Two scripts for my always-on server: devctl switches unused USB hardware off, powertrack measures monthly energy use.',
+    status: 'production',
+    types: ['fire'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'Linux Power Tools',
+    },
+    problemSolved:
+      "My homelab is an old laptop that stays on all day, and I wanted it to use less power and to know what it actually draws. devctl deauthorizes the webcam, card reader and Bluetooth through USB sysfs, from a terminal UI or CLI. A root daemon listens only on localhost behind a token and re-applies the choice after reboots. powertrack samples Intel RAPL energy counters every minute, handles counter wraparound and suspend gaps, calibrates the non-CPU draw from battery readings, and reports daily kWh, a monthly projection and cost.",
+    stack: ['Python', 'systemd', 'sysfs', 'Intel RAPL', 'curses'],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/linux-power-tools',
+        kind: 'repo',
+      },
+    ],
+  },
+
+  {
+    slug: 'sticky-todo-class-notes',
+    dexNumber: 34,
+    title: 'Sticky Todo + Class Notes',
+    summary:
+      'Recorded lectures become written notes overnight, and a "revise" task lands on a sticky-note to-do list on my PC and phone.',
+    status: 'production',
+    types: ['grass', 'psychic'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'Sticky Todo and Class Notes',
+    },
+    problemSolved:
+      "Lecture recordings are easy to save and hard to revise from, and to-do apps you have to open get forgotten. Class Notes finds each night's recordings through a logged-in headless browser, downloads only the audio, transcribes it with Groq Whisper and writes notes from the transcript in ten-minute windows, matched to that session's syllabus entry, then publishes them to a Docmost wiki. Each published lecture adds a revise task with the notes link to Sticky Todo: a sticky note that opens at PC login and an Android home-screen widget that refreshes on unlock, synced through a tiny self-hosted server.",
+    stack: ['Python', 'FastAPI', 'Playwright', 'Groq Whisper', 'Claude Code', 'Docmost', 'Android', 'PowerShell'],
+    links: [
+      {
+        label: 'Sticky Todo',
+        href: 'https://github.com/NoiceHax/sticky-todo',
+        kind: 'repo',
+      },
+      {
+        label: 'Android APK',
+        href: 'https://github.com/NoiceHax/sticky-todo/releases/latest',
+        kind: 'other',
+      },
+    ],
+  },
+
+  {
+    slug: 'backups',
+    dexNumber: 35,
+    title: 'Backups',
+    summary:
+      'Nightly restic backups of my homelab and PC, plus a Windows snapshot tool whose daily snapshots are plain folders.',
+    status: 'production',
+    types: ['fire'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'Backups',
+    },
+    problemSolved:
+      "A mirror backup copies deletions too: when Defender falsely flagged three files and deleted them, the next two mirror runs deleted the backups as well. winbackup keeps hardlink snapshots instead, so each day is a complete folder you restore by dragging a file out, and only changed files cost space. It also writes zstd archives, 36 times faster than gzip on my data. On the server, restic takes nightly Postgres and Mongo dumps plus the homelab files, pausing Minecraft saves for a consistent world, and the PC sends shadow-copy snapshots over SFTP. Retention and a weekly sampled integrity check run on the server.",
+    stack: ['restic', 'PowerShell', 'Bash', 'systemd', 'zstd', 'NTFS hardlinks', 'VSS'],
+    links: [
+      {
+        label: 'winbackup',
+        href: 'https://github.com/NoiceHax/winbackup',
+        kind: 'repo',
+      },
+      {
+        label: 'homelab-backup',
+        href: 'https://github.com/NoiceHax/homelab-backup',
+        kind: 'repo',
+      },
+    ],
+  },
+
+  {
+    slug: 'sync-time',
+    dexNumber: 36,
+    title: 'sync-time',
+    summary:
+      'Fixes the Windows clock after dual-booting Linux by resyncing internet time at boot, logon and wake.',
+    status: 'production',
+    types: ['normal'],
+    cover: {
+      src: '/assets/Miscellaneous/Items.png',
+      alt: 'sync-time',
+    },
+    problemSolved:
+      'Linux writes UTC to the hardware clock and Windows reads it as local time, so after a Linux session Windows came up 5h30m behind and certificates and 2FA codes failed. A scheduled task running as SYSTEM resyncs with internet time at startup, logon and resume (Fast Startup boots count as resumes), retries while the network comes up, and lets w32time correct the full offset in one step.',
+    stack: ['PowerShell', 'Task Scheduler', 'w32time'],
+    links: [
+      {
+        label: 'Repository',
+        href: 'https://github.com/NoiceHax/sync-time',
+        kind: 'repo',
+      },
+    ],
+  },
 ]
