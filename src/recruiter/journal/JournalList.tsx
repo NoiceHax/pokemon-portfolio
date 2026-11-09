@@ -8,7 +8,7 @@ import { ENTRY_TYPE_META } from './entryTypes'
 type Filter = JournalEntryType | 'all'
 
 /**
- * Journal list with type filter chips (mockup). Filtering is client-side over the
+ * Logs grid with type filter chips (mockup). Filtering is client-side over the
  * already-loaded entries - no refetch. Renders an empty state when a filter matches
  * nothing.
  */
@@ -25,9 +25,9 @@ export function JournalList({ entries }: { entries: BlogFrontmatter[] }) {
 
   return (
     <div>
-      <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label="Filter journal by type">
+      <div className="mb-5 flex flex-wrap gap-2" role="group" aria-label="Filter logs by type">
         <Chip active={filter === 'all'} onClick={() => setFilter('all')}>
-          All Entries
+          All Logs
         </Chip>
         {availableTypes.map((type) => (
           <Chip key={type} active={filter === type} onClick={() => setFilter(type)}>
@@ -41,9 +41,9 @@ export function JournalList({ entries }: { entries: BlogFrontmatter[] }) {
           No entries in this category yet.
         </p>
       ) : (
-        <ul className="space-y-4">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((entry) => (
-            <li key={entry.slug}>
+            <li key={entry.slug} className="h-full">
               <JournalCard entry={entry} />
             </li>
           ))}

@@ -40,7 +40,7 @@ const postSchema = z.object({
 
 /** Submit the changed entry plus the sitemap that now lists (or no longer lists) it. */
 async function notifySearchEngines(slug: string): Promise<void> {
-  await pingIndexNow([absoluteUrl(`/home/journal/${slug}`), absoluteUrl('/sitemap.xml')])
+  await pingIndexNow([absoluteUrl(`/home/logs/${slug}`), absoluteUrl('/sitemap.xml')])
 }
 
 async function guard(request: Request): Promise<Response | null> {
@@ -81,7 +81,7 @@ export async function POST(request: Request) {
   try {
     await upsertDbBlogPost(parsed.data)
     // Ping either way. Publishing announces a new URL; UNPUBLISHING makes that URL 404 for
-    // the public (the draft guard in home/journal/[slug] returns null), which is exactly the
+    // the public (the draft guard in home/logs/[slug] returns null), which is exactly the
     // condition the DELETE branch below submits for - a crawler needs the same nudge to drop
     // a withdrawn entry as a deleted one. Skipping drafts meant an unpublished post kept
     // being served from Bing/Yandex indefinitely.

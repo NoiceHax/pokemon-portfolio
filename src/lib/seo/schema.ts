@@ -66,7 +66,7 @@ export function blogPostingSchema(fm: BlogFrontmatter): JsonLdObject {
     description: fm.excerpt,
     datePublished: fm.date,
     author: { '@type': 'Person', name: AUTHOR_NAME, url: SITE_URL },
-    url: absoluteUrl(`/home/journal/${fm.slug}`),
+    url: absoluteUrl(`/home/logs/${fm.slug}`),
     image: absoluteUrl(journalOgImage(fm)),
     keywords: nonEmpty(fm.tags),
   })

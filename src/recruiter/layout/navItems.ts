@@ -32,7 +32,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: '/home/experience',
     icon: Map,
   },
-  { label: 'Journal', meaning: 'Blogs', href: '/home/journal', icon: NotebookPen },
+  { label: 'Logs', meaning: '2-minute reads', href: '/home/logs', icon: NotebookPen },
   {
     label: 'Pokémon Center',
     meaning: 'Contact me',

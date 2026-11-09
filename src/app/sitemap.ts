@@ -42,7 +42,7 @@ const STATIC_PATHS = [
   '',
   '/home/pokedex',
   '/home/experience',
-  '/home/journal',
+  '/home/logs',
   '/home/pokemon-center',
   '/hall-of-fame',
   '/privacy',
@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const journal = await getJournalFrontmatter()
     entries.push(
       ...journal.map((fm) => ({
-        url: `${SITE_URL}/home/journal/${fm.slug}`,
+        url: `${SITE_URL}/home/logs/${fm.slug}`,
         lastModified: lastModified(fm.date),
       })),
     )

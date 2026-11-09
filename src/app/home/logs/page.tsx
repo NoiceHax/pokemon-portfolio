@@ -4,25 +4,25 @@ import { PageHeader } from '@/recruiter/ui'
 import { JournalList } from '@/recruiter/journal'
 
 export const metadata = {
-  title: 'Journal',
-  description: 'How does Chandan think? Field notes, build logs, research and thoughts.',
-  alternates: { canonical: '/home/journal' },
+  title: 'Logs',
+  description: 'Two-minute reads on what Chandan builds, researches and learns.',
+  alternates: { canonical: '/home/logs' },
 }
 
-// DB-backed content: read the Journal fresh on every request so a post published in the
+// DB-backed content: read the posts fresh on every request so a post published in the
 // Control Room appears immediately, instead of serving a build-time static snapshot that
 // was rendered before the post existed.
 export const dynamic = 'force-dynamic'
 
-/** Journal - "How does Chandan think?" A research notebook (DB-first, MDX fallback). */
-export default async function JournalPage() {
+/** Logs - a grid of short, two-minute reads (DB-first, MDX fallback). */
+export default async function LogsPage() {
   const entries = await getJournalFrontmatter()
   return (
     <div>
       <PageHeader
         icon={NotebookPen}
-        title="Journal"
-        subtitle="Field notes, research logs and thoughts from the journey."
+        title="Logs"
+        subtitle="Two-minute reads on what I build, research and learn."
       />
       <JournalList entries={entries} />
     </div>

@@ -39,9 +39,9 @@ export const RECRUITER_DESTINATIONS: Record<RecruiterDestinationId, RecruiterDes
   },
   journal: {
     id: 'journal',
-    label: 'Journal',
-    href: '/home/journal',
-    cta: 'Read Journal',
+    label: 'Logs',
+    href: '/home/logs',
+    cta: 'Read Logs',
   },
   'pokemon-center': {
     id: 'pokemon-center',

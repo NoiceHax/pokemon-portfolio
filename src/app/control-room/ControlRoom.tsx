@@ -34,7 +34,7 @@ const emptyForm = (): PostForm => ({
   excerpt: '',
   bodyMdx: '',
   date: new Date().toISOString().slice(0, 10),
-  readMinutes: 3,
+  readMinutes: 2,
   tags: '',
   draft: true,
 })

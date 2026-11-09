@@ -35,10 +35,10 @@ const ACTIONS: Action[] = [
   },
   {
     tag: 'No.007',
-    title: 'Scout Journal',
-    description: 'Thoughts, learnings and field notes.',
-    href: '/home/journal',
-    cta: 'Read Journal',
+    title: 'Scout Logs',
+    description: 'Two-minute reads on what I build and learn.',
+    href: '/home/logs',
+    cta: 'Read Logs',
     icon: NotebookPen,
   },
   {

@@ -58,6 +58,8 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/home/pokedex/65to70', destination: '/home/pokedex/flick-n-pick', permanent: true },
+      { source: '/home/journal', destination: '/home/logs', permanent: true },
+      { source: '/home/journal/:slug', destination: '/home/logs/:slug', permanent: true },
       { source: '/recruiter', destination: '/home', permanent: true },
       { source: '/recruiter/:path*', destination: '/home/:path*', permanent: true },
     ]

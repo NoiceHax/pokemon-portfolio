@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: EntryPageProps) {
   const entry = await loadEntry(params.slug)
   if (!entry) return { title: 'Unknown Entry' }
   const { fm } = entry
-  const path = `/home/journal/${fm.slug}`
+  const path = `/home/logs/${fm.slug}`
   return {
     title: fm.title,
     description: fm.excerpt,
@@ -101,11 +101,11 @@ export default async function JournalEntryPage({ params }: EntryPageProps) {
       <ReadingProgress />
       <JsonLd data={blogPostingSchema(fm)} />
       <Link
-        href="/home/journal"
+        href="/home/logs"
         className="inline-flex items-center gap-1 font-mono text-sm text-ink-soft hover:text-poke-red focus:outline-none focus-visible:text-poke-red"
       >
         <ArrowLeft aria-hidden className="h-4 w-4" />
-        Back to Journal
+        Back to Logs
       </Link>
 
       <Panel className="p-5 sm:p-8">
