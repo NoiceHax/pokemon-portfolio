@@ -1,0 +1,27 @@
+name: Review and deploy
+
+# Every push to main is reviewed on the homelab server (minty); fixes are pushed back
+# as a [skip ci] commit and the result is deployed to https://noicehax.dev.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time; a newer push waits for the current run instead of cancelling it.
+concurrency:
+  group: deploy-noicehax
+  cancel-in-progress: false
+
+jobs:
+  review-and-deploy:
+    runs-on: [self-hosted, minty]
+    timeout-minutes: 75
+    steps:
+      - name: Review, fix and deploy
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: ~/homelab/apps/portfolio-ci/pipeline.sh "$BEFORE_SHA" "$AFTER_SHA"
